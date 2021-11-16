@@ -3,6 +3,8 @@
 [Тестилка регулярок](https://www.regextester.com/)
 [Тестилка регулярок 2](http://regviz.org/)
 
+[А этими вопросами я вас буду пытать в начале каждого занятия](https://github.com/enhorse/java-interview/blob/master/core.md)
+
 ## Задание 15.11.2021-18.11.2021:
 1. Установить программу для снятия скриншотов. [лежит тут](https://app.prntscr.com/ru/) 
 1. скачать и распаковать Java + Maven [java](https://jdk.java.net/java-se-ri/11) [maven](https://maven.apache.org/download.cgi)
