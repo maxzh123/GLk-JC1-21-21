@@ -1,5 +1,5 @@
 package by.itAcademy.homeworks.types;
-
+//Написать код, который выведет значения переменных на экран:
 public class Task3 {
      public static void main(String[] args) {
        
