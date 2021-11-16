@@ -5,7 +5,7 @@ package by.itAcademy.homeworks.basics;
     На примере задания 1 изменить сообщение на "Hello Belarus!", откомпилировать его и запустить.
  */
 
-public class Task1 {
+public class Task2 {
     public static void main(String[] args) {
         System.out.println("Hello Belarus!");
     }
