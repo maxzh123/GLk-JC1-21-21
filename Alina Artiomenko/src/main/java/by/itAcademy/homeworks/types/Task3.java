@@ -11,7 +11,7 @@ public class Task3 {
   long l = 0xffffffffL;
   char c = 'a';
   float f = .025f;
-  double = .00001234;
+  double d = .00001234;
   boolean bool = true;
   
   System.out.println("byte b = " + b);
