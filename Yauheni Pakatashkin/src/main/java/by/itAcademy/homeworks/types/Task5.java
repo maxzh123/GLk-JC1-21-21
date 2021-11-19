@@ -23,19 +23,10 @@ public class Task5 {
         int minute = (((number % 604800) % 86400) % 3600) / 60;
         int second = (((number % 604800) % 86400) % 3600) % 60;
 
-        if (week > 0) {
-            System.out.print("Week: " + week+" ");
-        }
-        if (week > 0 && day > 0) {
-            System.out.print("Day: " + day+" ");
-        }
-        if (hour > 0 && week > 0 && day > 0) {
-            System.out.print("Hour: " + hour+" ");
-        }
-        if (minute > 0 && hour > 0 && week > 0 && day > 0) {
-            System.out.print("Minute: " + minute+" ");
-        }
-
+        System.out.print("Week: " + week + " ");
+        System.out.print("Day: " + day + " ");
+        System.out.print("Hour: " + hour + " ");
+        System.out.print("Minute: " + minute + " ");
         System.out.print("Second: " + second);
 
 
