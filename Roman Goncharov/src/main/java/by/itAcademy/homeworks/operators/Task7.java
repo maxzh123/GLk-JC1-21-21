@@ -10,11 +10,9 @@ public class Task7 {
         if (r*2 >= Math.sqrt(a*a + b*b)) {
             System.out.println("Картонка радиусом "+ r + " полностью закрывает прямоугольное отверстие " +
                     "размерами a=" + a + " и b=" + b);
-            System.out.println(Math.sqrt(a*a + b*b));
         } else {
             System.out.println("Картонка радиусом "+ r + " не закрывает прямоугольное отверстие " +
                     "размерами a=" + a + " и b=" + b);
-            System.out.println(Math.sqrt(a*a + b*b));
         }
     }
 }
