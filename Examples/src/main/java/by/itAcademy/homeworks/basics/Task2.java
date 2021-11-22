@@ -1,25 +1,32 @@
 package by.itAcademy.homeworks.basics;
 
-public class Task2 {
+public class Task2 extends Object {
+    private int sum;
+    public Task2(){
+        sum=0;
+    }
+
+    public Task2(int initSum){
+        sum=initSum;
+    }
+
+    public void add(int a){
+        sum+=a;
+    }
+
+    public void print(){
+        System.out.println(sum);
+    }
+
     public static void main(String[] args) {
-        Integer x=8;
-        Integer y=050;
-        System.out.println(y);
-
-
-
-//        if (getFalse()&getTrue()){
-//
-//        }
+        Task2 t=new Task2();
+        Task2 t2=new Task2(2);
+        t.add(5);
+        t.add(2);
+        t2.add(8);
+        t.print();
+        t2.print();
     }
 
-    static boolean getTrue(){
-        System.out.println("getTrue");
-        return  true;
-    }
-    static boolean getFalse(){
-        System.out.println("getFalse");
-        return  false;
-    }
 
 }
