@@ -1,6 +1,6 @@
 package by.itAcademy.homeworks.basics;
 
-public class Task2 extends Object {
+public class Task2 implements Comparable<Task2> {
     private int sum;
     public Task2(){
         sum=0;
@@ -29,4 +29,11 @@ public class Task2 extends Object {
     }
 
 
+    @Override
+    public int compareTo(Task2 o) {
+        if (o==null) return 1;
+        if (o.sum>sum) return -1;
+        if (o.sum<sum) return 1;
+        return 0;
+    }
 }
