@@ -39,4 +39,9 @@ public class Task2 implements Comparable<Task2> {
     public int compareTo(Task2 o) {
        return -compareTo2(o);
     }
+    @Override
+    public String toString(){
+        return "Объект с сумой:"+String.valueOf(sum);
+
+    }
 }

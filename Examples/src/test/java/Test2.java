@@ -25,7 +25,7 @@ public class Test2 {
         System.out.println("Сортируем");
         Arrays.sort(array2);
         for(Task2 t:array2){
-            t.print();
+            System.out.println(t);
         }
 
     }
