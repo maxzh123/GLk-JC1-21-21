@@ -1,5 +1,8 @@
 package by.itAcademy.homeworks.loops;
 
+// Задание № 12
+// Вычислить факториал чисел от 0 до 10.
+
 public class Task12 {
     public static void main(String[] args) {
         System.out.println("0! = 1");
