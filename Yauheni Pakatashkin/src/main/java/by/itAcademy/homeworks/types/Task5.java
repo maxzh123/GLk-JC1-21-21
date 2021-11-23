@@ -17,6 +17,7 @@ public class Task5 {
                 System.out.println("Введите положительное число");
             }
         }
+        reader.close();
         int week = number / 604800;
         int day = (number % 604800) / 86400;
         int hour = ((number % 604800) % 86400) / 3600;
