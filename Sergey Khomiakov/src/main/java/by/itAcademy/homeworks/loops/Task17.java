@@ -14,9 +14,14 @@ public class Task17 {
 
         int number = Math.abs(num);
         NumberFormat df = new DecimalFormat("000");
-        String numberInARow = "";
+        String numberInARow="";
+
+        if (number !=0){
+        numberInARow = df.format(number%1000) + numberInARow;
+        number/=1000;
 
         do{
+
             if(number>1000){
             numberInARow = df.format(number%1000) + " " + numberInARow;
             }
@@ -26,6 +31,10 @@ public class Task17 {
             number/=1000;
 
         }while(number>0);
+
+        } else{
+            numberInARow = "0";
+        }
 
         if (num>=0){
             System.out.println(numberInARow);
