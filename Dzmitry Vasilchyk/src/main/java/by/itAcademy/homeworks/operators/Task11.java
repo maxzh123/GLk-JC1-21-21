@@ -28,9 +28,9 @@ public class Task11 {
         String Su = reader.readLine();
         System.out.println("Введите день недели");
         int Day = Integer.parseInt(reader.readLine());
-        Deary(M,T,W,Th,F,S,Su,Day);
+        deary(M,T,W,Th,F,S,Su,Day);
     }
-    private static void Deary(String M,String T,String W,String Th,String F,String S,String Su,int Day) {
+    private static void deary(String M,String T,String W,String Th,String F,String S,String Su,int Day) {
         if(Day==1){
             System.out.println("Ваше расписаное на понедельник: " + M);}
         else if(Day==2){
