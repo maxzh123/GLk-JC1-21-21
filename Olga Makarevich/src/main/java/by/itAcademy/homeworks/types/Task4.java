@@ -4,11 +4,17 @@ package by.itAcademy.homeworks.types;
 //этих чисел, и возвращает полученный результат из метода. Передать на вход в метод любые два числа.
 // Вывести полученный результат работы метода на экран
 
+import java.util.Scanner;
+
 public class Task4 {
     public static void main(String[] args) {
-        int a = 17;
-        int b = 58;
-        int z = (a + b) + a * b;
-        System.out.println(z);
+        Scanner num = new Scanner(System.in);
+        int a = num.nextInt();
+        int b = num.nextInt();
+        System.out.println(getExpression(a, b));
+    }
+
+    public static int getExpression(int a, int b) {
+        return a + b + a * b;
     }
 }
