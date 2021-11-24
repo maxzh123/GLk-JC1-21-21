@@ -1,0 +1,14 @@
+import by.itAcademy.homeworks.types.Task10;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+
+public class Task10Test {
+
+    @ParameterizedTest
+    @CsvSource(value = {"2,4,2,4,8,2"} )
+    void testGetExpression(int a, int b, int c, int d, int e, int f){
+        Assertions.assertEquals(z, Task4.getExpression(a,b));
+    }
+}

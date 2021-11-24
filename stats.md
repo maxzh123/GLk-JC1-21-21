@@ -2,17 +2,17 @@
 
 | Name | Tasks | class | Матем.операций | Методов | Присваиваний | анон.класов | внутр.класов | констант | логирование | лямбды | переменных | перхватов исключений | приват. методов | приват. полей | сравнений | циклов |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Nikolai Dzemidovich | 12 | 12 | 46 | 12 | 41 | 0 | 0 | 0 | 0 | 0 | 41 | 0 | 0 | 0 | 22 | 0 |
+| Nikolai Dzemidovich | 15 | 15 | 52 | 15 | 48 | 0 | 0 | 0 | 0 | 0 | 46 | 0 | 0 | 0 | 23 | 3 |
 | Sergey Khomiakov | 12 | 13 | 50 | 18 | 47 | 0 | 0 | 0 | 0 | 0 | 41 | 4 | 4 | 0 | 30 | 0 |
 | Roman Goncharov | 11 | 11 | 64 | 11 | 31 | 0 | 0 | 0 | 0 | 0 | 30 | 0 | 0 | 0 | 30 | 1 |
-| Ekaterina Cherkas | 10 | 10 | 20 | 11 | 26 | 0 | 0 | 0 | 0 | 0 | 26 | 0 | 0 | 0 | 1 | 0 |
 | Yauheni Pakatashkin | 10 | 10 | 45 | 14 | 28 | 0 | 0 | 0 | 0 | 0 | 28 | 0 | 1 | 0 | 12 | 3 |
 | Dzmitry Vasilchyk | 10 | 10 | 35 | 12 | 38 | 0 | 0 | 0 | 0 | 0 | 38 | 0 | 2 | 0 | 9 | 0 |
+| Ekaterina Cherkas | 10 | 10 | 20 | 11 | 26 | 0 | 0 | 0 | 0 | 0 | 26 | 0 | 0 | 0 | 1 | 0 |
+| Alina Shevlyukova | 6 | 6 | 16 | 6 | 13 | 0 | 0 | 0 | 0 | 0 | 13 | 0 | 0 | 0 | 0 | 0 |
 | Alina Artiomenko | 6 | 11 | 44 | 18 | 27 | 0 | 0 | 0 | 0 | 0 | 27 | 0 | 7 | 1 | 7 | 5 |
 | Ihar Harokhau | 5 | 5 | 4 | 5 | 12 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 | 1 |
 | Vlad Avchinnikov | 5 | 5 | 12 | 6 | 11 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 | 0 | 0 | 0 |
-| Alina Shevlyukova | 3 | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Makarevich Olga | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Olga Makarevich | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Kate Buglakova | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 
@@ -33,8 +33,11 @@
 | Авчинников Владислав  | SUCCESS |
 | Покаташкин Евгений Александрович  | SUCCESS |
 | Буглакова Екатерина  | SUCCESS |
+| Макаревич Ольга Николаевна  | FAILURE |
 | GLk-JC1-17-21  | SUCCESS |
 
 
 # Ошибки:
 
+1. Olga Makarevich/src/main/java/by/itAcademy/homeworks/basics/Task1.java строка:2 символ:1 class, interface, or enum expected
+1. Olga Makarevich/src/main/java/by/itAcademy/homeworks/basics/Task1.java строка:2 символ:1 class, interface, or enum expected
