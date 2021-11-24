@@ -1,5 +1,6 @@
 package by.itAcademy.homeworks.operators;
 
+
 import java.util.Scanner;
 
 public class Task8 {
@@ -7,10 +8,10 @@ public class Task8 {
         Scanner input = new Scanner(System.in);
         System.out.println("Введите число: ");
         double a= input.nextDouble();
-    if (a==1) {
-        System.out.println(a + "рубль");
-    }else{
-        System.out.println(a+"рублей");
-    }
+        int b = (int)a;
+        if (a==1){
+        System.out.println(b + " рубль");}
+        else{
+        System.out.println(b+" рублей");}
     }
 }
