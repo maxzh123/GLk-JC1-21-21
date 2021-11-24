@@ -30,8 +30,8 @@ public class Task10 {
             System.out.println("You need to use whole number");
         }
         if (a > 0 && b > 0 && c > 0 && d > 0 && e > 0 && f > 0){
-                 if(Math.max(e,f)>=Math.max(Math.max(a, b), Math.max(c,d))){
-                        if (Math.min(e,f)>=(Math.min(a,b) + (Math.min(c,d)))){
+                 if(Math.max(e,f)>=Math.max(Math.max(a, b), Math.max(c,d)) && Math.min(e,f)>=Math.max(Math.min(a,b),Math.min(c,d))){
+                        if (e*f>=a*b+c*d){
                                  System.out.println("Two houses are placed on area");
                         }
                         else{System.out.println("Two houses are not placed on area");
