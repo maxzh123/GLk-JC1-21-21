@@ -6,6 +6,10 @@ public class Task4 {
         Scanner number = new Scanner(System.in);
         int a = number.nextInt();
         int b = number.nextInt();
-        System.out.println(a + b + a * b);
+        System.out.println(getExpression(a,b));
+    }
+
+    public static int getExpression(int a, int b) {
+        return a + b + a * b;
     }
 }
