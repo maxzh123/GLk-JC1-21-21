@@ -12,6 +12,7 @@ public class OopRunner {
         pets[i++]=new Dog();
         pets[i++]=new Cat();
         pets[i++]=new MainKun();
+        ((MainKun)pets[i-1]).setIam("Дворняга блохастая");
         pets[i++]=new Cat();
         sayAll(pets);
     }

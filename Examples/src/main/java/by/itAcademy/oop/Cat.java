@@ -2,7 +2,7 @@ package by.itAcademy.oop;
 
 public class Cat implements Animal{
 
-    protected String iam="Дворовый кот";
+    private String iam="Дворовый кот";
     public Cat(){
 
     }
