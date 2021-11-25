@@ -5,18 +5,18 @@ package by.itAcademy.homeworks.loops;
 
 public class Task15 {
     public static void main(String[] args) {
-        int a = 0;
+        int a = 0; // Переменная для определения a-ого простого числа из интервала чисел.
             for (int i = 50; i<=70; i++) {
                 int j = 2;
                 while (i%j != 0) {
                     j++;
                 }
-                if (j == i) {
-                    if (i > a && a != 0) {
+                if (i == j) {
+                    a++;
+                    if (a == 2) {
                         System.out.println(i);
                         break;
                     }
-                    a = j;
                 }
             }
     }
