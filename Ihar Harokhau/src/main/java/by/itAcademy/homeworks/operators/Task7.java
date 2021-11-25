@@ -27,7 +27,7 @@ public class Task7 {
         reader.close();
 
         if (a == b){
-            System.out.println("\"a\" и \"b\" не могут быть равны друг другу! Ведь у тебя прямоугольник :)");
+            System.out.println("\"a\" и \"b\" не могут быть равны друг другу! Ведь у тебя прямоугольник:)");
             return;
         }
 
