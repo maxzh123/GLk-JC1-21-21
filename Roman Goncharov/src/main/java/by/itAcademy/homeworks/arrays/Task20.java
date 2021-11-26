@@ -8,15 +8,20 @@ public class Task20 {
     public static void main(String[] args) {
         int[] array = new int[10];
         Task18.fillingTheArray(array);
+        int index = indexMaxElement(array);
+        System.out.println("Максимальный элемент массива: " + array[index]);
+        System.out.println("Индекс максимального элемента: " + index);
+    }
+
+    public static int indexMaxElement (int[] array) {
+        int indexMax = 0;
         int max = array[0];
-        int index = 0;
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
-                index = i;
+                indexMax = i;
             }
         }
-        System.out.println("Максимальный элемент массива: " + max);
-        System.out.println("Индекс максимального элемента: " + index);
+        return indexMax;
     }
 }
