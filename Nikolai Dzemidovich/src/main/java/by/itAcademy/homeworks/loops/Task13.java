@@ -1,6 +1,7 @@
 package by.itAcademy.homeworks.loops;
 
 import java.math.BigInteger;
+import java.sql.SQLOutput;
 
 
 public class Task13 {
@@ -21,6 +22,7 @@ public class Task13 {
             factorials = factorials.multiply(BigInteger.valueOf(number));
             number++;
         } while (number <= maxNumberOfFatroial);
+        System.out.print("Факториал числа " + maxNumberOfFatroial + " = ");
 
         return factorials;
     }
