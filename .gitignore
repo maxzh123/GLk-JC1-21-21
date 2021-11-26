@@ -30,4 +30,6 @@ target/*
 target/**
 /classes/**
 *.pl
+*.bat
+
 users.txt

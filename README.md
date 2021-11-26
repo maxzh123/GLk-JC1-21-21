@@ -1,9 +1,21 @@
-# GLk-JC1-21-21
+# Группа GLk-JC1-21-21
+## Полезные ссылки:
+1. [Тестилка регулярок](https://www.regextester.com/)
+1. [Тестилка регулярок 2](http://regviz.org/)
+1. [вопросы](https://github.com/enhorse/java-interview/blob/master/core.md)
+1. [lightshot](https://app.prntscr.com/ru/) Программа для снятия скриншотов
+1. [Far Manager](https://www.farmanager.com/download.php?l=ru)
+1. [Winscp](https://winscp.net/eng/download.php)
+1. [Total Commander](https://www.ghisler.com/download.htm)
+1. [java](https://jdk.java.net/java-se-ri/11)
+1. [maven](https://maven.apache.org/download.cgi)
+1. [maven](https://maven.apache.org/download.cgi)
+1. [Idea](https://www.jetbrains.com/ru-ru/idea/download/#section=windows)
+1. [бобер](https://dbeaver.io/download/)
+1. [putty](https://www.putty.org/) ssh клиент для подключения к linux серверам с машин с win 7 и младше
+1. [Git](https://git-scm.com/) Клиент гит
+1. [Tortoise Git](https://tortoisegit.org/) Клиент гит, который встраивается в Windows
 
-[Тестилка регулярок](https://www.regextester.com/)
-[Тестилка регулярок 2](http://regviz.org/)
-
-[А этими вопросами я вас буду пытать в начале каждого занятия](https://github.com/enhorse/java-interview/blob/master/core.md)
 
 ## Задание 15.11.2021-18.11.2021:
 1. Установить программу для снятия скриншотов. [лежит тут](https://app.prntscr.com/ru/) 
@@ -14,17 +26,18 @@
    java -version
    mvn -version
 1. Установить среду разработки(Idea). Написать HelloWord. Прислать скриншот. [idea](https://www.jetbrains.com/ru-ru/idea/download/#section=windows)
-1. Установить бобра (клиент для СУБД). Запустить. Прислать скриншот. [idea](https://dbeaver.io/download/)
+1. Установить бобра (клиент для СУБД). Запустить. Прислать скриншот. [бобер](https://dbeaver.io/download/)
 1. Убедится что есть ssh клиент `win+r` ->  `cmd` ->  `ssh`  Если не ругается, что команда не найдена - все ок. Если ругается качаем [putty](https://www.putty.org/) он понадобится потом. 
 1. Зарегистрироваться на [GitHub](https://github.com)
 
-### обязательная программа закончена. начинается произвольная:
+
+### Обязательная программа закончена. начинается произвольная:
    
 1. установить Git. убедится что он работает. команда: [лежит тут](https://git-scm.com/)
-   git -version
+   `git -version`
 1. Забрать репозиторий `win+r` ->  `cmd` -> `cd c:\` ->  `git clone https://github.com/maxzh123/GLk-JC1-21-21`
-1. тем, кто без опыта программирования - постараться сделать задания 1-5 из заданий для новичков. (не получится не расстраивайтесь. они закрываю примерно первые 3 занятия) Т.ем кто уже хоть как-то пишет - просмотреть их. не интересно? - пробуйте в 6-е.
-1. доп. задание: написать программу которая выведет все числа, цифры в которых не повторяются.
+1. тем, кто без опыта программирования - постараться сделать задания 1-5 из заданий для новичков. (не получится не расстраивайтесь. Они закрывают примерно первые 3 занятия) Т.ем кто уже хоть как-то пишет - просмотреть их. не интересно? - пробуйте в 6-е.
+1. доп. задание: написать программу, которая выведет все числа, цифры в которых не повторяются.
 
 ### Задания для тех, кто хочет размять пальцы:
 Пакет `by.itAcademy.sample` в проекте "примеры"
