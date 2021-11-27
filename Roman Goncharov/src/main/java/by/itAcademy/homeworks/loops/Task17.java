@@ -23,7 +23,7 @@ public class Task17 {
         String result = "";
         do {
             if (number/1000 == 0) {
-                result = number%1000 + "".concat("" + result);
+                result = number%1000 + "".concat(result);
                 break;
             }
             String remainder = " ".concat(dF.format(number%1000));
