@@ -7,41 +7,47 @@ package by.itAcademy.homeworks.loops;
 
 import java.text.*;
 
-
 public class Task17 {
 
     public String getNewFormatString (int num) {
+        String lineResult = helpToDoIntermediateResult(Math.abs(num));
 
-        int number = Math.abs(num);
+        if (num>=0){
+            return lineResult;
+        } else{
+            return "-"+lineResult;
+        }
+    }
+
+    public String helpToDoIntermediateResult (int number) {
         NumberFormat df = new DecimalFormat("000");
-        String numberInARow="";
+        String numberInARow ="";
 
         if (number !=0){
-        numberInARow = df.format(number%1000) + numberInARow;
-        number/=1000;
-
-        do{
-
-            if(number>1000){
-            numberInARow = df.format(number%1000) + " " + numberInARow;
+            if (number < 1000){
+                numberInARow += number;
             }
             else {
-                numberInARow = number%1000+ " " + numberInARow;
-            }
-            number/=1000;
+                numberInARow = df.format(number % 1000);
+                number /= 1000;
 
-        }while(number>0);
+                while (number > 0) {
+
+                    if (number > 1000) {
+                        numberInARow = df.format(number % 1000) + " " + numberInARow;
+                    } else {
+                        numberInARow = number + " " + numberInARow;
+                    }
+                    number /= 1000;
+
+                }
+            }
 
         } else{
             numberInARow = "0";
         }
+        return numberInARow;
 
-        if (num>=0){
-            System.out.println(numberInARow);
-            return numberInARow;
-        } else{
-            System.out.println("-" + numberInARow);
-            return "-"+numberInARow;
-        }
     }
+
 }
