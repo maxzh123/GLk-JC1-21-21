@@ -1,7 +1,6 @@
 package by.itAcademy.homeworks.loops;
 
 import java.math.BigInteger;
-import java.sql.SQLOutput;
 
 
 public class Task13 {

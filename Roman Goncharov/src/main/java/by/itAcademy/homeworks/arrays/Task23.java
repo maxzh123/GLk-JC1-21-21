@@ -8,10 +8,13 @@ public class Task23 {
         int[][] array = new int[5][5];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if ((i == 1 || i == 3) && (j == 0 || j == 4) || i == 2 && j != 2) {
+                if (i <= array.length/2 && i <= j && j < array[i].length - i) {
+                    array[i][j] = 1;
+                    System.out.print(array[i][j] + " ");
+                } else if (i >= array.length/2) {
+                    array[i][j] = array[array.length - 1 - i][j];
                     System.out.print(array[i][j] + " ");
                 } else {
-                    array[i][j] = 1;
                     System.out.print(array[i][j] + " ");
                 }
             }
