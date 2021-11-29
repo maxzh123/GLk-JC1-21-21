@@ -1,13 +1,29 @@
 package by.itAcademy.homeworks.loops;
 
+import java.math.BigInteger;
+
+
 public class Task13 {
     public static void main(String[] args) {
-        double number = 1;
-        double count = 1;
-        do {
-            count = count * number;
-            number++;
-        } while (number <= 25);
-        System.out.println("Произведение от 1 до 25 = " + count);
+
+        BigInteger factorials = makeFaktorial(25);
+        System.out.println(factorials);
+
+
     }
+
+    public static BigInteger makeFaktorial(int maxNumberOfFatroial) {
+
+        BigInteger factorials = new BigInteger("1");
+        int number = 1;
+
+        do {
+            factorials = factorials.multiply(BigInteger.valueOf(number));
+            number++;
+        } while (number <= maxNumberOfFatroial);
+        System.out.print("Факториал числа " + maxNumberOfFatroial + " = ");
+
+        return factorials;
+    }
+
 }
