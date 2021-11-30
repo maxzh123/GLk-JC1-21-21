@@ -9,17 +9,18 @@ public class Task15 {
         System.out.println(foundOfNaturalNumber(numbers));
     }
 
-    public static foundOfNaturalNumber(int numbers) {
+    public static int foundOfNaturalNumber(int numbers) {
         int a = 1;
-        for (numbers = 50; numbers <= 70; numbers++) {
-            int count = 0;
-            if (numbers % a == numbers && numbers % a == 1) {
-                count++;
-                a++;
+        int count = 0;
+        for (a = 1; a <= 70; a++) {
+            if (numbers / a == numbers) {
+                if (numbers / a == 1) {
+                    count++;
+                }
             }
+            numbers++;
             if (count == 2) {
-                return numbers;
-                break;
+                System.out.println(numbers);
             }
         }
     }
