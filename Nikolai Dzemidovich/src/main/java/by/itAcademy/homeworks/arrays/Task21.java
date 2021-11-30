@@ -15,7 +15,7 @@ public class Task21 {
     public static void main(String[] args) {
 
         int n = 10;
-        int[] array = {46, 5, 3, 1, 60, 195, 11, 200, 127, 1};
+        int[] array = Task18.randomArrays(n);
 
         int maxIndex = MyArraysHelper.theMaxValueIndex(array);
         int minIndex = MyArraysHelper.theMinValueIndex(array);
