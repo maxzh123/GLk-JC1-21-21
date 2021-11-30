@@ -5,15 +5,21 @@ package by.itAcademy.homeworks.loops;
 
 public class Task15 {
     public static void main(String[] args) {
-        int a = 1;
         int numbers = 50;
-        while (a <= 70 && numbers <= 70) {
-            int b = numbers / a;
-            a++;
-            if (b == numbers && b == 1) {
-                System.out.println(b);
-            } else {
-                numbers++;
+        System.out.println(foundOfNaturalNumber(numbers));
+    }
+
+    public static foundOfNaturalNumber(int numbers) {
+        int a = 1;
+        for (numbers = 50; numbers <= 70; numbers++) {
+            int count = 0;
+            if (numbers % a == numbers && numbers % a == 1) {
+                count++;
+                a++;
+            }
+            if (count == 2) {
+                return numbers;
+                break;
             }
         }
     }
