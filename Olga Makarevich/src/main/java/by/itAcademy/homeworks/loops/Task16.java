@@ -6,8 +6,8 @@ public class Task16 {
     public static void main(String[] args) {
         int a = (int) (Math.random() * 100 + 1);
         for (a = 1; a <= 100; a++) {
-            if (a % 10 == 7) {
-                System.out.println("Hope!");
+            if (a % 7 == 0) {
+                System.out.println( a  + " =" + " Hope!");
             }
         }
     }
