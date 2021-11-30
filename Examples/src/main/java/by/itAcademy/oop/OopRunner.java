@@ -1,31 +1,70 @@
 package by.itAcademy.oop;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class OopRunner {
+
 
     public static void main(String[] args) {
         Animal[] pets=new Animal[10];
         int i=0;
-        pets[i++]=new Dog();
+        pets[i++]=new Doberman();
+        pets[i++]=getAnon();
+        pets[i++]=new Doberman();
         pets[i++]=new Cat();
-        pets[i++]=new Dog();
-        pets[i++]=new Cat();
-        pets[i++]=new Dog();
+        pets[i++]=new Doberman();
         pets[i++]=new Cat();
         pets[i++]=new MainKun();
-        pets[i++]=new Cat();
+        pets[i++]=getAnimal();
         sayAll(pets);
+//        doSay(new MainKun());
+
+
     }
+
     private static void sayAll(Animal[] animals){
+
         for(int i=0;i<animals.length;i++){
             if (animals[i]!=null){
-                animals[i].say();
-                if (animals[i] instanceof Cat) {
-
-                     Cat cat=(Cat)animals[i];
-                      cat.царапаться();
-                }
+                doSay(animals[i]);
             }
         }
+
+    }
+
+    private static void doSay(Dog dog){
+        dog.saySaySay();
+    }
+    private static void doSay(Cat cat){
+        cat.царапаться();
+    }
+    private static void doSay(Animal animal){
+        //animal.say();
+        doSay(animal, 1900+(new Date()).getYear());
+    }
+    private static void doSay(Animal animal,int year){
+        animal.say();
+        System.out.println(year);
+    }
+
+    private static class Дракон implements Animal{
+
+        @Override
+        public void say() {
+            System.out.println("ЛЛЛЛЛЛЛЛЛЛЛЛЛЛЛ. я калтавый длакон!");
+        }
+    }
+    public static Animal getAnimal(){
+        return new Дракон();
+    }
+    public static Animal getAnon(){
+        return new Animal() {
+            @Override
+            public void say() {
+                System.out.println("Битарды всегда в аноне.");
+            }
+        };
     }
 
 }
