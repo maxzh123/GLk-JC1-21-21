@@ -16,7 +16,8 @@ public class SimpleATM {
     private int multiplyOf20;
     private int multiplyOf50;
     private int multiplyOf100;
-    private int a, b;
+    private int b;
+    private int c;
 
     public SimpleATM(int multiplyOf20, int multiplyOf50, int multiplyOf100) {
 
@@ -48,33 +49,42 @@ public class SimpleATM {
        }
 
     public void getSomeMoneyFromATM() {
+        int a;
 
         Scanner scanner = new Scanner(System.in);
         int sumOfMoney = scanner.nextInt();
 
         int totalOfMoney = multiplyOf20 * 20 + multiplyOf50 * 50 + multiplyOf100 * 100;
         if (totalOfMoney >= sumOfMoney && sumOfMoney>0) {
-            if (sumOfMoney / 100 >= multiplyOf100) {
-                sumOfMoney = sumOfMoney - multiplyOf100 * 100;
-                a = multiplyOf100;
+            if (sumOfMoney / 100 >= multiplyOf100) {                                                                    // находим количество купюр, которые кратны 100 и мы можем выдать
+                sumOfMoney = sumOfMoney - multiplyOf100 * 100;                                                          // присваиваем переменной а это количество и идем дальше к 50
+                a = multiplyOf100;                                                                                      // переменную multiplyOf100 изменяем на количество забранный 100хкупюр
                 multiplyOf100 -= a;
-            }else {a = multiplyOf100;
+            }else {
+                a = multiplyOf100;
                 multiplyOf100 -= sumOfMoney/100;
                 a -= multiplyOf100;
                 sumOfMoney%=100;
             }
-             get50(sumOfMoney);
+
+            if (get50(sumOfMoney)){                                                                                     // проводим проверку через два метода, через get50 && get20. Оба должны возвращать true
+                System.out.println("Вы получили " + a + " x 100$ " + b + " x 50$ " + c + " x 20$");
+            } else if (get20(sumOfMoney)){                                                                              // если не получилось, то можно попробовать передать только в метод get20
+                System.out.println("Вы получили " + a + " x 100$ " + b + " x 50$ " + c + " x 20$");
+            } else {
+                multiplyOf100 += a;                                                                                     // если после мы не смогли подобрать купюры через методы get50 и get 20
+                System.out.println("Операция завершилась неудачно");}                                                   // то незабываем переменную multiplyOf100 вернуть в исходное состяние
 
         } else {
             System.out.println("Операция завершилась неудачно");
         }
     }
 
-    public void get50(int sum) {
+    public boolean get50(int sum) {
 
-        if (sum / 50 >= multiplyOf50) {
-            sum = sum - multiplyOf50 * 50;
-            b = multiplyOf50;
+        if (sum / 50 >= multiplyOf50) {                                                                                 // находим количество купюр, которые кратны 50 и мы можем выдать
+            sum = sum - multiplyOf50 * 50;                                                                              // присваиваем переменной b это количество и идем дальше к 20
+            b = multiplyOf50;                                                                                           // переменную multiplyOf50 изменяем на количество забранный 50хкупюр
             multiplyOf50 -=b;
         } else {
             b = multiplyOf50;
@@ -82,16 +92,23 @@ public class SimpleATM {
             b -= multiplyOf50;
             sum %= 50;
         }
-         get20(sum);
+
+         if (!get20(sum)){                                                                                              // идем к 20 и проверяем, если там не получается подобрать, то возвращаем false
+             multiplyOf50 = b + multiplyOf50;                                                                           // и не забываем обнулить временную переменную b и multiplyOf50 вернуть в исходное состояние
+             b = 0 ;
+            return false;}
+         else return true;
     }
 
-    public void get20(int summm) {
+    public boolean get20(int summm) {
 
-        if (summm / 20 <= multiplyOf20 && summm % 20 == 0 ) {
-            multiplyOf20 -= summm / 20;
-            System.out.println("Вы получили " + a + " x 100$ " + b + " x 50$ " + summm / 20 + " x 20$");
-        } else {
-            System.out.println("Операция завершилась неудачно.");
+        if (summm / 20 <= multiplyOf20 && summm % 20 == 0 ) {                                                           // находим количество купюр, которые кратны 20 и мы можем выдать
+            c = multiplyOf20;                                                                                           // присваиваем переменной c это количество
+            multiplyOf20 -= summm / 20;                                                                                 // переменную multiplyOf20 изменяем на количество забранный 20хкупюр
+            c -= multiplyOf20;
+            return true;
+        } else {                                                                                                        //если не получается ,то все откатываем
+            return false;
         }
     }
 
