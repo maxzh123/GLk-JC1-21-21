@@ -17,6 +17,12 @@ public class Task21 {
         int n = 10;
         int[] array = Task18.randomArrays(n);
 
+        System.out.println("Сумма между Мин и Макс = " + calcSum(array));
+
+
+    }
+
+    public static int calcSum(int[] array) {
         int maxIndex = MyArraysHelper.theMaxValueIndex(array);
         int minIndex = MyArraysHelper.theMinValueIndex(array);
 
@@ -24,8 +30,7 @@ public class Task21 {
 
         System.out.println("Максимальный идекс максимального значения =" + getTheMaxIndexOfTheSameValue(array, maxIndex));
         System.out.println("Минимальнй индекс минимального значения = " + getTheMinIndexOfTheSameValue(array, minIndex));
-        System.out.println("Сумма между Мин и Макс = " + MyArraysHelper.getTheSumBetweenMaxAndMin(array, getTheMinIndexOfTheSameValue(array, minIndex), getTheMaxIndexOfTheSameValue(array, maxIndex)));
-
+        return MyArraysHelper.getTheSumBetweenMaxAndMin(array, getTheMinIndexOfTheSameValue(array, minIndex), getTheMaxIndexOfTheSameValue(array, maxIndex));
     }
 
     public static int getTheMaxIndexOfTheSameValue(int[] array, int max) {
