@@ -50,11 +50,8 @@ public class Task9 {
     }
 
     public static boolean checkYear(int year) {
-        if (year % 100 == 0 && year % 400 == 0 || year % 4 == 0 && year % 100 > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return year % 100 == 0 && year % 400 == 0 || year % 4 == 0 && year % 100 > 0;
+
     }
 
 
