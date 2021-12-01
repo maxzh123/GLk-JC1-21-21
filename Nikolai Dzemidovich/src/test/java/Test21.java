@@ -29,6 +29,8 @@ public class Test21 {
             "2,3;2;1",
             "3,3;2;1;1",
             "3,1;1;2;3",
+            "3,3;1;1;2;3",
+            "5,3;2;2;1;1;2;3",
     })
     public void testArrayLength(int sum,@ConvertWith(IntArrayConverter.class)  Object[] data ){
         int[] arr=new int[data.length];
