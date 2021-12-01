@@ -2,15 +2,15 @@
 
 | Name | Tasks | class | Матем.операций | Методов | Присваиваний | анон.класов | внутр.класов | констант | логирование | лямбды | переменных | перхватов исключений | приват. методов | приват. полей | сравнений | циклов |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Roman Goncharov | 24 | 27 | 118 | 35 | 101 | 0 | 0 | 0 | 0 | 0 | 80 | 0 | 0 | 0 | 38 | 15 |
+| Roman Goncharov | 25 | 28 | 122 | 39 | 108 | 0 | 0 | 0 | 0 | 0 | 87 | 0 | 0 | 0 | 38 | 15 |
+| Nikolai Dzemidovich | 24 | 28 | 85 | 43 | 111 | 0 | 0 | 1 | 0 | 0 | 89 | 0 | 0 | 1 | 38 | 20 |
 | Sergey Khomiakov | 23 | 28 | 75 | 38 | 107 | 0 | 0 | 0 | 0 | 0 | 81 | 4 | 4 | 0 | 35 | 15 |
-| Nikolai Dzemidovich | 23 | 25 | 81 | 36 | 95 | 0 | 0 | 1 | 0 | 0 | 78 | 0 | 0 | 1 | 36 | 16 |
 | Alina Artiomenko | 21 | 29 | 72 | 50 | 100 | 0 | 0 | 0 | 0 | 0 | 72 | 3 | 7 | 1 | 43 | 15 |
 | Dzmitry Vasilchyk | 21 | 22 | 77 | 28 | 98 | 0 | 0 | 0 | 0 | 0 | 84 | 0 | 6 | 0 | 25 | 12 |
 | Yauheni Pakatashkin | 20 | 21 | 68 | 29 | 71 | 0 | 0 | 0 | 0 | 0 | 55 | 0 | 3 | 0 | 36 | 15 |
 | Ekaterina Cherkas | 17 | 17 | 35 | 19 | 52 | 0 | 0 | 0 | 0 | 0 | 48 | 0 | 0 | 0 | 13 | 6 |
 | Ihar Harokhau | 17 | 17 | 36 | 19 | 50 | 0 | 0 | 0 | 0 | 0 | 46 | 0 | 0 | 0 | 6 | 7 |
-| Olga Makarevich | 15 | 15 | 46 | 18 | 55 | 0 | 0 | 0 | 0 | 0 | 49 | 0 | 0 | 7 | 52 | 3 |
+| Olga Makarevich | 15 | 15 | 47 | 19 | 56 | 0 | 0 | 0 | 0 | 0 | 49 | 0 | 0 | 7 | 53 | 3 |
 | Alina Shevlyukova | 14 | 14 | 37 | 14 | 42 | 0 | 0 | 0 | 0 | 0 | 42 | 0 | 0 | 0 | 2 | 2 |
 | Vlad Avchinnikov | 11 | 11 | 40 | 17 | 38 | 0 | 0 | 0 | 0 | 0 | 35 | 0 | 0 | 0 | 24 | 0 |
 | Kate Buglakova | 7 | 7 | 16 | 10 | 17 | 0 | 0 | 0 | 0 | 0 | 17 | 0 | 1 | 0 | 1 | 0 |
@@ -33,9 +33,11 @@
 | Авчинников Владислав  | SUCCESS |
 | Покаташкин Евгений Александрович  | SUCCESS |
 | Буглакова Екатерина  | SUCCESS |
-| Макаревич Ольга Николаевна  | SUCCESS |
+| Макаревич Ольга Николаевна  | FAILURE |
 | GLk-JC1-17-21  | SUCCESS |
 
 
 # Ошибки:
 
+1. Olga Makarevich/src/main/java/by/itAcademy/homeworks/loops/Task15.java строка:12 символ:19 invalid method declaration; return type required
+1. Olga Makarevich/src/main/java/by/itAcademy/homeworks/loops/Task15.java строка:12 символ:19 invalid method declaration; return type required
