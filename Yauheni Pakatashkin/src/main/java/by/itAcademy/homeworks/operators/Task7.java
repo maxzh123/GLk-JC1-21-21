@@ -13,11 +13,6 @@ public class Task7 {
     }
     public static boolean check(int x, int y, int r){
        double hypotenuse = Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
-       if (hypotenuse<=r*2){
-           return true;
-       }
-       else {
-           return false;
-       }
+        return hypotenuse <= r * 2;
     }
 }
