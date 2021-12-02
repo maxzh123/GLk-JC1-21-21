@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Task23 {
     public static void main(String[] args) {
 
-        int n = 7;
+        int n = 5;
         int[][] array = new int[n][n];
         getButterflyArray(array);
 
