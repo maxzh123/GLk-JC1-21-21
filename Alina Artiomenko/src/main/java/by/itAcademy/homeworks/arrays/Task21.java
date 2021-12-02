@@ -16,12 +16,15 @@ public class Task21 {
         int sizeArray = 10;
         int[] arrayOfNumber = Task21.fillArrayWithNumber(sizeArray);
         System.out.println(Arrays.toString(arrayOfNumber));
-
+        System.out.println("Сумма элементов между MIN и MAX (включая) = " + calcSum(arrayOfNumber));
+    }
+    public static int calcSum(int[] arrayOfNumber){
+        System.out.println(Arrays.toString(arrayOfNumber));
         int minValue = getMinNumberOfArray(arrayOfNumber);
         int maxValue = getMaxNumberOfArray(arrayOfNumber);
         System.out.println("Индекс MIN - " + minValue);
         System.out.println("Индекс MAN - " + maxValue);
-        System.out.println("Сумма элементов между MIN и MAX (включая) = " + getSumBetweenMaxMin(arrayOfNumber,minValue,maxValue));
+        return getSumBetweenMaxMin(arrayOfNumber,minValue,maxValue);
     }
 
     //наполняем массив рандомными числами типа int
