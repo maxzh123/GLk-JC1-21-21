@@ -7,6 +7,11 @@ public class OopRunner {
 
 
     public static void main(String[] args) {
+
+        Cat cat=new Cat();
+        cat.царапаться();
+        cat.say();
+
         Animal[] pets=new Animal[10];
         int i=0;
         pets[i++]=new Doberman();
