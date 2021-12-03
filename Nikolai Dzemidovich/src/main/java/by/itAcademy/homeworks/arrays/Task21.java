@@ -24,22 +24,42 @@ public class Task21 {
     }
 
     public static int calcSum(int[] array) {
-        int maxIndex = MyArraysHelper.theMaxValueIndex(array);
-        int minIndex = MyArraysHelper.theMinValueIndex(array);
+        int maxValue = MyArraysHelper.theMaxValueIndex(array);
+        int minValue = MyArraysHelper.theMinValueIndex(array);
+        int maxIndexMaxV = getTheMaxIndexOfTheSameValue(array, maxValue);
+        int minIndexMaxV = getTheMinIndexOfTheSameValue(array, maxValue);
+        int maxIndexMinV = getTheMaxIndexOfTheSameValue(array, minValue);
+        int minIndexMinV = getTheMinIndexOfTheSameValue(array, minValue);
 
         System.out.println(Arrays.toString(array));
 
-        System.out.println("Максимальный идекс максимального значения =" + getTheMaxIndexOfTheSameValue(array, maxIndex));
-        System.out.println("Минимальнй индекс минимального значения = " + getTheMinIndexOfTheSameValue(array, minIndex));
+        System.out.println("Максимальный индекс максимального значения =" + maxIndexMaxV);
+        System.out.println("Минимальный индекс максимального значения =" + minIndexMaxV);
+        System.out.println("");
+        System.out.println("Максимальный индекс минимального значения = " + maxIndexMinV);
+        System.out.println("Минимальный индекс минимального значения =" + minIndexMinV);
 
-        if ((getTheMaxIndexOfTheSameValue(array, maxIndex) - getTheMinIndexOfTheSameValue(array, minIndex)) > (getTheMaxIndexOfTheSameValue(array, minIndex) - getTheMinIndexOfTheSameValue(array, maxIndex))) {
-            return MyArraysHelper.getTheSumBetweenMaxAndMin(array, getTheMinIndexOfTheSameValue(array, minIndex), getTheMaxIndexOfTheSameValue(array, maxIndex));
+        if ( getTheCountBetweenMinValueMaxValue(minIndexMinV,maxIndexMaxV) > getTheCountBetweenMaxValueMinValue(minIndexMaxV,maxIndexMinV)) {
+
+            return MyArraysHelper.getTheSumBetween(array,minIndexMinV,maxIndexMaxV) ;
         } else {
-            return MyArraysHelper.getTheSumBetweenMaxAndMin(array, getTheMinIndexOfTheSameValue(array, maxIndex), getTheMaxIndexOfTheSameValue(array, minIndex));
+            return MyArraysHelper.getTheSumBetween(array,minIndexMaxV,maxIndexMinV);
         }
 
     }
-
+    public static int getTheCountBetweenMinValueMaxValue(int minIndexMinV, int maxIndexMaxV){
+        int count = 0;
+        for ( int i = minIndexMinV; i < maxIndexMaxV; i++){
+            count ++;
+        } return count;
+    }
+    public static int getTheCountBetweenMaxValueMinValue(int minIndexMaxV, int maxIndexMinV) {
+       int count = 0;
+        for (int i = minIndexMaxV; i < maxIndexMinV; i++) {
+            count ++;
+        }
+        return count;
+    }
     public static int getTheMaxIndexOfTheSameValue(int[] array, int max) {
 
         for (int i = 0; i < array.length; i++) {

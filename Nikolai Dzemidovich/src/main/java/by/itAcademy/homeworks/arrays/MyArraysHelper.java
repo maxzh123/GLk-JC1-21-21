@@ -2,7 +2,7 @@ package by.itAcademy.homeworks.arrays;
 
 public class MyArraysHelper {
 
-    public static int getTheSumBetweenMaxAndMin(int[] array, int min, int max) {
+    public static int getTheSumBetween(int[] array, int min, int max) {
         int sum = 0;
         for (int i = min + 1; i < max; i++) {
             sum += array[i];
