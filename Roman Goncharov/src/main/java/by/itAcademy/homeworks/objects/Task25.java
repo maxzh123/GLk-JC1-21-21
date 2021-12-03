@@ -6,18 +6,11 @@ package by.itAcademy.homeworks.objects;
  кол-вом купюр и какого номинала выдана сумма.
  */
 
-import java.util.Scanner;
-
 public class Task25 {
     public static void main(String[] args) {
         CashMachine balance = new CashMachine(5, 2, 4);
-        Scanner console = new Scanner(System.in);
-        int transaction = console.nextInt();
-            if (transaction > 0) {
-                balance.plusMoneyOnTheBalance(transaction);
-            } else if (transaction < 0) {
-                balance.minusMoneyOnTheBalance(transaction);
-            } else System.out.println("Ваш текущий баланс: " + balance.getBalance());
+        int money = 0; // Переменная нужна для запуска метода. В методе будет переопределена на вводимую с клавиатуры сумму.
+        balance.transactions(money, balance.getBalance());
     }
 }
 
