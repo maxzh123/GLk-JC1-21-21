@@ -2,7 +2,7 @@ package by.itAcademy.homeworks.arrays;
 
 public class Task19 {
     public static void main(String[] args) {
-        int [] array = FillingTheArray.Array(10);
+        int [] array = FillingTheArray.array(10);
         for (int i =0; i<array.length; i++){
             System.out.print(array[i] + " ");
         }

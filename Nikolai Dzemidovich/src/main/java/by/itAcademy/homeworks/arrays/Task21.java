@@ -2,7 +2,8 @@ package by.itAcademy.homeworks.arrays;
 
 import java.util.Arrays;
 
-/**Создайте переменную для массива из 10 элементов.
+/**
+ * Создайте переменную для массива из 10 элементов.
  * Заполните его произвольными значениями целочисленного типа.
  * Определите сумму элементов массива, расположенных между минимальным и максимальным значениями.
  * Если значений максимальных и минимальных несколько, то необходимо взять максимальное значение разницы индексов между максимальным и минимальным значениями.
@@ -30,7 +31,13 @@ public class Task21 {
 
         System.out.println("Максимальный идекс максимального значения =" + getTheMaxIndexOfTheSameValue(array, maxIndex));
         System.out.println("Минимальнй индекс минимального значения = " + getTheMinIndexOfTheSameValue(array, minIndex));
-        return MyArraysHelper.getTheSumBetweenMaxAndMin(array, getTheMinIndexOfTheSameValue(array, minIndex), getTheMaxIndexOfTheSameValue(array, maxIndex));
+
+        if ((getTheMaxIndexOfTheSameValue(array, maxIndex) - getTheMinIndexOfTheSameValue(array, minIndex)) > (getTheMaxIndexOfTheSameValue(array, minIndex) - getTheMinIndexOfTheSameValue(array, maxIndex))) {
+            return MyArraysHelper.getTheSumBetweenMaxAndMin(array, getTheMinIndexOfTheSameValue(array, minIndex), getTheMaxIndexOfTheSameValue(array, maxIndex));
+        } else {
+            return MyArraysHelper.getTheSumBetweenMaxAndMin(array, getTheMinIndexOfTheSameValue(array, maxIndex), getTheMaxIndexOfTheSameValue(array, minIndex));
+        }
+
     }
 
     public static int getTheMaxIndexOfTheSameValue(int[] array, int max) {

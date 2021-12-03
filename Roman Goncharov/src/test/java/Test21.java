@@ -10,7 +10,6 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class Test21 {
-
     public static class IntArrayConverter extends TypedArgumentConverter<String,Object[]> {
         public IntArrayConverter() {
             super(String.class,Object[].class);
@@ -18,10 +17,11 @@ public class Test21 {
 
         @Override
         protected Object[] convert(String source) throws ArgumentConversionException {
-           String[] arr=((String) source).split("\\s*;\\s*");
-          return Arrays.stream(arr).map(i->Integer.valueOf(i)).collect(Collectors.toList()).toArray();
+            String[] arr=((String) source).split("\\s*;\\s*");
+            return Arrays.stream(arr).map(i->Integer.valueOf(i)).collect(Collectors.toList()).toArray();
         }
     }
+
 
     @ParameterizedTest
     @CsvSource(value = {
