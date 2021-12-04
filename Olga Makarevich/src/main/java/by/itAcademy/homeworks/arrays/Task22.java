@@ -24,3 +24,4 @@ public class Task22 {
         return arrConversely;
     }
 }
+//
