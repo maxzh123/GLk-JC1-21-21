@@ -6,23 +6,35 @@ import java.util.Arrays;
 
 public class Task21 {
     public static void main(String[] args) {
-
+        System.out.println("Сумма элементов = " + sumBetweenMinMax(/*я не понимаю что здесь должно быть написано*/));
     }
 
-    private static int[] arrayRandom(int[] a) {
-        a = new int[10];
-        for (int i = 0; i < 10; i++) {
-            a[i] = (int) (Math.random() * 1000 + 1);
-            System.out.println(a);
+    public static int sumBetweenMinMax() { //логика такая: найти индекс элемента массива с max значением и индекс элемента массива с min значением; значение каждого индекса, следующего за индексом с min значением прибавить к 0 вплоть до индекса с max значением; все равно работает некорректно, если вообще работает
+        int[] arr = ArraysHelper.arrayRandom(10);  // вторую часть задания я не поняла: нужно найти СУММУ, которая включает повторяющися максимальные значения, т.к. один из индексов min/max будет больше/меньше повторяющегося значения?
+        System.out.println(Arrays.toString(arr));
+
+        int maxIndex = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxIndex) {
+                maxIndex = arr[i];
+            }
+            return maxIndex;
+            //System.out.println(maxIndex);
         }
-        return a;
+
+        int minIndex = arr[0];
+        for(int i = 1; i<arr.length;i++) {
+        if (arr[i] < minIndex) {
+            minIndex = arr[i];
+        }
+        return minIndex;
     }
 
-//    private static void arraySort(int[] arrayRandom) {
-//        Arrays.sort(arrayRandom);
-//        for (int i = 0; i < arrayRandom.length; i++) {
-//            System.out.print(arrayRandom[i] + "  ");
-//        }
-//    }
+        int sum = 0;
+        for (int i = arr[minIndex + 1]; i < arr[maxIndex]; i++) {
+            sum += arr[i];
+        }
+            return sum;
+    }
 }
-
+//
