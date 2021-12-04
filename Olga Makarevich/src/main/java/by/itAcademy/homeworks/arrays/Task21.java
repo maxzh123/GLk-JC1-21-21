@@ -37,3 +37,4 @@ public class Task21 {
             return sum;
     }
 }
+//
