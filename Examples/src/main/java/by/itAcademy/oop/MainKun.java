@@ -4,6 +4,7 @@ public class MainKun extends Cat{
 
     public MainKun(){
         super("Мэйнкун");
+        super.say();
     }
 
     @Override
