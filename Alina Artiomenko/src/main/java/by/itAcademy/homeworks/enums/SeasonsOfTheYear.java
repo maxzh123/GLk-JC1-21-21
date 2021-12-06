@@ -16,7 +16,7 @@ public enum SeasonsOfTheYear {
         this.countOfDays = countOfDays;
     }
 
-      //получение индекса следующего сезона
+    //получение индекса следующего сезона
     public void nextIndexOfSeason(SeasonsOfTheYear season){
         indexOfSeason = season.ordinal();
         if (indexOfSeason == 3) {
@@ -41,6 +41,26 @@ public enum SeasonsOfTheYear {
                 break;
             case 3:
                 msg = "Следующий сезон - " + Autumn.name();
+                break;
+        }
+        return msg;
+    }
+
+    //вывод кол-во дней в сезоне
+    public String printDays(SeasonsOfTheYear seson){
+        String msg = "";
+        switch (seson.ordinal()){
+            case 0:
+                msg = "Колечество дне " + Winter.name() + " - " + Winter.countOfDays;
+                break;
+            case 1:
+                msg = "Колечество дне " + Sprin.name() + " - " + Sprin.countOfDays;
+                break;
+            case 2:
+                msg = "Колечество дне " + Summer.name() + " - " + Summer.countOfDays;
+                break;
+            case 3:
+                msg = "Колечество дне " + Autumn.name() + " - " + Autumn.countOfDays;
                 break;
         }
         return msg;
