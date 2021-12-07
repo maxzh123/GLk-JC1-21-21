@@ -10,5 +10,12 @@ package by.itAcademy.homeworks.objects;
 
 
 public class Task25 {
+    public static void main(String[] args) {
+        ATM alfa = new ATM("Alfa", "dollars", 10,20,30,3200);
+        System.out.println(ATM.addBill());
+
+        ATM bps = new ATM("bps", "byn", 20,50,1,3000);
+        System.out.println(ATM.takeBill());
+    }
 
 }

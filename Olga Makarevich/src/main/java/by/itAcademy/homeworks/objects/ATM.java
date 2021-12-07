@@ -22,12 +22,13 @@ public class ATM { // Не понимаю как сделать так, чтоб
         bill20 = x;
         bill50 = y;
         bill100 = z;
-        cashAvailable = s;
+        cashAvailable = s; // можно ли так, чтобы сразу считало x+y+z?
     }
 
     public static void main(String[] args) {
         System.out.println(addBill());
         System.out.println(takeBill());
+        ATM Alfa = new ATM ("Alfa", "dollars", 10,20,30,3200);
 
     }
 
