@@ -3,20 +3,48 @@ package by.itAcademy.homeworks.oop.Task32Appliances;
 public class Cooker extends AppForKitchen{
     @Override
     public String getName() {
-        name = "Плита";
+        name = "Плита.";
         return name;
     }
 
-    @Override
-    public String action() {
-        action = "Приготовить суп";
-        return action;
+    public Cooker (int area, int height){
+        this.area = area;
+        this.height = height;
     }
 
-    public void say() {
-        System.out.println(getName());
+    @Override
+    public String description() {
+        description = "Площадь: " + area + " кв.см. " + "Высота: " + height + " см.";
+        return description;
+    }
+
+    @Override
+    public void isOn() {
+        System.out.println("Работает на природном газе");
+    }
+
+    @Override
+    public void action() {
+        System.out.println("Чтобы включить газ нажмите 1:");;
+        int number = console.nextInt();
+        while (true) {
+            if (number == 1) {
+                System.out.println("Когда закончите готовку, нажмите 2 чтобы выключить газ");
+                number = console.nextInt();
+                if (number == 2) {
+                    System.out.println("Вы выключили газ, приятного аппетита!");
+                    break;
+                }
+            }
+            System.out.println("Ошибка. Попробуйте снова");
+            number = console.nextInt();
+        }
+    }
+
+    @Override
+    public void run(){
+        System.out.println(getName() + description());
         isOn();
-        System.out.println(action());
-        isOff();
+        action();
     }
 }
