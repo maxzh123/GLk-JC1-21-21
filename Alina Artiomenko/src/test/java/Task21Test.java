@@ -57,7 +57,7 @@ class Task21Test {
             "7,1;1;2;3",
             "7,3;1;1;2;3",
             "9,3;2;2;1;1;2;3",
-            "16,3;2;2;1;1;2;1;1;3;1;3;3"
+            "17,3;2;2;1;1;2;1;1;3;1;3;3"
     })
     public void testArrayLength(int sum,@ConvertWith(IntArrayConverter.class)  Object[] data ){
         int[] arr=new int[data.length];

@@ -12,15 +12,16 @@ package by.itAcademy.homeworks.objects;
 
 public class Task25 {
     public static void main(String[] args) {
-        SimpleATM ATM = new SimpleATM(5, 5, 5);
+        SimpleATM ATM = new SimpleATM(5, 5, 0);
         ATM.getSomeMoneyFromATM();
+        ATM.getBalanceInATM();
         ATM.getSomeMoneyFromATM();
+        ATM.getBalanceInATM();
 
         ATM.addMoneyToATM();
 
         ATM.getSomeMoneyFromATM();
-        ATM.getSomeMoneyFromATM();
-        ATM.getSomeMoneyFromATM();
+        ATM.getBalanceInATM();
 
     }
 }
