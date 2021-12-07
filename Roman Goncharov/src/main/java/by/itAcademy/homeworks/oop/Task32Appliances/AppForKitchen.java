@@ -1,27 +1,30 @@
 package by.itAcademy.homeworks.oop.Task32Appliances;
 
-public class AppForKitchen implements Appliances {
-    String name,action;
+import java.util.Scanner;
 
-    public String getName() {
+abstract class AppForKitchen implements Appliances {
+    protected String name, description;
+    protected int area, height;
+
+    Scanner console = new Scanner(System.in);
+
+    protected String getName() {
         return name;
     }
 
-    public String action() {
-        return action;
+    protected String description(){
+        return description;
     }
 
-    public void isOn() {
+    protected void isOn() {
         System.out.println("Включить в розетку.");
     }
 
-    public void isOff() {
+    protected void isOff() {
         System.out.println("Выключить с розетки.");
     }
 
-    @Override
-    public void say() {
-        System.out.println(getName());
-        System.out.println(action());
-    }
+    protected void action(){}
+
+    public void run(){}
 }
