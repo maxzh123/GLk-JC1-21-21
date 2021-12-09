@@ -1,7 +1,8 @@
 package by.itAcademy.homeworks.loops;
 
-// Задание №14
-// Посчитать сумму цифр заданного числа.
+/** Задание № 14
+ * Посчитать сумму цифр заданного числа.
+ */
 
 public class Task14 {
     public static void main(String[] args) {
