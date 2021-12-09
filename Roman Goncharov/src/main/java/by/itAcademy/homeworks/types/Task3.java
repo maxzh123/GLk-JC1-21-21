@@ -1,5 +1,9 @@
 package by.itAcademy.homeworks.types;
 
+/** Задание 3
+ * Написать код, который выведет значения переменных на экран.
+ */
+
 public class Task3 {
     public static void main(String[] args) {
         byte b = 0x55;

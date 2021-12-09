@@ -1,11 +1,12 @@
 package by.itAcademy.homeworks.oop.Task32Appliances;
 
 /**
- Создать цепочку наследования классов, описывающих бытовую технику. Создать несколько объектов этих классов, часть из
- них включить в розетку.
+ * Задание 32
+ * Создать цепочку наследования классов, описывающих бытовую технику. Создать несколько объектов этих классов, часть из
+ * них включить в розетку.
  */
 
-public class Runner {
+public class Task32 {
     public static void main(String[] args) {
         Appliances[] app = new Appliances[3];
         app[0] = new Fridge(4200,200);
