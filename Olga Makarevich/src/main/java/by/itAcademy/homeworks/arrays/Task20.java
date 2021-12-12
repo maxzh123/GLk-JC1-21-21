@@ -19,6 +19,7 @@ public class Task20 {
         for (int i = 1; i < arriveRandom3.length; i++) {
             if (arriveRandom3[i] > maxValue) {
                 maxValue = arriveRandom3[i];
+                System.out.println("Индекс максимального элемента = " + i);
             }
         }
         return maxValue;

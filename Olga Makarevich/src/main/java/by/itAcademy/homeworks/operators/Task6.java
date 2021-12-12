@@ -4,16 +4,21 @@ package by.itAcademy.homeworks.operators;
 //Метод должен определить, является ли последняя цифра числа семеркой и вернуть boolean значение
 
 
+//
+
+// Second try
+
 public class Task6 {
+
     public static void main(String[] args) {
-        int a = 0;
-        int b = 1000;
-        int x = a + (int) (Math.random() * b);
-        System.out.println(seven(x));
+        int numberRandom = (int) (Math.random() * 100 + 1);
+        System.out.println(numberRandom);
+        System.out.println(foundLast7(numberRandom));
+
     }
 
-    public static boolean seven(int x) {
-        if (x % 10 == 7) {
+    static boolean foundLast7(int a) {
+        if (a % 10 == 7) {
             return true;
         } else {
             return false;

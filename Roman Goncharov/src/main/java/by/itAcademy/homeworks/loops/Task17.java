@@ -1,9 +1,10 @@
 package by.itAcademy.homeworks.loops;
 
-import java.text.DecimalFormat;
+/** Задание № 17
+ * Задать произвольное число и вывести его в бухгалтерском формате.
+ */
 
-// Задание 17
-// Задать произвольное число и вывести его в бухгалтерском формате.
+import java.text.DecimalFormat;
 
 public class Task17 {
     public static void main(String[] args) {

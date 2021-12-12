@@ -1,6 +1,6 @@
 package by.itAcademy.homeworks.objects;
 
-public class TheTimer {
+public class TheTimer implements Comparable<TheTimer> {
 
         private int seconds;
         private int minutes;

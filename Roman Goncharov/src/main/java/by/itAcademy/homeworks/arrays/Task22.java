@@ -1,14 +1,16 @@
 package by.itAcademy.homeworks.arrays;
 
-// Задание 22
-// Создать массив из 10 элементов, заполнить его произвольными целочисленными значениями,
-// вывести на экран массив и его перевернутую копию.
+/** Задание 22
+ * Создать массив из 10 элементов, заполнить его произвольными целочисленными значениями,
+ * вывести на экран массив и его перевернутую копию.
+ */
 
 import java.util.Arrays;
 
 public class Task22 {
     public static void main(String[] args) {
-        int[] array = new int[10];
+        int x = 10;
+        int[] array = new int[x];
         Task18.fillingTheArray(array);
         reverseTheArray(array);
         System.out.println(Arrays.toString(array));
