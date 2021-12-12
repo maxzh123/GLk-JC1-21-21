@@ -29,10 +29,6 @@ public class Task17 {
             number /= 1000;
             System.out.println(array[i]);
         }
-        String result="";
-        for (int i = array.length - 1; i >= 0; i--) {
-            result+=array[i] + " ";
-        }
         return array;
     }
 

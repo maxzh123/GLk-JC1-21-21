@@ -7,8 +7,8 @@ public class Task12 {
         int i = 1;
         int a = 1;
        while (i < 11) {
-           a = i*a;
+           a = i * a;
            i++;
     }
-        System.out.println(a);}
+        System.out.println("Факториал целых чисел от 1 до 10 = " + a);}
     }

@@ -27,15 +27,12 @@ public class Task9 {
 
         }
 
-
-
         leapYear=isLeapYear(yearX);
         getDate(dayX,  monthX, yearX);
 
     }
 
     private static void getDate(int day, int month, int year){
-
 
                 if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10){
 
@@ -100,17 +97,6 @@ public class Task9 {
     }
 
         private static boolean isLeapYear(int yearCh){
-            if(yearCh%400==0){
-                return true;}
-
-                else if (yearCh%100==0){
-                    return false;
-                }
-                else if (yearCh%4==0){
-                return true;
-                }
-                else{
-                    return  false;
-            }
+            return yearCh % 400 == 0  || yearCh % 4 == 0 && yearCh % 100 != 0;
         }
     }

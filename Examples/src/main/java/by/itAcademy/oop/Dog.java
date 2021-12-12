@@ -1,7 +1,10 @@
 package by.itAcademy.oop;
 
-public class Dog implements Animal {
-    public void say(){
-        System.out.println("Гаф");
+public abstract class Dog implements Animal {
+    private int a=1;
+    @Override
+    public void say() {
+
+        System.out.println("Гав гав "+a++);
     }
 }
