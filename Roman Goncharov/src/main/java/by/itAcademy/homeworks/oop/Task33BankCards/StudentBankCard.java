@@ -6,10 +6,8 @@ public class StudentBankCard extends DebitBankCard{
         super(currency,cardTerm);
     }
 
-    @Override
-    public String getCardName() {
-        cardName = "Студенческая карта.";
-        return cardName;
+    public String getCardName(){
+        return "Студенческая карта.";
     }
 
     @Override

@@ -15,7 +15,7 @@ public class Task28 {
     }
 
     public static String findTheLastLetters(String str) {
-        Pattern pattern = Pattern.compile("[a-zA-Zа-яА-ЯЁё]+[-]?[a-zA-Zа-яА-ЯЁё]*"); // Находим слова.
+        Pattern pattern = Pattern.compile("[a-zA-Zа-яА-ЯЁё]+[-]?[a-zA-Zа-яА-ЯЁё]+"); // Находим слова.
         Matcher matcher = pattern.matcher(str);
         String lastChars = "";
         while(matcher.find()){

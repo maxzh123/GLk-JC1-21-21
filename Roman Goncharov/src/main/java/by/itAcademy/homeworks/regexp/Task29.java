@@ -16,7 +16,7 @@ public class Task29 {
     }
 
     public static void findHexNumbers(String str) {
-        Pattern pattern = Pattern.compile("0x[A-F0-9]+");
+        Pattern pattern = Pattern.compile("0x([A-F0-9]{2})+");
         Matcher matcher = pattern.matcher(str);
         while(matcher.find()){
             System.out.println(matcher.group());

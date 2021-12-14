@@ -4,13 +4,8 @@ import java.util.Objects;
 
 public class DebitBankCard extends AbstractBankCard{
 
-    @Override
-    public String getCardName() {
-        cardName = "Дебетовая карта.";
-        return cardName;
-    }
-
     public DebitBankCard (String currency, int cardTerm) {
+        super("Дебетовая карта.");
         this.currency = currency;
         this.cardTerm = cardTerm;
     }

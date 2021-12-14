@@ -3,11 +3,15 @@ package by.itAcademy.homeworks.oop.Task33BankCards;
 import java.util.Scanner;
 
 abstract class AbstractBankCard implements BankCards {
-    protected String cardName; // Название карты
+    final private String cardName; // Название карты
     protected int cardTerm; // Срок действия карты
     protected String currency; // Валюта, с которой работает карта
     protected double balance = 0; // Баланс карты
     Scanner console = new Scanner(System.in);
+
+    protected AbstractBankCard (String cardName){
+        this.cardName = cardName;
+    }
 
     public String getCardName() {
         return cardName;

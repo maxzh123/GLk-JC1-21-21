@@ -1,13 +1,9 @@
 package by.itAcademy.homeworks.oop.Task32Appliances;
 
 public class Cooker extends AppForKitchen{
-    @Override
-    public String getName() {
-        name = "Плита.";
-        return name;
-    }
 
     public Cooker (int area, int height){
+        super("Плита.");
         this.area = area;
         this.height = height;
     }

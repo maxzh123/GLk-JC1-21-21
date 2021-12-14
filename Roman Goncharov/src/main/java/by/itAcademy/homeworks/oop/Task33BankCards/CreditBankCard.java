@@ -3,13 +3,8 @@ package by.itAcademy.homeworks.oop.Task33BankCards;
 public class CreditBankCard extends AbstractBankCard{
     int sumCredit;
 
-    @Override
-    public String getCardName() {
-        cardName = "Кредитная карта.";
-        return cardName;
-    }
-
     public CreditBankCard (int sumCredit, String currency, int cardTerm) {
+        super("Кредитная карта.");
         this.sumCredit = sumCredit;
         this.currency = currency;
         this.cardTerm = cardTerm;

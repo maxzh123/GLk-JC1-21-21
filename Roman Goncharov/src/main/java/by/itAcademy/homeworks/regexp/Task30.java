@@ -13,7 +13,7 @@ public class Task30 {
     }
 
     public static String replacingTags(String str) {
-        str = str.replaceAll("</p>|<p id=\"p\\d+\">","<p>");
+        str = str.replaceAll("<p\\s[^>]*>","<p>");
         return str;
     }
 }
