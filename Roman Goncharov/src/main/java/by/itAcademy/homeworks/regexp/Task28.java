@@ -15,12 +15,12 @@ public class Task28 {
     }
 
     public static String findTheLastLetters(String str) {
-        Pattern pattern = Pattern.compile("[a-zA-Zа-яА-ЯЁё]+[-]?[a-zA-Zа-яА-ЯЁё]+"); // Находим слова.
+        Pattern pattern = Pattern.compile("[a-zA-Zа-яА-ЯЁё]+[-]?[a-zA-Zа-яА-ЯЁё]*"); // Находим слова.
         Matcher matcher = pattern.matcher(str);
         String lastChars = "";
         while(matcher.find()){
             String str1 = matcher.group();
-            boolean bool = str1.matches("[a-zA-Zа-яА-ЯЁё]+[-]+[a-zA-Zа-яА-ЯЁё]+"); // Проверяем есть ли в слове тире
+            boolean bool = str1.matches("[a-zA-Zа-яА-ЯЁё]+-[a-zA-Zа-яА-ЯЁё]+"); // Проверяем есть ли в слове тире
             if (bool) {
                 str1 = str1.replaceAll("-",""); // Если есть, заменяем тире на пустой символ, чтобы
             }                                                   // слово с тире не принимало за два отдельных слова

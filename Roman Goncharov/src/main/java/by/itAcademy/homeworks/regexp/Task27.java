@@ -16,7 +16,7 @@ public class Task27 {
     }
 
     public static int findWords(String str) {
-        Pattern pattern = Pattern.compile("([a-zA-Zа-яА-ЯЁё]+[-]?[ ]{2,}[a-zA-Zа-яА-ЯЁё]*)|([a-zA-Zа-яА-ЯЁё]+[-]?[a-zA-Zа-яА-ЯЁё]+)");
+        Pattern pattern = Pattern.compile("([a-zA-Zа-яА-ЯЁё]+[-]?[ ]{2,}[a-zA-Zа-яА-ЯЁё]*)|([a-zA-Zа-яА-ЯЁё]+[-]?[a-zA-Zа-яА-ЯЁё]*)");
         Matcher matcher = pattern.matcher(str);
         int temp = 0;
         while(matcher.find()){

@@ -12,23 +12,23 @@ abstract class AppForKitchen implements Appliances {
         this.name = name;
     }
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
-    protected String description(){
+    public String description(){
         return description;
     }
 
-    protected void isOn() {
+    public void isOn() {
         System.out.println("Включить в розетку.");
     }
 
-    protected void isOff() {
+    public void isOff() {
         System.out.println("Выключить с розетки.");
     }
 
-    protected void action(){}
+    public void action(){}
 
     public void run(){}
 }
