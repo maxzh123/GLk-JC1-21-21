@@ -1,16 +1,17 @@
 package by.itAcademy.homeworks.arrays;
 
-// Задание 20
-// Создать массив из 10 элементов, заполнить его произвольными целочисленными значениями,
-// вывести максимальный элемент массива и его индекс.
+/** Задание 20
+ * Создать массив из 10 элементов, заполнить его произвольными целочисленными значениями,
+ * вывести максимальный элемент массива и его индекс.
+ */
 
 public class Task20 {
     public static void main(String[] args) {
-        int[] array = new int[10];
+        int x = 10;
+        int[] array = new int[x];
         Task18.fillingTheArray(array);
-        int index = indexMaxElement(array);
-        System.out.println("Максимальный элемент массива: " + array[index]);
-        System.out.println("Индекс максимального элемента: " + index);
+        System.out.println("Максимальный элемент массива: " + array[indexMaxElement(array)]);
+        System.out.println("Индекс максимального элемента: " + indexMaxElement(array));
     }
 
     public static int indexMaxElement (int[] array) {

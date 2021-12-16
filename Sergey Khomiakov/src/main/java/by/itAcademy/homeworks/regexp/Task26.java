@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class Task26 {
     public static void main(String[] args) {
         String string = SimpleReader.readLine();
-        Pattern p = Pattern.compile("-?[.,!?;:\"'-]");
+        Pattern p = Pattern.compile("[.,!?;:\"'-]+");
         Matcher m = p.matcher(string);
         int count = 0;
         while (m.find()){

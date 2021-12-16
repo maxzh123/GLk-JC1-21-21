@@ -17,8 +17,14 @@ public class Task9 {
         if (a <= 30 && (b == 1 | b == 3 | b == 5 | b == 7 | b == 8 | b == 10 | b == 12)) {
             System.out.println("Дата следующего дня: " + ++a + "." + b + "." + c);
         } else if (a == 31 && (b == 1 | b == 3 | b == 5 | b == 7 | b == 8 | b == 10 | b == 12)) {
+            if (b == 12) {
+                a = 0;
+                b = 1;
+                c = c+1;
+            } else {
             a = 0;
             b++;
+            }
             System.out.println("Дата следующего дня: " + ++a + "." + b + "." + c);
         } else if (a <= 29 && (b == 4 | b == 6 | b == 9 | b == 11)) {
             System.out.println("Дата следующего дня: " + ++a + "." + b + "." + c);

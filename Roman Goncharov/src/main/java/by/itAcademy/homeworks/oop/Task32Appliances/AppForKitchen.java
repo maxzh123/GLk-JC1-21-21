@@ -1,14 +1,23 @@
 package by.itAcademy.homeworks.oop.Task32Appliances;
 
-public class AppForKitchen implements Appliances {
-    String name,action;
+import java.util.Scanner;
+
+abstract class AppForKitchen implements Appliances {
+    final private String name;
+    protected String description;
+    protected int area, height;
+    Scanner console = new Scanner(System.in);
+
+    protected AppForKitchen(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
     }
 
-    public String action() {
-        return action;
+    public String description(){
+        return description;
     }
 
     public void isOn() {
@@ -19,9 +28,7 @@ public class AppForKitchen implements Appliances {
         System.out.println("Выключить с розетки.");
     }
 
-    @Override
-    public void say() {
-        System.out.println(getName());
-        System.out.println(action());
-    }
+    public void action(){}
+
+    public void run(){}
 }
