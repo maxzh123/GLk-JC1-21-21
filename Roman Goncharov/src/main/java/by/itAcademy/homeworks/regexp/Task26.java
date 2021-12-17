@@ -15,7 +15,7 @@ public class Task26 {
     }
 
     public static int findPunctuation(String str) {
-        Pattern pattern = Pattern.compile("[.]{3,}|!+|\\?+|\\?+!+|!+\\?+|[.,;:\\-\"!?]");
+        Pattern pattern = Pattern.compile("[.]{3,}|\\?+!+|!+\\?+|!+|\\?+|[.,;:\\-\"]");
         Matcher matcher = pattern.matcher(str);
         int temp = 0;
         while(matcher.find()){
