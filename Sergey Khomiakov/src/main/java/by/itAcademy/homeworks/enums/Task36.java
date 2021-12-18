@@ -12,6 +12,6 @@ public class Task36 {
         String season = SimpleReader.readLine();
 
         System.out.print("Следующий сезон - это ");
-        System.out.println(SeasonsOfTheYear.nextSeason(SeasonsOfTheYear.valueOf(season)));
+        System.out.println(SeasonsOfTheYear.nextSeason(SeasonsOfTheYear.valueOf(season.toUpperCase())));
     }
 }

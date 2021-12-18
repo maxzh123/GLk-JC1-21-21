@@ -7,9 +7,9 @@ package by.itAcademy.homeworks.enums;
 
 public class Task35 {
     public static void main(String[] args) {
-            for (SeasonsOfTheYear seasons: SeasonsOfTheYear.values()){
-                System.out.println(seasons + " это сезон, когда... " + seasons.description + " и в котором "
-                        + seasons.countOfDays + " дня(день)");
+            for (SeasonsOfTheYear season: SeasonsOfTheYear.values()){
+                System.out.println(season + " это сезон, когда... " + SeasonsOfTheYear.getDescription(season)
+                        + " и в котором " + SeasonsOfTheYear.getNumbersOfDaysInSeason(season) + " дня(день)");
             }
     }
 }

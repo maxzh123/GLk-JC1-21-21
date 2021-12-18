@@ -6,6 +6,7 @@ public class AlphaBankCard extends CreditCard{
         super(nameOfUser, account, accountAmount);
         this.nameOfBank = "AlphaBank";
 
+
     }
 
     public void greetingFromBank(){
@@ -15,7 +16,7 @@ public class AlphaBankCard extends CreditCard{
 
     @Override
     public void registerCard() {            //метод регистрации карточки
-        isFrozen = false;
+        super.registerCard();
         System.out.println("Поздравляю, вы зарегестрировали и активировали карточку со следующими параметрами:\n"
                 + "имя банка - " + nameOfBank + ";\n" + "имя владельца счета - " + nameOfUser + ";\n" + "номер счета - " + account);
     }

@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class Task27 {
     public static void main(String[] args) {
         String string = SimpleReader.readLine();
-        Pattern p = Pattern.compile("\\S+\\b");
+        Pattern p = Pattern.compile("[a-zA-Zа-яА-ЯёЁ]+[-]?[a-zA-Zа-яА-ЯёЁ]*");
         Matcher m = p.matcher(string);
         int count = 0;
         while (m.find()){

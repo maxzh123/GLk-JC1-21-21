@@ -3,8 +3,7 @@ package by.itAcademy.homeworks.oop.task32;
 import by.itAcademy.homeworks.regexp.SimpleReader;
 
 public class Iron extends AbstractAppliances{
-    public Iron(String type, String model, String producer, int power){
-        this.type = type;
+    public Iron(String model, String producer, int power){
         this.model = model;
         this.producer = producer;
         this.power = power;
