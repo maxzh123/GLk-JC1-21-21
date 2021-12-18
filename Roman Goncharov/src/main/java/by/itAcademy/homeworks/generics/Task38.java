@@ -10,12 +10,10 @@ package by.itAcademy.homeworks.generics;
 
 public class Task38 {
     public static void main(String[] args) {
-        Car car = new Car("BMW","x5");
-        Motorcycle moto = new Motorcycle("Harley Davidson","1200 FX");
-        Garage <Car> Garage1 = new Garage<>();
-        Garage <Motorcycle> Garage2 = new Garage<>();
-        Garage1.setVehicle(car);
-        Garage2.setVehicle(moto);
+        Garage <Vehicle> Garage1 = new Garage<>();
+        Garage <Vehicle> Garage2 = new Garage<>();
+        Garage1.addVehicle(new Car("BMW","x5"));
+        Garage2.addVehicle(new Motorcycle("Harley Davidson","1200 FX"));
         System.out.println("В гараже номер 1 хранится: " + Garage1);
         System.out.println("В гараже номер 2 хранится: " + Garage2);
     }

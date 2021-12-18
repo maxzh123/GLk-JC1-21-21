@@ -3,7 +3,7 @@ package by.itAcademy.homeworks.generics;
 public class Garage<T extends Vehicle> {
     private T vehicle;
 
-    public void setVehicle(T vehicle){
+    public void addVehicle(T vehicle){
         this.vehicle = vehicle;
     }
 
