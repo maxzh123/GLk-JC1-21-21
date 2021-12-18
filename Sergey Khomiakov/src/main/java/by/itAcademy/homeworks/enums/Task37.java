@@ -8,8 +8,9 @@ import by.itAcademy.homeworks.regexp.SimpleReader;
 
 public class Task37 {
     public static void main(String[] args) {
-        System.out.println("Введите сезон: WINTER, SPRING, SUMMER, AUTUMN");
+        System.out.println("Введите один из следующих сезонов: WINTER, SPRING, SUMMER, AUTUMN");
         String season = SimpleReader.readLine();
-        SeasonsOfTheYear.getNumbersOfDaysInSeason(SeasonsOfTheYear.valueOf(season));
+        SeasonsOfTheYear tmpSeason = SeasonsOfTheYear.valueOf(season.toUpperCase());
+        System.out.println("Количество дней - " + SeasonsOfTheYear.getNumbersOfDaysInSeason(tmpSeason));
     }
 }

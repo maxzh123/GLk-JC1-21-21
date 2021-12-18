@@ -6,12 +6,12 @@ public enum SeasonsOfTheYear {
     SUMMER("приключения алергика продолжаются... хотя есть и плюсы. Фрукты и ягоды есть...", 92),
     AUTUMN("пора собирать урожай и готовиться к зиме...",92);
 
-    String description;
-    int countOfDays;
+    private final String description;
+    private final int numberOfDays;
 
     SeasonsOfTheYear(String description, int countOfDays){
         this.description = description;
-        this.countOfDays = countOfDays;
+        this.numberOfDays = countOfDays;
     }
 
     public static SeasonsOfTheYear nextSeason(SeasonsOfTheYear season){  // метод получения следующего по счету сезона
@@ -28,22 +28,36 @@ public enum SeasonsOfTheYear {
            return season;
     }
 
-    public static void getNumbersOfDaysInSeason(SeasonsOfTheYear season){ // метод получения дней в сезоне
+    public static int getNumbersOfDaysInSeason(SeasonsOfTheYear season){ // метод получения дней в сезоне
         switch (season){
             case WINTER:
-                System.out.println("Количество дней зимой - " + WINTER.countOfDays);
-                break;
+                return WINTER.numberOfDays;
             case SPRING:
-                System.out.println("Количество дней весной - " + SPRING.countOfDays);
-                break;
+                return SPRING.numberOfDays;
             case SUMMER:
-                System.out.println("Количество дней летом - " + SUMMER.countOfDays);
-                break;
+                return SUMMER.numberOfDays;
             case AUTUMN:
-                System.out.println("Количество дней осенью - " + AUTUMN.countOfDays);
-                break;
-        }
+                return AUTUMN.numberOfDays;
+
+        } return season.numberOfDays;
 
     }
+
+    public static String getDescription(SeasonsOfTheYear season){  // метод получения описания сезонае
+        switch (season){
+            case WINTER:
+                return WINTER.description;
+            case SPRING:
+                return SPRING.description;
+            case SUMMER:
+                return SUMMER.description;
+            case AUTUMN:
+                return AUTUMN.description;
+
+        }
+        return season.description;
+    }
+
+
 
 }
