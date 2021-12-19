@@ -15,4 +15,8 @@ public class MyReadHelper {
         System.out.println(title);
         return scr.nextLine();
     }
+    static public double readDouble(String title){
+        System.out.println(title);
+        return scr.nextDouble();
+    }
 }
