@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class Task29 {
     public static void main(String[] args) {
         String string = SimpleReader.readLine();
-        Pattern p = Pattern.compile("0[xX][0-9a-fA-F]{2,}");
+        Pattern p = Pattern.compile("0[xX]([0-9a-fA-F]{2})+");
         Matcher m = p.matcher(string);
         while (m.find()){
                 System.out.println(m.group());

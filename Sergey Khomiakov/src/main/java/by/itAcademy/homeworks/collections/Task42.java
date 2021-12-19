@@ -13,28 +13,33 @@ import java.util.regex.Pattern;
 
 public class Task42 {
     public static void main(String[] args) {
-        //String line = SimpleReader.readLine();
-        String staticLine = "Привет! Я - человек, который пытается что-то делать. Мир, мир, мир!";
+        System.out.println("Введите текст");
+        String line = SimpleReader.readLine();
+        Map<String, Integer> map = getMapForDividedString(getEachWordFromString(line));
+
+        map.entrySet().forEach(System.out::println);
+    }
+
+    // делаем коллекцию Map из массива, полученного из метода getEachWordFromString
+    public static Map<String, Integer> getMapForDividedString(List<String> words){
+        Map<String, Integer> map = new HashMap<>();
+        for(String word: words) {
+            if (!map.containsKey(word)) {
+                map.put(word, 1);
+            } else {
+               map.put(word, map.get(word) + 1);
+            }
+        } return map;
+    }
+
+    // разделяем строку на массив слов и заносив в коллекцию ArrayList (промежуточный шаг)
+    public static List<String> getEachWordFromString(String line){
         ArrayList<String> words = new ArrayList<>();
 
         Pattern pattern = Pattern.compile("[a-zA-Zа-яА-ЯёЁ]+[-]?[a-zA-Zа-яА-ЯёЁ]*");
-        Matcher matcher = pattern.matcher(staticLine);
+        Matcher matcher = pattern.matcher(line);
         while (matcher.find()){
             words.add(matcher.group());
-        }System.out.println(words);
-
-        Map<String, Integer> map = new HashMap<>();
-
-        for(String word: words) {
-            if (map.containsKey(word)) {
-                map.put(word, map.get(word) + 1);
-            } else {
-                map.put(word, 1);
-            }
-        }
-
-        for (Map.Entry entry: map.entrySet()){
-            System.out.println(entry);
-        }
+        } return words;
     }
 }

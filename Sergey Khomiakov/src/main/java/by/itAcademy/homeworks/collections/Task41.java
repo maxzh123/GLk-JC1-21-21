@@ -12,6 +12,11 @@ public class Task41 {
     public static void main(String[] args) {
         List<Integer> array = HelperForCollections.fillTheArrayList(10);
         System.out.println("Первоначальный список: " + array);
+        System.out.println("Максимальное значение: " + getMaxValue(array));
+
+    }
+
+    public static Integer getMaxValue(List<Integer> array){
         int maxValue = array.get(0);
         Iterator <Integer> iterator = array.iterator();
         while (iterator.hasNext()){
@@ -19,8 +24,6 @@ public class Task41 {
             if(nextValue>maxValue){
                 maxValue = nextValue;
             }
-        }
-        System.out.println("Максимальное значение: " + maxValue);
-
+        } return maxValue;
     }
 }
