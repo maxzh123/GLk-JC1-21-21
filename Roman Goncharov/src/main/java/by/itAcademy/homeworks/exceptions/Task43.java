@@ -8,8 +8,8 @@ package by.itAcademy.homeworks.exceptions;
 
 public class Task43 {
     public static void main(String[] args) {
-        Object newObject1 = null;
-        exceptionHandler(newObject1);
+        Object newObject = null;
+        exceptionHandler(newObject);
     }
 
     public static void exceptionHandler (Object obj){
