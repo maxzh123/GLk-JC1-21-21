@@ -15,8 +15,10 @@ public class Task9 {
         int year = Integer.parseInt(reader.readLine());
         reader.close();
         System.out.println(day + "." + month + "." + year);
+        nextDate(day, month, year);
+    }
 
-
+    public static void nextDate( int day, int month, int year){
         if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10) {
             if (day == 31) {
                 day = 1;
@@ -45,8 +47,7 @@ public class Task9 {
                 month++;
             } else day++;
         }
-        System.out.println(day + "." + month + "." + year);
-
+        System.out.println("Следующий день "+day + "." + month + "." + year);
     }
 
     public static boolean checkYear(int year) {

@@ -3,6 +3,8 @@ package by.itAcademy.homeworks.objects;
 public class TimeInterval {
     private int hour, minute, seconds;
 
+    //Как сделать проверку в конструкторе, чтобы нельзя было создать объект с отрицательными значением
+
     public TimeInterval(int seconds) {
         this.seconds = seconds;
     }
