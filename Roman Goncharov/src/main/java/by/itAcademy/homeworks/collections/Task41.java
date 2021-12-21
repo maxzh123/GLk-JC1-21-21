@@ -24,7 +24,7 @@ public class Task41 {
         Integer max = arrayList.get(0);
         while (it.hasNext()){
             Integer next = it.next();
-            if (next > max){
+            if (next.compareTo(max) == 1){
                 max = next;
             }
         }

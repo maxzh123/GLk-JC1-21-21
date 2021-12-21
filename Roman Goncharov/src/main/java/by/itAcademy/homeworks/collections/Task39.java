@@ -8,6 +8,7 @@ package by.itAcademy.homeworks.collections;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Task39 {
     public static void main(String[] args) {
@@ -15,7 +16,7 @@ public class Task39 {
         List<Integer> assessments = new ArrayList<>(elements);
         fillingList(assessments,elements);
         System.out.println("Изначальный список оценок: " + assessments);
-        System.out.println("Список после удаления неудовлетворительных оценок: " + removingElements(assessments,elements));
+        System.out.println("Список после удаления неудовлетворительных оценок: " + removingElements(assessments));
     }
 
     public static void fillingList(List<Integer> arrayList, int amountOfElements) {
@@ -24,12 +25,12 @@ public class Task39 {
         }
     }
 
-    public static List<Integer> removingElements(List<Integer> arrayList, int amountOfElements) {
-        for (int i = 0; i < amountOfElements; i++) {
-            if (arrayList.get(i) <= 5) {
-                arrayList.remove(i); // Удаляем элемент, размер нашего массива уменьшился на 1.
-                i--; // Уменьшаем i, чтобы проверить следующий элемент, который стал на место i, иначе мы его пропустим.
-                amountOfElements = arrayList.size(); // Наш изначальный размер массива становится равен текущему.
+    public static List<Integer> removingElements(List<Integer> arrayList) {
+        ListIterator<Integer> it = arrayList.listIterator();
+        while (it.hasNext()){
+            Integer next = it.next();
+            if (next.compareTo(6) == -1){
+                it.remove();
             }
         }
         return arrayList;

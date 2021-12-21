@@ -11,16 +11,16 @@ import java.util.Scanner;
 public class Task44 {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        stringToUpperCase(console.nextLine());
+        try {
+            stringToUpperCase(console.nextLine());
+        } catch (MyException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void stringToUpperCase (String str) {
+    public static void stringToUpperCase (String str) throws MyException {
         if (str.equals("")) {
-            try {
-                throw new MyException("Вы ввели пустую строку.");
-            } catch (MyException e) {
-                e.printStackTrace();
-            }
+            throw new MyException("Вы ввели пустую строку.");
         } else System.out.println(str.toUpperCase());
     }
 }
