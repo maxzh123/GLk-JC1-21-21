@@ -16,14 +16,18 @@ public class Task21 {
 
         int[] myFourthArray = Task18.getHelperToCreateArray(countsOfElements);
 
-        int maxIndex = getMaximumIndexInArray(myFourthArray);
-        int minIndex = getMinimumIndexInArray(myFourthArray);
+        System.out.println(calcSum(myFourthArray));
 
-        int maximumValue = myFourthArray[maxIndex];
-        int minimumValue = myFourthArray[minIndex];
+    }
+    public static int calcSum(int[] myArray){
+        int maxIndex = getMaximumIndexInArray(myArray);
+        int minIndex = getMinimumIndexInArray(myArray);
 
-        maxValues = getBooleanArray(myFourthArray, maximumValue);
-        minValues = getBooleanArray(myFourthArray, minimumValue);
+        int maximumValue = myArray[maxIndex];
+        int minimumValue = myArray[minIndex];
+
+        maxValues = getBooleanArray(myArray, maximumValue);
+        minValues = getBooleanArray(myArray, minimumValue);
 
         int start = maxIndex;
         int stop = minIndex;
@@ -46,8 +50,7 @@ public class Task21 {
 
         }
 
-        System.out.println(getSumBetweenMaxAndMin(myFourthArray, start, stop));
-
+        return getSumBetweenMaxAndMin(myArray, start, stop);
     }
 
     public static int getSumBetweenMaxAndMin(int[] array, int start, int stop){
