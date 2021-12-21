@@ -7,8 +7,8 @@ public class Task38 {
 > клавиатуры) и вывести на экран имя хранимого транспортного средства.*/
 
     public static void main(String[] args) {
-        Garage<Vehicle> veh1 = new Garage<>();
-        Garage<Vehicle> veh2 = new Garage<>();
+        Garage<Car> veh1 = new Garage<>();
+        Garage<Motorcycle> veh2 = new Garage<>();
 
         veh1.addVehicle(new Car());
         veh2.addVehicle(new Motorcycle());
