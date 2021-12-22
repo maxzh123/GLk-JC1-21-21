@@ -19,7 +19,7 @@ public class Task29 {
         string(s);
     }
     private static void string(String s){
-        Pattern p = Pattern.compile("0x[A-Fa-f0-9]{1,4}");
+        Pattern p = Pattern.compile("0[xX][0-9a-fA-F]+");
         Matcher m = p.matcher(s);
         while (m.find()){
             System.out.println(s.substring(m.start(),m.end()));
