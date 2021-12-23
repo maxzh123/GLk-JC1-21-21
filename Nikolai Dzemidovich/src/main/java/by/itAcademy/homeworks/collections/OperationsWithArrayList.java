@@ -12,7 +12,7 @@ public class OperationsWithArrayList {
 
     }
 
-    public static List<Integer> removeBadNumbers(List<Integer> list, int badNumber) {
+    public static void removeBadNumbers(List<Integer> list, int badNumber) {
 
         ListIterator<Integer> iterator = list.listIterator();
 
@@ -24,7 +24,7 @@ public class OperationsWithArrayList {
             }
         }
 
-        return list;
+
 
 
     }
@@ -42,9 +42,10 @@ public class OperationsWithArrayList {
         } return max;
     }
 
-    public static List<Integer> deleteDuplicate(List<Integer> list) {
+    public static void  deleteDuplicate(List<Integer> list) {
         Set<Integer> newList = new LinkedHashSet<>(list);
-        list = new ArrayList<>(newList);
-        return list;
+        list.clear();
+        list.addAll(newList);
+
     }
 }
