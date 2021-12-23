@@ -26,7 +26,7 @@ public class Task43 {
 
     public static void equalsDecember (ArrayList<String> list) throws NullPointerException{
         for (String l : list){
-            System.out.println(l.equals("December"));
+            System.out.println(l.equals("November"));
         }
     }
 }

@@ -17,7 +17,7 @@ public class Task44 {
 
         while(listOfMonth.size() != 12) {
             try {
-                System.out.print("Введите месяц: ");
+                System.out.print("Введите название месяца: ");
                 String month = inputMonth.nextLine();
                 checkTheValue(month,listOfMonth);
                 listOfMonth.add(month);
