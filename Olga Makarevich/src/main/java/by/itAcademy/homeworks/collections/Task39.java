@@ -20,7 +20,7 @@ public class Task39 {
         return random;
     }
 
-    static ArrayList returnListWithoutUnsatisfactoryMarks(ArrayList <Integer> listWithoutUnsatisfactoryMarks) {
+    static ArrayList<Integer> returnListWithoutUnsatisfactoryMarks(ArrayList<Integer> listWithoutUnsatisfactoryMarks) {
         for (int i = 0; i < listWithoutUnsatisfactoryMarks.size(); i++) {
             if (listWithoutUnsatisfactoryMarks.get(i) <= 4) {
                 listWithoutUnsatisfactoryMarks.remove(i);
