@@ -21,7 +21,7 @@ public class Task41 {
         Iterator <Integer> iterator = array.iterator();
         while (iterator.hasNext()){
             Integer nextValue = iterator.next();
-            if(nextValue>maxValue){
+            if(nextValue.compareTo(maxValue) > 0){
                 maxValue = nextValue;
             }
         } return maxValue;
