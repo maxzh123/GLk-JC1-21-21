@@ -15,11 +15,7 @@ public class Task6 {
     }
 
     public static boolean checking(int a) {
-        if (a == 7 || a == -7 || a % 10 == 7 || a % 10 == -7) {
-            return true;
-        } else {
-            return false;
-        }
+        return a == 7 || a == -7 || a % 10 == 7 || a % 10 == -7;
     }
 
 }

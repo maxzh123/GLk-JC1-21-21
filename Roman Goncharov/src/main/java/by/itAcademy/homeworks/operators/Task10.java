@@ -1,10 +1,11 @@
 package by.itAcademy.homeworks.operators;
 
-import java.util.Scanner;
+/** Задание 10
+ * Проверить можно ли разместить 2 дома размерами a*b и с*d на участке e*f. Расположение сторон домов параллельно
+ * расположению сторон участка.
+ */
 
-// Задание № 10
-// Проверить можно ли разместить 2 дома размерами a*b и с*d на участке e*f. Расположение сторон домов параллельно
-// расположению сторон участка.
+import java.util.Scanner;
 
 public class Task10 {
     public static void main(String[] args) {
@@ -21,28 +22,13 @@ public class Task10 {
         int e = console.nextInt();
         System.out.println("Введите размер f");
         int f = console.nextInt();
-        if (e >= a && e >=c && f >= b+d) {
-            System.out.println("На участке размерами " + e + "*" + f + " можно разместить 2 дома размерами " +
-                    a + "*" + b + " и " + c + "*" + d);
-        } else if (e >= a && e >= d && f >= b+c) {
-            System.out.println("На участке размерами " + e + "*" + f + " можно разместить 2 дома размерами " +
-                    a + "*" + b + " и " + c + "*" + d);
-        } else if (e >= b && e >= c && f >= a + d) {
-            System.out.println("На участке размерами " + e + "*" + f + " можно разместить 2 дома размерами " +
-                    a + "*" + b + " и " + c + "*" + d);
-        } else if (e >= b && e >= d && f >= a+c) {
-            System.out.println("На участке размерами " + e + "*" + f + " можно разместить 2 дома размерами " +
-                    a + "*" + b + " и " + c + "*" + d);
-        } else if (f >= a && f >=c && e >= b+d) {
-            System.out.println("На участке размерами " + e + "*" + f + " можно разместить 2 дома размерами " +
-                    a + "*" + b + " и " + c + "*" + d);
-        } else if (f >= a && f >= d && e >= b+c) {
-            System.out.println("На участке размерами " + e + "*" + f + " можно разместить 2 дома размерами " +
-                    a + "*" + b + " и " + c + "*" + d);
-        } else if (f >= b && f >= c && e >= a + d) {
-            System.out.println("На участке размерами " + e + "*" + f + " можно разместить 2 дома размерами " +
-                    a + "*" + b + " и " + c + "*" + d);
-        } else if (f >= b && f >= d && e >= a+c) {
+        checkingAreas(a,b,c,d,e,f);
+    }
+
+    public static void checkingAreas (int a, int b, int c, int d, int e, int f) {
+        if (e >= a && e >=c && f >= b+d || e >= a && e >= d && f >= b+c || e >= b && e >= c && f >= a + d
+        || e >= b && e >= d && f >= a+c || f >= a && f >=c && e >= b+d || f >= a && f >= d && e >= b+c ||
+        f >= b && f >= c && e >= a + d || f >= b && f >= d && e >= a+c) {
             System.out.println("На участке размерами " + e + "*" + f + " можно разместить 2 дома размерами " +
                     a + "*" + b + " и " + c + "*" + d);
         } else {

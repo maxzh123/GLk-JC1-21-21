@@ -7,12 +7,16 @@ public class MyReadHelper {
     static final private Scanner scr = new Scanner(System.in);
 
     static public Integer readInt(String title) {
-        System.out.println("Введите " + title);
+        System.out.println(title);
         return scr.nextInt();
     }
 
     static public String readLine(String title) {
-        System.out.println("Введите " + title);
+        System.out.println(title);
         return scr.nextLine();
+    }
+    static public double readDouble(String title){
+        System.out.println(title);
+        return scr.nextDouble();
     }
 }

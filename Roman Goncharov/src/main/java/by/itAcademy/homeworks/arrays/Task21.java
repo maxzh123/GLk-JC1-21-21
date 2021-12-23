@@ -1,21 +1,26 @@
 package by.itAcademy.homeworks.arrays;
 
-// Задание 21
-// Создать массив из 10 элементов, заполнить его произвольными целочисленными значениями,
-// определить сумму элементов между максимальным и минимальным элементами массива.
+/** Задание 21
+ * Создать массив из 10 элементов, заполнить его произвольными целочисленными значениями,
+ * определить сумму элементов между максимальным и минимальным элементами массива.
+ */
 
 public class Task21 {
     public static void main(String[] args) {
-        int[] array = new int[10];
+        int x = 10;
+        int[] array = new int[x];
         Task18.fillingTheArray(array);
+        System.out.println("Сумма элементов между максимальным и минимальным элементами массива равна: " +calcSum(array));
+    }
+
+    public static int calcSum(int[] array){
         int indexMax = Task20.indexMaxElement(array);
         System.out.println("Максимальный элемент массива: " + array[indexMax]);
         System.out.println("Индекс максимального элемента: " + indexMax);
         int indexMin = indexMinElement(array);
         System.out.println("Минимальный элемент массива: " + array[indexMin]);
         System.out.println("Индекс минимального элемента: " + indexMin);
-        int sum = sumElementsOfArray(array, indexMax, indexMin);
-        System.out.println("Сумма элементов между максимальным и минимальным элементами массива равна: " + sum);
+        return sumElementsOfArray(array, indexMax, indexMin);
     }
 
     public static int indexMinElement(int[] array) {
@@ -29,6 +34,7 @@ public class Task21 {
         }
         return indexMin;
     }
+
     public static int sumElementsOfArray (int[] array, int indexMax, int indexMin) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {

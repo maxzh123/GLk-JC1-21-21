@@ -2,7 +2,7 @@ package by.itAcademy.homeworks.arrays;
 
 public class Task20 {
     public static void main(String[] args) {
-        int[] array = FillingTheArray.Array(10);
+        int[] array = FillingTheArray.array(10);
         int Max = array[0];
         int index = 0;
         for (int i = 1; i < array.length - 1; i++) {

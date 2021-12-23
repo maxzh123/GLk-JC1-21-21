@@ -1,15 +1,20 @@
 package by.itAcademy.homeworks.operators;
 
-import java.util.Scanner;
+/** Задание 11
+ * На входе мы имеем порядковый номер дня недели, и, в зависимости от выбора, нам выводится, что запланировано на данный день.
+ */
 
-// Задание № 11
-// На входе мы имеем порядковый номер дня недели, и, в зависимости от выбора, нам выводится, что запланировано на данный день.
+import java.util.Scanner;
 
 public class Task11 {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.println("Введите порядковый номер дня недели:");
         int number = console.nextInt();
+        schedule(number);
+    }
+
+    public static void schedule (int number) {
         switch (number) {
             case (1):
                 System.out.println("Понедельник, 18.30: Курсы IT");
