@@ -17,7 +17,6 @@ public class Task43 {
 
     public static void main(String[] args) {
         Object obj = null;
-        obj.hashCode();
 
         if (obj == null) {
             try {
