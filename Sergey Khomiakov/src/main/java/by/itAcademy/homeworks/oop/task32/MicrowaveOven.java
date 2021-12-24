@@ -4,8 +4,8 @@ import by.itAcademy.homeworks.regexp.SimpleReader;
 
 public class MicrowaveOven extends AbstractAppliances{
 
-    public MicrowaveOven(String type, String model, String producer, int power){
-        this.type = type;
+    public MicrowaveOven(String model, String producer, int power){
+
         this.model = model;
         this.producer = producer;
         this.power = power;

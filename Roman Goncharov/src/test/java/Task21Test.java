@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class Test21 {
+public class Task21Test {
     public static class IntArrayConverter extends TypedArgumentConverter<String,Object[]> {
         public IntArrayConverter() {
             super(String.class,Object[].class);

@@ -19,12 +19,12 @@ public class Task27 {
         string(s);
     }
     private static void string(String s){
-        Pattern p = Pattern.compile("\\b");// границы слова - их две
+        Pattern p = Pattern.compile("\\S+\\s"); //находит связку пробельный символ+не пробельный символ
         Matcher m = p.matcher(s);
         int count = 0;
         while (m.find()){
             count++;
         }
-        System.out.println(count/2);
+        System.out.println(count);
     }
 }

@@ -18,7 +18,7 @@ public class Task26 {
         string(s);
     }
     private static void string(String s){
-        Pattern p = Pattern.compile("[-.,:;?!]");
+        Pattern p = Pattern.compile("[\\p{Punct}]");//ищет все знаки пунктуации
         Matcher m = p.matcher(s);
         int count = 0;
         while (m.find()){

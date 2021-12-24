@@ -1,0 +1,14 @@
+package by.itAcademy.homeworks.oop.Task33Ap;
+
+public class Visa extends Bills {
+
+    public Visa(int cardNumber) {
+
+        System.out.println("Стандартный пароль = 0000");
+
+        this.cardNumber = cardNumber;
+        this.password = "0000";
+        this.account = (int) (Math.random() * 1000);
+
+    }
+}

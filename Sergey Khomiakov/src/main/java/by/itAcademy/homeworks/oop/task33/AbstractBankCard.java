@@ -56,8 +56,7 @@ public abstract class AbstractBankCard implements BehaviorForCard {
     @Override
     public void registerCard() {            //метод регистрации карточки
         isFrozen = false;
-        System.out.println("Поздравляю, вы зарегестрировали и активировали карточку со следующими параметрами:\n"
-                + "имя владельца счета - " +  nameOfUser + ";\n" + "номер счета - " + account);
+
     }
 
     @Override

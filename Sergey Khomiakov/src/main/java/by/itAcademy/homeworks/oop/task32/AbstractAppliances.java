@@ -2,11 +2,11 @@ package by.itAcademy.homeworks.oop.task32;
 
 public abstract class AbstractAppliances implements HouseholdAppliances{
         protected boolean isOn = false;
-        protected String type, model, producer;
+        protected String model, producer;
         protected int power;
 
         public String getInfoAboutAppliances(){
-                return "Системная информация:\nтип прибора - " + type + ";\nмодель - " + model + ";\n"
+                return "Системная информация:\nмодель - " + model + ";\n"
                         + "изготовитель - " + producer + ";\nмощность - " + power + " Вт;";
 
         }
