@@ -12,7 +12,7 @@ public class Task39 {
         System.out.println(returnListWithoutUnsatisfactoryMarks(listOfStudentsAssessment));
     }
 
-    static ArrayList<Integer> createArrayListRandom(ArrayList<Integer> random, int a) {
+    public static ArrayList<Integer> createArrayListRandom(ArrayList<Integer> random, int a) {
         for (int j = 0; j < a; j++) {
             int b = (int) (Math.random() * a + 1);
             random.add(j, b);
