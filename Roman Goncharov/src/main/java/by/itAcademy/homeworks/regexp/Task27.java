@@ -21,7 +21,6 @@ public class Task27 {
         int temp = 0;
         while(matcher.find()){
             temp++;
-            System.out.println(matcher.group());
         }
         return temp;
     }
