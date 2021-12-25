@@ -4,5 +4,4 @@ package by.itAcademy.homeworks.io;
 // Файлы и каталоги должны быть распечатаны отдельно.
 
 public class Task46 {
-
 }
