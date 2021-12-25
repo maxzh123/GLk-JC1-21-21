@@ -20,6 +20,28 @@ public class Task47 {
                 a = newBR.readLine();
             }
 
+           /* BufferedReader newBR = null; // Создаём объект
+            try { // Пытаемся прочитать файл через потоки
+                newBR = new BufferedReader(new FileReader(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//TextFile47"));
+                String a = newBR.readLine();
+                int countPunctuationMark = 0;
+                Pattern p = Pattern.compile("[-.,;:!?]+");
+                while (a != null) {      // Первый цикл, где мы проходимся по строке
+                    System.out.println(a);
+                    Matcher m = p.matcher(a);
+                    while (m.find()) { // Второй цикл для  поиска в строке  знаков
+                        countPunctuationMark++; В этой строке сразу ищешь знаки препинания.
+                    }
+                    a = newBR.readLine(); // Переходишь на следующую строку
+                }
+                System.out.println("Количество знаков препинания = " + countPunctuationMark);
+            } catch (IOException e){
+                e.printStackTrace();
+            } finally { // Если всё получилось, закрываем поток.
+                if(newBR != null)    Если файл не найден, мы сюда не попадём, поток не открыт его не нужно закрывать                                                   // его не нужно закрывать
+                    newBR.close();
+            }*/
+
 /**         int countPunctuationMark = 0;                  /// ЗДЕСЬ НЕ РАБОТАЕТ. НЕПОНЯТНО ПОЧЕМУ - Cannot invoke "java.lang.CharSequence.length()" because "this.text" is null
             Pattern p = Pattern.compile("[-.,;:!?]+");
             Matcher m = p.matcher(a);
