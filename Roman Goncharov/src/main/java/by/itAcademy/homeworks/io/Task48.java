@@ -19,7 +19,7 @@ public class Task48 {
     private static List<Integer> arrayList = new ArrayList<>();
 
     public static void main(String[] args) {
-        File newFile = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//TextFile48");
+        File newFile = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//TextFile48.txt");
         operationsWithNumbersInFile(newFile);
     }
 
