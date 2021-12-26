@@ -1,6 +1,6 @@
 package by.itAcademy.homeworks.objects;
 
-public class TimeInterval {
+public class TimeInterval implements Comparable<TimeInterval>{
     private int hour;
     private int min;
     private int sec;

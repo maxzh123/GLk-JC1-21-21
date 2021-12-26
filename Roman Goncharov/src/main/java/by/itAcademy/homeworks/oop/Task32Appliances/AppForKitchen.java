@@ -3,28 +3,32 @@ package by.itAcademy.homeworks.oop.Task32Appliances;
 import java.util.Scanner;
 
 abstract class AppForKitchen implements Appliances {
-    protected String name, description;
+    final private String name;
+    protected String description;
     protected int area, height;
-
     Scanner console = new Scanner(System.in);
 
-    protected String getName() {
+    protected AppForKitchen(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
         return name;
     }
 
-    protected String description(){
+    public String description(){
         return description;
     }
 
-    protected void isOn() {
+    public void isOn() {
         System.out.println("Включить в розетку.");
     }
 
-    protected void isOff() {
+    public void isOff() {
         System.out.println("Выключить с розетки.");
     }
 
-    protected void action(){}
+    public void action(){}
 
     public void run(){}
 }

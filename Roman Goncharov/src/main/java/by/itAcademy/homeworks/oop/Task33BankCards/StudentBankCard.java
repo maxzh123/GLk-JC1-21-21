@@ -1,14 +1,14 @@
 package by.itAcademy.homeworks.oop.Task33BankCards;
 
 public class StudentBankCard extends DebitBankCard{
+    private String cardName = "Студенческая карта.";
 
     public StudentBankCard(String currency, int cardTerm){
         super(currency,cardTerm);
     }
 
     @Override
-    public String getCardName() {
-        cardName = "Студенческая карта.";
+    public String getCardName(){
         return cardName;
     }
 

@@ -7,21 +7,21 @@ package by.itAcademy.homeworks.arrays;
  и минимальным значениями.
  **/
 public class Task21 {
-    static int size = 13;
-    static int marks[] = new int[size];
+   // static int size = 13;
+    static int marks[] = new int[]{1,2,3,5,6,9,5,6,3,0,3};
     static int maxIndex = 0;
     static int minIndex = 0;
     public static void main(String[] args) {
-        for (int i = 0; i < size; i++) {
-            marks[i] = (int) (Math.random() * 10 + 1);
-            System.out.print(marks[i]+" ");
-        }
-        System.out.println();
+        //     for (int i = 0; i < size; i++) {
+        //       marks[i] = (int) (Math.random() * 10 + 1);
+        //     System.out.print(marks[i]+" ");
+        //   }
+        //  System.out.println();
         searchMaxMin();
         markMinMax();
     }
     public static void searchMaxMin() { //ищем индексы максимальных и минимальных значений (первые встречные)
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < marks.length; i++) {
             if (marks[maxIndex] < marks[i]) {
                 maxIndex = i;
             }

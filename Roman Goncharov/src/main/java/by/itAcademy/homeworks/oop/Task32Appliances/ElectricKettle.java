@@ -2,13 +2,8 @@ package by.itAcademy.homeworks.oop.Task32Appliances;
 
 public class ElectricKettle extends AppForKitchen{
 
-    @Override
-    public String getName() {
-        name = "Электрочайник.";
-        return name;
-    }
-
     public ElectricKettle (int area, int height){
+        super("Электрочайник.");
         this.area = area;
         this.height = height;
     }

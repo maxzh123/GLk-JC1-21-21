@@ -2,13 +2,8 @@ package by.itAcademy.homeworks.oop.Task32Appliances;
 
 public class Fridge extends AppForKitchen{
 
-    @Override
-    public String getName() {
-        name = "Холодильник.";
-        return name;
-    }
-
     public Fridge (int area, int height){
+        super("Холодильник.");
         this.area = area;
         this.height = height;
     }
