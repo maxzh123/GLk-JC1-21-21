@@ -13,7 +13,7 @@ import java.io.*;
 
 public class Task47 {
     public static void main(String[] args) {
-        File newFile = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//TextFile47");
+        File newFile = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//TextFile47.txt");
         readingAndDescriptionOfTheFile(newFile);
     }
 
