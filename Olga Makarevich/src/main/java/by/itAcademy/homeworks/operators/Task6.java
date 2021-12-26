@@ -17,7 +17,7 @@ public class Task6 {
 
     }
 
-    static boolean foundLast7(int a) {
+    public static boolean foundLast7(int a) {
         if (a % 10 == 7) {
             return true;
         } else {

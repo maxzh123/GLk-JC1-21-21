@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class Task22 {
     private static int i;
 
-    static void returnReversArray(int[] Array) {
+    static void returnReversArray(int[] array) {
         int temp;
-        for (int i = Array.length - 1, j = 0; i >= Array.length / 2; i--, j++) {
-            temp = Array[j];
-            Array[j] = Array[i];
-            Array[i] = temp;
+        for (int i = array.length - 1, j = 0; i >= array.length / 2; i--, j++) {
+            temp = array[j];
+            array[j] = array[i];
+            array[i] = temp;
         }
     }
 
@@ -21,7 +21,7 @@ public class Task22 {
         int sizeArray = in.nextInt();
 
         int[] Array = new int[sizeArray];
-        for (int i = 0; i < Array.length; i++);{
+        for (int i = 0; i < Array.length; i++) {
             Array[i] = (int) (Math.random() * 5 + 2);
         }
         System.out.println("Первоначальный массив: ");
