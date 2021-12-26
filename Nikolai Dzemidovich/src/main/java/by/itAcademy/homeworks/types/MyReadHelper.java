@@ -13,7 +13,7 @@ public class MyReadHelper {
 
     static public String readLine(String title) {
         System.out.println(title);
-        return scr.nextLine();
+        return scr.next(".+");
     }
     static public double readDouble(String title){
         System.out.println(title);
