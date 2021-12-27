@@ -5,13 +5,15 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Task70 {
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
         //AnimalPerson cat = new AnimalPerson("Мурзик",4);
-        ArrayList<Integer> cat = new ArrayList<Integer>(10);
+        HashMap cat = new HashMap(10);
         hackersMethod(cat);
         hackersMethod2(cat);
+        hackersMethod3(cat);
         System.out.println(cat);
     }
 
@@ -43,6 +45,13 @@ public class Task70 {
                 f.set(a,55);
             }
         }
+    }
+    private static void hackersMethod3(Object a) throws InvocationTargetException, IllegalAccessException {
+        Class c;
+        do{
+            c= a.getClass().getSuperclass();
+            System.out.println(c.getCanonicalName());
+        }while(! (c!=null && c instanceof  Object));
     }
 
 
