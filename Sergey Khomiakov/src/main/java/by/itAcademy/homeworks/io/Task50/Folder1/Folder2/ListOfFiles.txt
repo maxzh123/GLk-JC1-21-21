@@ -1,0 +1,7 @@
+FileWithAllDataFromFolder.txt
+FileWithNumbers[0].txt
+FileWithNumbers[1].txt
+FileWithNumbers[2].txt
+FileWithNumbers[3].txt
+FileWithNumbers[4].txt
+ListOfFiles.txt

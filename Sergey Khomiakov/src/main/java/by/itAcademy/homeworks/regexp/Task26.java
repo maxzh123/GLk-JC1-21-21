@@ -10,14 +10,18 @@ import java.util.regex.Pattern;
 public class Task26 {
     public static void main(String[] args) {
         String string = SimpleReader.readLine();
+        System.out.println("Вы ввели следующую строку: \n"  + string);
+        System.out.println("Общее количество знаков препинания в введенной строке равно " + countOfPunctuationMarksInText(string));
+
+    }
+
+    public static int countOfPunctuationMarksInText(String string){
         Pattern p = Pattern.compile("[.]{3,}|[!]+[?]+|[?]+[!]+|[!]+|[?]+|[.,;:\"'-]");
         Matcher m = p.matcher(string);
         int count = 0;
         while (m.find()){
             count++;
         }
-        System.out.println("Вы ввели следующую строку: \n"  + string);
-        System.out.println("Общее количество знаков препинания в введенной строке равно " + count);
-
+        return count;
     }
 }

@@ -11,13 +11,18 @@ import java.util.regex.Pattern;
 public class Task27 {
     public static void main(String[] args) {
         String string = SimpleReader.readLine();
+        System.out.println("Вы ввели следующую строку: \n"  + string);
+
+        System.out.println("Общее количество слов в введенной строке равно " + countOfWordsInText(string));
+    }
+
+    public static int countOfWordsInText(String string){
         Pattern p = Pattern.compile("[a-zA-Zа-яА-ЯёЁ]+[-]?[a-zA-Zа-яА-ЯёЁ]*");
         Matcher m = p.matcher(string);
         int count = 0;
         while (m.find()){
             count++;
         }
-        System.out.println("Вы ввели следующую строку: \n"  + string);
-        System.out.println("Общее количество слов в введенной строке равно " + count);
+        return count;
     }
 }
