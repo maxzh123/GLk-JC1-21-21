@@ -16,9 +16,9 @@ public class Task21Test {
             "5,3;2;2;1;1;2;3",
             "13,3;2;2;1;1;2;1;1;3;1;3;3"
     })
-    public void testArrayLength(int sum,@ConvertWith(IntArrayConverter.class)  Object[] data ){
+    public void testArrayLength(int sum,@ConvertWith(IntArrayConverter.class)  Integer[] data ){
         int[] arr=new int[data.length];
-        for(int i=0;i<data.length;i++){arr[i]=(int)data[i];};
+        for(int i=0;i<data.length;i++){arr[i]=data[i];};
         Assertions.assertEquals(sum, Task21.sumOfArrayElements(arr));
     }
 
