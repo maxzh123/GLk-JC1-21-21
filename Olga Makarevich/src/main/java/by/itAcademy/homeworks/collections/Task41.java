@@ -16,13 +16,12 @@ public class Task41 {
 
     static int foundMax(ArrayList<Integer> random) {
         int max = 0;
-        Iterator i = random.iterator();
+        Iterator<Integer> i = random.iterator();
         while (i.hasNext()) {
-            for (int j = 0; j < random.size(); j++) {
-                if (random.get(j) > max) {
-                    max = random.get(j);
+            Integer curr = i.next();
+                if (curr > max) {
+                    max = curr;
                 }
-            }
         }
         return max;
     }
