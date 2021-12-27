@@ -8,19 +8,19 @@ package by.itAcademy.homeworks.arrays;
  **/
 public class Task21 {
    // static int size = 13;
-    static int marks[] = new int[]{1,2,3,5,6,9,5,6,3,0,3};
     static int maxIndex = 0;
     static int minIndex = 0;
     public static void main(String[] args) {
+        int marks[] = new int[]{1,2,3,5,6,9,5,6,3,0,3};
         //     for (int i = 0; i < size; i++) {
         //       marks[i] = (int) (Math.random() * 10 + 1);
         //     System.out.print(marks[i]+" ");
         //   }
         //  System.out.println();
-        searchMaxMin();
-        markMinMax();
+        searchMaxMin(marks);
+        System.out.println(calcSum(marks));
     }
-    public static void searchMaxMin() { //ищем индексы максимальных и минимальных значений (первые встречные)
+    public static void searchMaxMin(int[] marks) { //ищем индексы максимальных и минимальных значений (первые встречные)
         for (int i = 0; i < marks.length; i++) {
             if (marks[maxIndex] < marks[i]) {
                 maxIndex = i;
@@ -30,7 +30,9 @@ public class Task21 {
             }
         }
     }
-    public static void markMinMax(){ //двойным циклом просчитываем расстояние между индексами
+
+
+    public static int calcSum(int[] marks){ //двойным циклом просчитываем расстояние между индексами
         int min=minIndex;            //с минимальными и максимальными значениями
         int max=maxIndex;
         for (int i=0;i<marks.length;i++){
@@ -52,6 +54,6 @@ public class Task21 {
         for (int i=min+1;i<max;i++){
             sum+=marks[i];
         }
-        System.out.println(sum);
+        return sum;
     }
 }

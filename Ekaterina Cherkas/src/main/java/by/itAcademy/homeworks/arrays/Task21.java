@@ -3,6 +3,10 @@ package by.itAcademy.homeworks.arrays;
 public class Task21 {
     public static void main(String[] args) {
         int[] array = {9, 3, 8, 7, 4, 8, 10, 8 , 7 , 1};
+        System.out.println(sumOfArrayElements(array));
+    }
+
+    public static int sumOfArrayElements(int[] array){
         int min = array[0];
         int max = array[0];
         int indexMin = 0;
@@ -23,6 +27,6 @@ public class Task21 {
         for (int i = Math.min(indexMin, indexMax)+1;i<Math.max(indexMin, indexMax);i++){
             summa = summa + array[i];
         }
-        System.out.println("Сумма элементов между максимальным и минимальным значениями: " + summa);
+        return summa;
     }
 }
