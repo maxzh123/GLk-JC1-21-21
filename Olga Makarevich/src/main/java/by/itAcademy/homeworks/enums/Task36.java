@@ -10,6 +10,6 @@ public class Task36 {
         Scanner scr = new Scanner(System.in);
         System.out.println("Введите сезон года");
         String season = scr.nextLine();
-        System.out.println(Season.getNextSeason(season));
+        System.out.println(Season.getNextSeason(Season.valueOfString(season)));
     }
 }

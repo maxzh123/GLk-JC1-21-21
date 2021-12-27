@@ -22,24 +22,27 @@ public enum Season {
         return countOfDays;
     }
 
-    static String getNextSeason(String season) {
+    static Season getNextSeason(Season season) {
         switch (season) {
-            case "winter":
-                System.out.println("Следующий сезон - весна");
-                break;
-            case "spring":
-                System.out.println("Следующий сезон - лето");
-                break;
-            case "summer":
-                System.out.println("Следующий сезон - осень");
-                break;
-            case "fall":
-                System.out.println("Следующий сезон - зима");
-                break;
+            case WINTER:
+                return SPRING;
+            case SPRING:
+                return SUMMER;
+            case SUMMER:
+                return FALL;
+            case FALL:
+                return WINTER;
             default:
-                System.out.println("Введите сезон правильно!");
+                System.out.println("Введите сезон правильно!!!");
                 break;
         }
         return season;
+    }
+
+    static public Season valueOfString(String str){
+        for(Season s:Season.values()){
+            if (s.name().equalsIgnoreCase(str)) return s;
+        }
+        return null;
     }
 }
