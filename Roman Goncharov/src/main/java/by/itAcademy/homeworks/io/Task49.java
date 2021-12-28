@@ -7,20 +7,26 @@ package by.itAcademy.homeworks.io;
  */
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Task49 {
+    private static final List<Integer> arrayList = new ArrayList<>();
+
     public static void main(String[] args) {
-        File newFile = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//File49.dat");
-        fileWrite(newFile);
-        readFile(newFile);
+        FileHandler fileHandler = new FileHandler("File49.dat");
+        File newFile = new File(fileHandler.getFilePath());
+        binaryFileWrite(newFile);
+        readBinaryFile(newFile);
+        System.out.println("Среднее арифмитическое чисел файла равно "+arithmeticMeanOfTheNumbers());
     }
 
-    public static void fileWrite(File file){
+    public static void binaryFileWrite(File file){
         try (DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(file)))) {
             for (int i = 0; i < 20; i++) {
                 dos.writeInt((int)(Math.random()*20+1));
             }
-            System.out.println("Запись в файл произведена успешно.");
+            System.out.println("Запись в файл "+file.getName()+" произведена успешно.");
         } catch (FileNotFoundException e){
             System.out.println("Файл не найден.");
         } catch (IOException e){
@@ -28,19 +34,17 @@ public class Task49 {
         }
     }
 
-    public static void readFile(File file){
+    public static void readBinaryFile(File file){
         try (DataInputStream dos = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
-            int number = dos.readInt(), count = 0, sum = 0;
+            int number = dos.readInt();
             System.out.println("Все прочитанные в файле числа:");
             while(true){
                 System.out.print(number + " ");
-                sum += number;
-                count++;
+                arrayList.add(number);
                 try{
                     number = dos.readInt();
                 } catch (EOFException e){
-                    System.out.println("\nСреднее арифмитическое чисел равно "+(double)sum/count);
-                    System.out.println("Файл полностью прочитан.");
+                    System.out.println("\nФайл "+file.getName()+" полностью прочитан.");
                     break;
                 }
             }
@@ -49,5 +53,14 @@ public class Task49 {
         } catch (IOException e){
             System.out.println("Ошибка. Что-то не так с файлом.");
         }
+    }
+
+    public static double arithmeticMeanOfTheNumbers(){
+        int sum = 0, count = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            sum += arrayList.get(i);
+            count++;
+        }
+        return (double)sum/count;
     }
 }

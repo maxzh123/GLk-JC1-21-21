@@ -8,7 +8,6 @@ package by.itAcademy.homeworks.io;
 
 import by.itAcademy.homeworks.collections.Task40;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -16,51 +15,45 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Task48 {
-    private static List<Integer> arrayList = new ArrayList<>();
+    private static final List<Integer> arrayList = new ArrayList<>();
 
     public static void main(String[] args) {
-        File newFile = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//TextFile48.txt");
-        operationsWithNumbersInFile(newFile);
+        FileHandler fileHandler = new FileHandler("TextFile48.txt");
+        String fileData = fileHandler.readFile();
+        findNumbersInFile(fileData);
+        displayingAllNumbers();
+        System.out.println("\nСумма всех чисел в файле: "+sumOfNumbersInFile());
+        displayingNumbersNoRepetitions();
     }
 
-    public static void operationsWithNumbersInFile(File file) {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))){
-            String str = bufferedReader.readLine();
-            Pattern pattern = Pattern.compile("\\d+");
-            while(str != null){
-                Matcher matcher = pattern.matcher(str);
-                while (matcher.find()){
-                    arrayList.add(Integer.parseInt(matcher.group()));
-                }
-                str = bufferedReader.readLine();
-            }
-            sumOfNumbers();
-            displayingNumbers();
-        } catch (FileNotFoundException e){
-            System.out.println("Файл не найден.");
-        } catch (IOException e){
-            System.out.println("Ошибка. Что-то не так с файлом.");
+    public static void findNumbersInFile(String str) {
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(str);
+        while (matcher.find()) {
+            arrayList.add(Integer.parseInt(matcher.group()));
         }
     }
 
-    public static int sumOfNumbers(){
+    public static int sumOfNumbersInFile() {
         ListIterator<Integer> it = arrayList.listIterator();
         Integer sum = 0;
-        while(it.hasNext()){
+        while (it.hasNext()) {
             Integer next = it.next();
             sum += next;
         }
         return sum;
     }
 
-    public static void displayingNumbers(){
-        System.out.println("Все числа в файле:");
-        for(Integer number: arrayList){
+    public static void displayingAllNumbers() {
+        System.out.print("Все числа в файле: ");
+        for (Integer number : arrayList) {
             System.out.print(number + " ");
         }
-        System.out.println("\nСумма найденных в файле чисел: "+sumOfNumbers());
-        System.out.println("Все числа в файле без повторений:");
-        for (Integer number: Task40.removeRepetitions(arrayList)){
+    }
+
+    public static void displayingNumbersNoRepetitions() {
+        System.out.print("Числа в файле без повторений: ");
+        for (Integer number : Task40.removeRepetitions(arrayList)) {
             System.out.print(number + " ");
         }
     }
