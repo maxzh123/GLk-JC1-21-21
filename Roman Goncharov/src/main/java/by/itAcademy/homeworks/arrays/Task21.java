@@ -14,25 +14,13 @@ public class Task21 {
     }
 
     public static int calcSum(int[] array){
-        int indexMax = Task20.indexMaxElement(array);
+        int indexMax = IndexSearcher.getIndexMax(array);
         System.out.println("Максимальный элемент массива: " + array[indexMax]);
         System.out.println("Индекс максимального элемента: " + indexMax);
-        int indexMin = indexMinElement(array);
+        int indexMin = IndexSearcher.getIndexMin(array);
         System.out.println("Минимальный элемент массива: " + array[indexMin]);
         System.out.println("Индекс минимального элемента: " + indexMin);
         return sumElementsOfArray(array, indexMax, indexMin);
-    }
-
-    public static int indexMinElement(int[] array) {
-        int indexMin = 0;
-        int min = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < min) {
-                min = array[i];
-                indexMin = i;
-            }
-        }
-        return indexMin;
     }
 
     public static int sumElementsOfArray (int[] array, int indexMax, int indexMin) {
