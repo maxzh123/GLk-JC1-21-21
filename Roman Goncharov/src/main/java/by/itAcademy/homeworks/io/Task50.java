@@ -11,31 +11,34 @@ import java.io.*;
 
 public class Task50 {
     public static void main(String[] args) {
-        FileHandler.setNewPath("Package50"+File.separator+"Package1"+File.separator+"Package2"+File.separator);
-        FileHandler fh1 = new FileHandler("File1.txt"), fh2 = new FileHandler("File2.txt"),
-        fh3 = new FileHandler("File3.txt"), fh4 = new FileHandler("File4.txt"),
-        fh5 = new FileHandler("File5.txt");
-        String[] fileData = {fh1.readFile(),fh2.readFile(),fh3.readFile(),fh4.readFile(),fh5.readFile()};
-        writeAllFilesToOneFile(fileData,"CommonFile.txt");
-        writeFileNamesToFile(FileHandler.getDirectoryName(),"ListFile.txt");
+        FileHandler.setNewPathTask50();
+        int fileCount = 5; // Кол-во читаемых файлов
+        FileHandler fileHandlerOne = new FileHandler("CommonFile.txt");
+        fileHandlerOne.fileWrite(getContentOfFiles(fileCount));
+        FileHandler fileHandlerTwo = new FileHandler("ListFile.txt");
+        fileHandlerTwo.fileWrite(getListOfFilesInDirectory(FileHandler.getDirectoryPath()));
     }
 
-    public static void writeAllFilesToOneFile(String[] files, String fileNameToWrite) {
-        FileHandler fileHandler = new FileHandler(fileNameToWrite);
-        StringBuilder commonString = new StringBuilder();
-        for(String file: files){
-            commonString.append(file);
-        }
-        fileHandler.fileWrite(commonString.toString());
-    }
-
-    public static void writeFileNamesToFile(String nameDirectory, String fileNameToWrite) {
+    public static String getListOfFilesInDirectory(String nameDirectory) {
         File directory = new File(nameDirectory);
-        FileHandler fileHandler = new FileHandler(fileNameToWrite);
         StringBuilder listString = new StringBuilder();
-        for (File file : directory.listFiles()) {
-            listString.append(file.getName()+"\n");
+        try {
+            for (File file : directory.listFiles()) {
+                listString.append(file.getName() + "\n");
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Каталог не содержит файлов. Проверьте путь : " + nameDirectory);
         }
-        fileHandler.fileWrite(listString.toString());
+        return listString.toString();
+    }
+
+    public static String getContentOfFiles(int number) {
+        FileHandler[] fileHandlers = new FileHandler[number];
+        StringBuilder listString = new StringBuilder();
+        for (int i = 0; i < number; i++) {
+            fileHandlers[i] = new FileHandler("File" + (i + 1) + ".txt");
+            listString.append(fileHandlers[i].readFile());
+        }
+        return listString.toString();
     }
 }

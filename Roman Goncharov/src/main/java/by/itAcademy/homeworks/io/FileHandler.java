@@ -12,18 +12,11 @@ public class FileHandler {
         this.fileName = fileName;
     }
 
-    public static void setNewPath(String directory){
-        boolean bool = new File(path + directory).isDirectory();
-        if (bool){
-            path += directory;
-        }
+    public static void setNewPathTask50() {
+        path += "Package50" + File.separator + "Package1" + File.separator + "Package2" + File.separator;
     }
 
-    public String getFileName(){
-        return fileName;
-    }
-
-    public static String getDirectoryName(){
+    public static String getDirectoryPath() {
         return path;
     }
 
@@ -51,7 +44,7 @@ public class FileHandler {
     public void fileWrite(String str) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(getFilePath()))) {
             bw.write(str);
-            System.out.println("Запись в файл "+fileName+" произведена успешно.");
+            System.out.println("Запись в файл " + fileName + " произведена успешно.");
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден: " + fileName);
         } catch (IOException e) {
