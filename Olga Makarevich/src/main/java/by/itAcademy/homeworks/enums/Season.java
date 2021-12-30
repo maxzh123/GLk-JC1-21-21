@@ -22,27 +22,54 @@ public enum Season {
         return countOfDays;
     }
 
-    static Season getNextSeason(Season season) {
-        switch (season) {
+    static Season getNextSeason(Season season1) {   // почему этот метод нельзя сделать void?
+        switch (season1) {
             case WINTER:
-                return SPRING;
+                System.out.println("Следующий сезон - весна");
+                break;
             case SPRING:
-                return SUMMER;
+                System.out.println("Следующий сезон - лето");
+                break;
             case SUMMER:
-                return FALL;
+                System.out.println("Следующий сезон - осень");
+                break;
             case FALL:
-                return WINTER;
+                System.out.println("Следующий сезон - зима");
+                break;
             default:
-                System.out.println("Введите сезон правильно!!!");
+                System.out.println("Введите сезон правильно!");
                 break;
         }
-        return season;
+        return season1;
     }
 
-    static public Season valueOfString(String str){
-        for(Season s:Season.values()){
-            if (s.name().equalsIgnoreCase(str)) return s;
+    public static Season valueOfString (String string) {    // если мы возвращаем null, почему нельзя сделать void?
+        for (Season season2 : Season.values()) {
+            if (season2.name().equalsIgnoreCase(string)) {
+                return season2;
+            }
         }
         return null;
+    }
+
+    static Season getNumberOfDay(Season season1) {   // почему этот метод нельзя сделать void?
+        switch (season1) {
+            case WINTER:
+                System.out.println("Количество дней в сезоне - " + Season.WINTER.countOfDays);
+                break;
+            case SPRING:
+                System.out.println("Количество дней в сезоне - " + Season.SPRING.countOfDays);
+                break;
+            case SUMMER:
+                System.out.println("Количество дней в сезоне - " + Season.SUMMER.countOfDays);
+                break;
+            case FALL:
+                System.out.println("Количество дней в сезоне - " + Season.FALL.countOfDays);
+                break;
+            default:
+                System.out.println("Введите сезон правильно!");
+                break;
+        }
+        return season1;
     }
 }
