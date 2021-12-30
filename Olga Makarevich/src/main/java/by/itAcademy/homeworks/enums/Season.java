@@ -72,4 +72,19 @@ public enum Season {
         }
         return season1;
     }
+    @Override
+    public String toString() {
+        switch (this) {
+            case WINTER:
+                return "Зима";
+            case SPRING:
+                return "Весна";
+            case SUMMER:
+                return "Лето";
+            case FALL:
+                return "Осень";
+        }
+        return "Нет такого сезона";
+    }
+
 }
