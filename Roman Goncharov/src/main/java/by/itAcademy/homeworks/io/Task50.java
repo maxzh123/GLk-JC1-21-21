@@ -11,46 +11,31 @@ import java.io.*;
 
 public class Task50 {
     public static void main(String[] args) {
-        String path1 = ".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//Package50//Package1//Package2//File1.txt";
-        String path2 = ".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//Package50//Package1//Package2//File2.txt";
-        String path3 = ".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//Package50//Package1//Package2//File3.txt";
-        String path4 = ".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//Package50//Package1//Package2//File4.txt";
-        String path5 = ".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//Package50//Package1//Package2//File5.txt";
-        File[] arrayFiles = {new File(path1), new File(path2), new File(path3), new File(path4), new File(path5)};
-        writeAllFilesToOneFile(arrayFiles);
-        writeFileNamesToFile(new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//Package50//Package1//Package2"));
+        FileHandler.setNewPath("Package50"+File.separator+"Package1"+File.separator+"Package2"+File.separator);
+        FileHandler fh1 = new FileHandler("File1.txt"), fh2 = new FileHandler("File2.txt"),
+        fh3 = new FileHandler("File3.txt"), fh4 = new FileHandler("File4.txt"),
+        fh5 = new FileHandler("File5.txt");
+        String[] fileData = {fh1.readFile(),fh2.readFile(),fh3.readFile(),fh4.readFile(),fh5.readFile()};
+        writeAllFilesToOneFile(fileData,"CommonFile.txt");
+        writeFileNamesToFile(FileHandler.getDirectoryName(),"ListFile.txt");
     }
 
-    public static void writeAllFilesToOneFile(File[] files) {
-        File fileForWrite = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//Package50//Package1//Package2//CommonFile.txt");
-        String content = "";
-        for (File file : files) {
-            try (BufferedReader br = new BufferedReader(new FileReader(file)); BufferedWriter bw = new BufferedWriter(new FileWriter(fileForWrite))) {
-                String str = br.readLine();
-                while (str != null) {
-                    content += str + "\n";
-                    str = br.readLine();
-                }
-                bw.write(content);
-            } catch (FileNotFoundException e) {
-                System.out.println("Файл не найден: " + file.getName());
-            } catch (IOException e) {
-                System.out.println("Ошибка. Что-то не так с файлом: " + file.getName());
-            }
+    public static void writeAllFilesToOneFile(String[] files, String fileNameToWrite) {
+        FileHandler fileHandler = new FileHandler(fileNameToWrite);
+        StringBuilder commonString = new StringBuilder();
+        for(String file: files){
+            commonString.append(file);
         }
+        fileHandler.fileWrite(commonString.toString());
     }
 
-    public static void writeFileNamesToFile(File directory) {
-        File fileForWrite = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//Package50//Package1//Package2//ListFile.txt");
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileForWrite))) {
-            for (File file : directory.listFiles()) {
-                bw.write(file.getName());
-                bw.newLine();
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден: " + fileForWrite.getName());
-        } catch (IOException e) {
-            System.out.println("Ошибка. Что-то не так с файлом: " + fileForWrite.getName());
+    public static void writeFileNamesToFile(String nameDirectory, String fileNameToWrite) {
+        File directory = new File(nameDirectory);
+        FileHandler fileHandler = new FileHandler(fileNameToWrite);
+        StringBuilder listString = new StringBuilder();
+        for (File file : directory.listFiles()) {
+            listString.append(file.getName()+"\n");
         }
+        fileHandler.fileWrite(listString.toString());
     }
 }
