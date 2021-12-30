@@ -5,7 +5,7 @@ package by.itAcademy.homeworks.operators;
 import java.util.Scanner;
 
 public class Task9 {
-    public static void main(String[] args) {
+    public static long main(String[] args) {
         Scanner print = new Scanner(System.in);
         System.out.println("Введите день");
         int a = print.nextInt();
@@ -44,5 +44,6 @@ public class Task9 {
         else {
             System.out.println("Дата введена некорректно!");
         }
+        return 0;
     }
 }

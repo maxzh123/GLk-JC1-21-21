@@ -9,9 +9,12 @@ public class Task36 {
     public static void main(String[] args) {
         Scanner scr = new Scanner(System.in);
         System.out.println("Введите сезон года");
-        String season = scr.nextLine();
-        System.out.println(Season.getNextSeason(Season.valueOfString(season)));
+        try {
+            String season = scr.nextLine();
+            Season.getNextSeason(Season.valueOfString(season));
+        } catch (NullPointerException e) {
+            System.out.println("Нет такого сезона");
+        }
+
     }
 }
-
-// при неправильном вводе наименования сезона не работает - объясните, пожалуйста почему

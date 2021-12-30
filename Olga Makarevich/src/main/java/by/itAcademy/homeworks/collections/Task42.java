@@ -13,7 +13,7 @@ public class Task42 {
         Scanner scr = new Scanner(System.in);
         System.out.println("Введите текст");
         String enter = scr.nextLine();
-        Map<String, Integer> text = new HashMap<String, Integer>();
+        Map<String, Integer> text = new HashMap<>();
         System.out.println(text.put(enter,count(enter)));
         System.out.println(text.values());
         System.out.println(text.keySet());
