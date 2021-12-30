@@ -13,3 +13,5 @@ public class Task36 {
         System.out.println(Season.getNextSeason(Season.valueOfString(season)));
     }
 }
+
+// при неправильном вводе наименования сезона не работает - объясните, пожалуйста почему
