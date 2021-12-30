@@ -4,6 +4,7 @@ package by.itAcademy.homeworks.collections;
 //Найти самую высокую оценку с использованием итератора.
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 
 public class Task41 {
@@ -14,9 +15,9 @@ public class Task41 {
         System.out.println("Самая высокая оценка = " + foundMax(listOfStudentsAssessment));
     }
 
-    static int foundMax(ArrayList<Integer> random) {
+    static int foundMax(Collection<Integer> collectionOfInteger) {
         int max = 0;
-        Iterator<Integer> i = random.iterator();
+        Iterator<Integer> i = collectionOfInteger.iterator();
         while (i.hasNext()) {
             Integer curr = i.next();
                 if (curr > max) {

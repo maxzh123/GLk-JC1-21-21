@@ -18,7 +18,7 @@ public class Task26 {
     }
 
     static int countAllPunctuationMarks (String s) {
-        Pattern newPattern = Pattern.compile("[(.*),;:(!*)(/?*)(!*?*)(?*!*)]+"); // не умею засунуть сюда -
+        Pattern newPattern = Pattern.compile("[(.*),;:(!*)(/?*)(!*?*)(?*!*)\\-?]+");
         Matcher newMatcher = newPattern.matcher(s);
         int count = 0;
         while (newMatcher.find()) {
