@@ -15,22 +15,30 @@ public class Task51 {
     public static void main(String[] args) {
         Person[] people = new Person[10];
         for (int i = 0; i < people.length; i++) {
-            people[i] = new Person(RandomVariables.randomName(),RandomVariables.randomSurname(),RandomVariables.randomAge());
+            people[i] = new Person(RandomVariables.randomName(), RandomVariables.randomSurname(), RandomVariables.randomAge());
         }
-        fileWriteInfo(people);
+        FileHandler fileHandlerText = new FileHandler("TextFile51.txt");
+        fileHandlerText.fileWrite(textDescriptionOfObjects(people));
+        FileHandler fileHandlerBinary = new FileHandler("BinaryFile51.bin");
+        writeObjectToFile(people, fileHandlerBinary.getFilePath());
     }
 
-    public static void fileWriteInfo(Object[] objects){
-        File fileForWrite = new File(".//Roman Goncharov//src//main//java//by//itAcademy//homeworks//io//TextFile51.txt");
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileForWrite))) {
-            for (int i = 0; i < objects.length; i++) {
-                bw.write(String.valueOf(objects[i]));
-                bw.newLine();
-            }
+    public static String textDescriptionOfObjects(Object[] objects) {
+        StringBuilder listString = new StringBuilder();
+        for (Object obj : objects) {
+            listString.append(obj).append("\n");
+        }
+        return listString.toString();
+    }
+
+    public static void writeObjectToFile(Object[] objects, String fileName) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
+            oos.writeObject(objects);
+            System.out.println("Запись в файл " + fileName + " произведена успешно.");
         } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден: " + fileForWrite.getName());
+            System.out.println("Файл не найден.");
         } catch (IOException e) {
-            System.out.println("Ошибка. Что-то не так с файлом: " + fileForWrite.getName());
+            System.out.println("Ошибка. Что-то не так с файлом.");
         }
     }
 }

@@ -24,7 +24,7 @@ public class Task50 {
         StringBuilder listString = new StringBuilder();
         try {
             for (File file : directory.listFiles()) {
-                listString.append(file.getName() + "\n");
+                listString.append(file.getName()).append("\n");
             }
         } catch (NullPointerException e) {
             System.out.println("Каталог не содержит файлов. Проверьте путь : " + nameDirectory);
