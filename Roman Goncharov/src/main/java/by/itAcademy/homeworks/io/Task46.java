@@ -10,20 +10,20 @@ import java.io.File;
 public class Task46 {
     public static void main(String[] args) {
         File path = new File(".");
-        try {
-            contentOutput(path);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
+        outputListOfDirectory(path);
+        outputListOfFiles(path);
     }
 
-    public static void contentOutput(File directory) throws NullPointerException {
+    public static void outputListOfDirectory(File directory) {
         System.out.println("Каталоги:");
         for (File file : directory.listFiles()) {
             if (file.isDirectory()) {
                 System.out.println(file.getName());
             }
         }
+    }
+
+    public static void outputListOfFiles(File directory) {
         System.out.println("Файлы:");
         for (File file : directory.listFiles()) {
             if (file.isFile()) {
