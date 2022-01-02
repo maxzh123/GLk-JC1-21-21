@@ -4,9 +4,10 @@ import java.util.List;
 
 public class MyThread52 extends Thread {
     public void run() {
-        System.out.println(getName() + " создал коллекцию: " + Task52.arrayList +
+        List<Integer> arrayListForThread = Task52.creationAndFillingList(10);
+        System.out.println(getName() + " создал коллекцию: " + arrayListForThread +
                 " и высчитал среднее арифмитическое ёё чисел равное "
-                + arithmeticMeanOfTheNumbers(Task52.arrayList));
+                + arithmeticMeanOfTheNumbers(arrayListForThread));
     }
 
     public static double arithmeticMeanOfTheNumbers(List<Integer> arrayList) {

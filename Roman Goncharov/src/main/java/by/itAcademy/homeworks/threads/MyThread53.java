@@ -13,9 +13,10 @@ public class MyThread53 implements Runnable {
 
     @Override
     public void run() {
-        int indexMaxElement = Task20.indexMaxElement(Task53.array);
+        int[] arrayForThread = Task53.creationAndFillingTheArray(10);
+        int indexMaxElement = Task20.indexMaxElement(arrayForThread);
         System.out.println(myThread.getName() + " создал массив: "
-                + Arrays.toString(Task53.array) +
-                " и нашёл его максимальный элемент равный: " + Task53.array[indexMaxElement]);
+                + Arrays.toString(arrayForThread) +
+                " и нашёл его максимальный элемент равный: " + arrayForThread[indexMaxElement]);
     }
 }

@@ -10,8 +10,6 @@ package by.itAcademy.homeworks.threads;
 import java.util.Random;
 
 public class Task53 {
-    static int[] array;
-
     public static void main(String[] args) {
         int amountThreads = 10;
         Thread[] threadsArray = new Thread[amountThreads];
@@ -28,7 +26,6 @@ public class Task53 {
 
     public static void startingThreads(Thread[] threadsArray) {
         for (Thread thread : threadsArray) {
-            fillingTheArray();
             thread.start();
             try {
                 thread.join();
@@ -38,11 +35,12 @@ public class Task53 {
         }
     }
 
-    public static void fillingTheArray() {
+    public static int[] creationAndFillingTheArray(int amountOfNumbers) {
         Random randomNumber = new Random();
-        array = new int[10];
+        int[] array = new int[amountOfNumbers];
         for (int i = 0; i < array.length; i++) {
             array[i] = randomNumber.nextInt(500);
         }
+        return array;
     }
 }

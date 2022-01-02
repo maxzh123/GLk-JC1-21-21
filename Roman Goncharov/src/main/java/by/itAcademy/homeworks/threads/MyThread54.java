@@ -15,7 +15,8 @@ public class MyThread54 implements Runnable {
 
     @Override
     public void run() {
-        fileWrite(Arrays.toString(Task53.array));
+        int[] arrayForThread = Task53.creationAndFillingTheArray(10);
+        fileWrite(Arrays.toString(arrayForThread));
     }
 
     public void fileWrite(String str) {

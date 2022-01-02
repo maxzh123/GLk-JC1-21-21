@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Task52 {
-    static List<Integer> arrayList;
-
     public static void main(String[] args) {
         int amountThreads = 10;
         Thread[] threadsArray = new Thread[amountThreads];
@@ -28,7 +26,6 @@ public class Task52 {
 
     public static void startingThreads(Thread[] threadsArray) {
         for (Thread thread : threadsArray) {
-            creationAndFillingList(10);
             thread.start();
             try {
                 thread.join();
@@ -38,11 +35,12 @@ public class Task52 {
         }
     }
 
-    public static void creationAndFillingList(int amountOfNumbers) {
+    public static List<Integer> creationAndFillingList(int amountOfNumbers) {
+        List<Integer> arrayList = new ArrayList<>();
         Random random = new Random();
-        arrayList = new ArrayList<>();
         for (int i = 0; i < amountOfNumbers; i++) {
             arrayList.add(random.nextInt(100));
         }
+        return arrayList;
     }
 }
