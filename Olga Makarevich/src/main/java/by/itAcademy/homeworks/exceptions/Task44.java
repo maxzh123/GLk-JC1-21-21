@@ -4,26 +4,38 @@ package by.itAcademy.homeworks.exceptions;
 // Сгенерировать код, который будет выбрасывать его и обрабатывать.
 // Результат работы программы вывести на экран.
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class Task44 {
-    public static void main(String[] args) {
-        int[] a = new int[10];
-        for (int i = 0; i < a.length; i++) {
-            a[i] = (int) (Math.random() * 10 + 1);
-        }
-        System.out.println(Arrays.toString(a));
+    static class Flower {
+        boolean isWater;
+        String name;
 
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == 9) {
-                try {
-                    throw new MyException("Цифра 9 не любимая");
-                } catch (MyException e) {
-                    System.out.println("Массив должен исключать цифру 9");
-                }
+        Flower(String name) {
+            this.name = name;
+        }
+
+        public void waterFlower() {
+            System.out.println("Цветок полит");
+            this.isWater = true;
+        }
+
+        public void bloomsFlower() throws MyException {
+            if (isWater) {
+                System.out.println("Цветок расцветет");
+            } else {
+                throw new MyException();
             }
+        }
+
+        public static void main(String[] args) {
+            Flower cactus = new Flower("Кактус");
+            //cactus.waterFlower();
+            try {
+                cactus.bloomsFlower();
+            } catch (MyException e) {
+                System.out.println(e);
+            }
+
+
         }
     }
 }
-//
