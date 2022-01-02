@@ -14,7 +14,7 @@ public class Task26 {
 
         int count = 0;
 
-        Pattern p1 = Pattern.compile("[,.:;!?\"'-]");
+        Pattern p1 = Pattern.compile("[\\p{Punct}]");
         Matcher m1 = p1.matcher(text);
 
         while(m1.find()){
