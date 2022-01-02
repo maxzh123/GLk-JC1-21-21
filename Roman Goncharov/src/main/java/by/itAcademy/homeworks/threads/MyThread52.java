@@ -1,24 +1,12 @@
 package by.itAcademy.homeworks.threads;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MyThread52 extends Thread {
-    private final static Random random = new Random();
-
     public void run() {
-        System.out.println(getName() + " создал коллекцию: " + creationAndFillingList(10) +
+        System.out.println(getName() + " создал коллекцию: " + Task52.arrayList +
                 " и высчитал среднее арифмитическое ёё чисел равное "
-                + arithmeticMeanOfTheNumbers(creationAndFillingList(10)));
-    }
-
-    public static List<Integer> creationAndFillingList(int amountOfNumbers) {
-        List<Integer> arrayList = new ArrayList<>();
-        for (int i = 0; i < amountOfNumbers; i++) {
-            arrayList.add(random.nextInt(100));
-        }
-        return arrayList;
+                + arithmeticMeanOfTheNumbers(Task52.arrayList));
     }
 
     public static double arithmeticMeanOfTheNumbers(List<Integer> arrayList) {

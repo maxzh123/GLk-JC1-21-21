@@ -7,6 +7,9 @@ public class FileHandler {
             "main" + File.separator + "java" + File.separator + "by" + File.separator + "itAcademy" + File.separator +
             "homeworks" + File.separator + "io" + File.separator;
     private String fileName;
+    private static String path54 = "." + File.separator + "Roman Goncharov" + File.separator + "src" + File.separator +
+            "main" + File.separator + "java" + File.separator + "by" + File.separator + "itAcademy" + File.separator +
+            "homeworks" + File.separator + "threads" + File.separator;
 
     public FileHandler(String fileName) {
         this.fileName = fileName;
@@ -18,6 +21,10 @@ public class FileHandler {
 
     public static String getDirectoryPath() {
         return path;
+    }
+
+    public static String getDirectoryPath54() {
+        return path54;
     }
 
     public String getFilePath() {
