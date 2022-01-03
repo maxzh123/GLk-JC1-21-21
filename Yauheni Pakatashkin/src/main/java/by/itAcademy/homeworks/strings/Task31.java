@@ -11,7 +11,7 @@ public class Task31 {
         String s1 = "";
         System.gc();
         long time = System.currentTimeMillis();
-        for (int i = 0; i<100000; i++){
+        for (int i = 0; i<1000000; i++){
             s1+=a;
         }
         long time1 = System.currentTimeMillis();
@@ -22,7 +22,7 @@ public class Task31 {
         StringBuilder str = new StringBuilder();
         System.gc();
         long time = System.currentTimeMillis();
-        for (int i = 0; i<100000; i++){
+        for (int i = 0; i<1000000; i++){
             str.append(a);
         }
         long time1 = System.currentTimeMillis();
