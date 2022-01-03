@@ -33,7 +33,7 @@ public class Task44 {
                 cactus.bloomsFlower();
             } catch (MyException e) {
                 //System.out.println(e);
-                e.getMessage();
+                System.out.println(e.getMessage());
             }
 
 
