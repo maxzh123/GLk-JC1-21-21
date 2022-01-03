@@ -22,7 +22,7 @@ public class Task44 {
             if (isWater) {
                 System.out.println("Цветок расцветет");
             } else {
-                throw new MyException();
+                throw new MyException("Цветок не yt расцветет");
             }
         }
 
@@ -32,7 +32,8 @@ public class Task44 {
             try {
                 cactus.bloomsFlower();
             } catch (MyException e) {
-                System.out.println(e);
+                //System.out.println(e);
+                e.getMessage();
             }
 
 
