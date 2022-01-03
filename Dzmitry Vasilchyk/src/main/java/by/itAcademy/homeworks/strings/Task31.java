@@ -14,12 +14,11 @@ public class Task31 {
         }
         System.out.println("string+ cost time: " + (System.currentTimeMillis() - start) + "ms");
         start = System.currentTimeMillis();
+        StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 1000000; i++) {
-            StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append(a);
-            stringBuilder.append(b);
-            String string = stringBuilder.toString();
         }
+        String string = stringBuilder.toString();
         System.out.println("stringbuilder cost time: " + (System.currentTimeMillis() - start) + "ms");
     }
 
