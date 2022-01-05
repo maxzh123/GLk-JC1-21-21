@@ -41,3 +41,4 @@ public class Task49 {
             return result;
         }
 }
+

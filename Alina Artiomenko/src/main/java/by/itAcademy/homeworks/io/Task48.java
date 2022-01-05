@@ -29,6 +29,7 @@ public class Task48 {
         System.out.println("Список без дубликатов: " + removeDuplicateValues(listOfNumber));
     }
 
+
     //get ArrayList of numbers from a text
     public static ArrayList<Integer> getNumbersFromText (List<String> list){
         ArrayList<Integer> listOfNumber = new ArrayList<>();

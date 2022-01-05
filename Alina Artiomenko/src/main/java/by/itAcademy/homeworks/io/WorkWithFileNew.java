@@ -177,6 +177,7 @@ public class WorkWithFileNew {
         finally {
             try {
                 writer.close();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

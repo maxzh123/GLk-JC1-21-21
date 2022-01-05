@@ -22,7 +22,6 @@ public class Task47 {
         task47.printTextFromFile(task47.readFile());
         System.out.println("\nКол-во знаков препинания: " + getNumberOfCharacters(task47.readFile()));
         System.out.println("Кол-во слов: " + getNumbOfWord(task47.readFile()));
-
     }
 
     public static int getNumberOfCharacters(List<String> list){

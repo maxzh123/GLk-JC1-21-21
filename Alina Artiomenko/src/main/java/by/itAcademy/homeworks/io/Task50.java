@@ -25,6 +25,7 @@ public class Task50 {
 
         List<WorkWithFileNew> listOfNameFiles = createSomeFile("Task50",task50Direct.getPath(),valueOfFile);
 
+
         for (WorkWithFileNew txtFile : listOfNameFiles){
             txtFile.writeToFile(Task49.getRandomNumbers(valueOfNumber));
         }
