@@ -17,7 +17,9 @@ public class Task51 {
     public static void main(String[] args) {
         String path = "Sergey Khomiakov/src/main/java/by/itAcademy/homeworks/io/";
         File file = new File(path + "FileForTask51.txt");
+        File file1 = new File(path + "FileForObject51.dat");
         Writer.writerOfFiles(file, getListOfPeople(10));    //записываем массив случайных людей в файл
+        Writer.writerOfObject(file1, getListOfPeople(10));
 
     }
 
