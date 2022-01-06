@@ -12,7 +12,7 @@ enum SeasonDay {
     Spring(91),
     Summer(92),
     Autumn(91);
-    int countOfDays;
+    private int countOfDays;
     SeasonDay(int countOfDays) {
         this.countOfDays = countOfDays;
     }
