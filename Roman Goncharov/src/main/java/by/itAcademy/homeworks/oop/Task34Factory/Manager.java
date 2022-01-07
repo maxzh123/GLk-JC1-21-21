@@ -17,8 +17,8 @@ public abstract class Manager extends LaborOrganizationDepartment implements Emp
         return age;
     }
 
-    public Manager(String workSchedule, String workplace, String wage, String position) {
-        super(workSchedule, workplace, wage);
+    public Manager(String workSchedule, String workplace, String wage, String position, String contract) {
+        super(workSchedule, workplace, wage, contract);
         this.position = position;
     }
 
@@ -27,6 +27,7 @@ public abstract class Manager extends LaborOrganizationDepartment implements Emp
         setWorkSchedule();
         setWorkplace();
         setWage();
+        concludeContract();
         payroll();
     }
 }
