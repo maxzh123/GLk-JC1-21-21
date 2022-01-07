@@ -16,27 +16,19 @@ import java.io.IOException;
 public class Task47 {
 
     public static void main(String[] args) {
-        File file = new File ("Sergey Khomiakov/src/main/java/by/itAcademy/homeworks/io/FileWithTextForTask47.txt");
-        getNumberOfWordsAndPunctuationMarksFromFile(file);
-    }
+        ReadWriteFileAssistant task47 = new ReadWriteFileAssistant("FileWithTextForTask47.txt");
+        String textForExample = "Класс ObjectInputStream отвечает за обратный процесс - чтение ранее сериализованных " +
+                "данных из потока. В конструкторе он принимает ссылку на поток ввода:";
+        task47.writeTextInFile(textForExample);
+        String text = task47.readTextFromFile();
 
-    public static void getNumberOfWordsAndPunctuationMarksFromFile(File file){
-        StringBuilder text = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))){
-            String tmp = reader.readLine();
-            while (tmp !=null){
-                text.append(tmp);
-                tmp = reader.readLine();
-            }
-            int numberOfPunctuationMarks = Task26.countOfPunctuationMarksInText(text.toString());
-            int numberOfWords = Task27.countOfWordsInText(text.toString());
-            System.out.println("Количество слов в тексте: " + numberOfWords);
-            System.out.println("Количество знаков препинания в тексте: " + numberOfPunctuationMarks);
-        } catch (IOException ex){
-            System.out.println(ex.getMessage());
-        }
+        //берем метод подсчета знаков препинания в тексте из задания 26
+        int numberOfPunctuationMarks = Task26.countOfPunctuationMarksInText(text);
+        //берем метод подсчета количества слов в тексте из задания 27
+        int numberOfWords = Task27.countOfWordsInText(text);
+
+        System.out.println("Количество слов в тексте: " + numberOfWords);
+        System.out.println("Количество знаков препинания в тексте: " + numberOfPunctuationMarks);
 
     }
-
-
 }

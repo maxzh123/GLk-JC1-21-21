@@ -19,27 +19,26 @@ public class Task48 {
     private static List<Integer> arrayList = new ArrayList<>();
 
     public static void main(String[] args) {
-        File file = new File("Sergey Khomiakov/src/main/java/by/itAcademy/homeworks/io/FileWithNumbersForTask48.txt");
-        getNumberFromTextDoSumAndRemoveAllRepeats(file);
+        ReadWriteFileAssistant task48 = new ReadWriteFileAssistant("FileWithNumbersForTask48.txt");
+        String textForWriting = "По умолчанию сериализуются все  3 переменные объекта. Однако," +
+                " возможно, мы хотим, 1 чтобы некоторые 2 поля были исключены из сериализации. Для этого они 10 " +
+                "3 должны быть объявлены с 2 модификатором transient 10.";
+        task48.writeTextInFile(textForWriting);
+
+        String text = task48.readTextFromFile();
+        getNumbersFromText(text);
+
+        System.out.println("Список чисел из текста:\n" + arrayList);
+        System.out.println("Сумма значений:\n" + getSum(arrayList));
+        System.out.println("Список чисел из текста без повторов:\n" + Task40.helperForRemoveRepeats(arrayList));
     }
 
-    public static void getNumberFromTextDoSumAndRemoveAllRepeats(File file){
-        try(BufferedReader reader = new BufferedReader(new FileReader(file))){
-            String text = reader.readLine();
-            Pattern pattern = Pattern.compile("[0-9]+");
-            while (text!=null){
-                Matcher matcher = pattern.matcher(text);
-                while (matcher.find()) {
-                    arrayList.add(Integer.parseInt(matcher.group()));}
-                text = reader.readLine();
-            }
-            System.out.println("Список чисел из текста:\n" + arrayList);
-            System.out.println("Сумма значений:\n" + getSum(arrayList));
-            System.out.println("Список чисел из текста без повторов:\n" + Task40.helperForDeleteRepeats(arrayList));
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+    public static void getNumbersFromText(String text){
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(text);
+            while (matcher.find()) {
+                arrayList.add(Integer.parseInt(matcher.group()));}
+     }
 
     public static Integer getSum(Collection<Integer> collection){
         int sum = 0;

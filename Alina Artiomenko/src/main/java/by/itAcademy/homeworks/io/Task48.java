@@ -2,6 +2,7 @@ package by.itAcademy.homeworks.io;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,27 +16,30 @@ import java.util.regex.Pattern;
 
 public class Task48 {
     public static void main(String[] args) {
-        WorkWithFile task48 = new WorkWithFile("Task48.txt");
-        String text = "Что-то было сказано о числах 6787 7 7 14 14 14, а нужно ли учитывать знак - перед числами -2 -3?";
+        WorkWithFileNew task48 = new WorkWithFileNew("Task48.txt");
+        String text = "Что-то было сказано о числах 6787 7 7 14 14 14, \nа нужно ли учитывать знак - перед числами -2 -3?";
 
-        task48.creatFileAndAddText(task48.getPath(), text); //create new file and write a text
-        String textFromFile = task48.readFile(task48.getPath()); //read the text from the file
-        System.out.println(textFromFile);
-        ArrayList<Integer> listOfNumber = getNumbersFromText(textFromFile); //get array of numbers
+        task48.createNewFile();
+        task48.writeToFile(text);
+        task48.printTextFromFile(task48.readFile());
 
-        System.out.println("Найденные числа в тексте: " + listOfNumber);
-        System.out.println("Сумма числовых значений: " + getSummOfNumbers(listOfNumber));
+        ArrayList<Integer> listOfNumber = getNumbersFromText(task48.readFile()); //get array of numbers
+        System.out.println("\nНайденные числа в тексте: " + listOfNumber);
+        System.out.println("\nСумма числовых значений: " + getSummOfNumbers(listOfNumber));
         System.out.println("Список без дубликатов: " + removeDuplicateValues(listOfNumber));
     }
 
+
     //get ArrayList of numbers from a text
-    public static ArrayList<Integer> getNumbersFromText (String text){
+    public static ArrayList<Integer> getNumbersFromText (List<String> list){
         ArrayList<Integer> listOfNumber = new ArrayList<>();
         Pattern pattern = Pattern.compile("-?[0-9]+");
-        Matcher matcher = pattern.matcher(text);
-        while (matcher.find()) {
-            listOfNumber.add(Integer.valueOf(text.substring(matcher.start(), matcher.end())));
-        }
+        for (String text : list){
+            Matcher matcher = pattern.matcher(text);
+            while (matcher.find()){
+                    listOfNumber.add(Integer.valueOf(text.substring(matcher.start(), matcher.end())));
+                }
+            }
         return listOfNumber;
     }
 

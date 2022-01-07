@@ -1,0 +1,7 @@
+FilesInDirect.txt
+InformFromAllFiles.txt
+Task50-0.txt
+Task50-1.txt
+Task50-2.txt
+Task50-3.txt
+Task50-4.txt

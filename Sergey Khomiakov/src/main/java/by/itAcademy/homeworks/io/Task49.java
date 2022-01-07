@@ -13,38 +13,13 @@ import java.util.List;
 
 public class Task49 {
     public static void main(String[] args) {
-        File path = new File("Sergey Khomiakov/src/main/java/by/itAcademy/homeworks/io/FileForNumbersForTask49.dat");
-        binaryWriterForNumbers(path);
-        readerForNumber(path);
-    }
+        ReadWriteFileAssistant task49 = new ReadWriteFileAssistant("FileForNumbersForTask49.dat");
+        task49.writeDataInBinaryFile(20);   //произвели запись чисел в файл
+        List<Integer> listOfNumbers = task49.readDataFromBinaryFile();  //произвели чтение из файла
 
-    public static void binaryWriterForNumbers(File path){
-        try (DataOutputStream  dataOutputStream = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(path)))){
-            for(int i = 0; i < 20;i++){
-                dataOutputStream.writeInt((int)(Math.random()*100));
-            } System.out.println("Файл записан.");
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+        System.out.println("Список чисел: " + listOfNumbers);
+        System.out.println("Среднее арифместическое: " + getAverage(listOfNumbers));
 
-    public static void readerForNumber(File path)  {
-        List<Integer> arrayList = new ArrayList<>();
-        try(DataInputStream reader = new DataInputStream(new BufferedInputStream(new FileInputStream(path)))){
-            int number = reader.readInt();
-            while (true){
-                arrayList.add(number);
-                try{
-                    number = reader.readInt();}
-                catch (EOFException e) {
-                    break;
-                }
-            }
-            System.out.println("Список чисел: " + arrayList);
-            System.out.println("Среднее арифметическое: " + getAverage(arrayList));
-        } catch (IOException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 
     public static double getAverage(Collection<Integer> collection){

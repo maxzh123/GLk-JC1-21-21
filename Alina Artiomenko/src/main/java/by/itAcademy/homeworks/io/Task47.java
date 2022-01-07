@@ -1,4 +1,5 @@
 package by.itAcademy.homeworks.io;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,35 +13,37 @@ import java.util.regex.Pattern;
 
 public class Task47 {
     public static void main(String[] args) {
-        WorkWithFile task47 = new WorkWithFile("Task47.txt");
+        WorkWithFileNew task47 = new WorkWithFileNew("Task47.txt");
+        String text = "Этот метод записывает в поток вывода один символ char (не int). \n" +
+                "Переданное значение приводится к типу char, два первых байта отбрасываются.";
 
-        String text = "Этот метод записывает в поток вывода один символ char (не int). Переданное значение приводится к типу char, " +
-                "два первых байта отбрасываются.";
-
-        task47.creatFileAndAddText(task47.getPath(),text);
-        String textFromFile = task47.readFile(task47.getPath());
-        System.out.println(textFromFile);
-        System.out.println("Кол-во знаков препинания: " + getNumberOfCharacters(textFromFile));
-        System.out.println("Кол-во слов: " + getNumberOfWords(textFromFile));
-
+        task47.createNewFile();
+        task47.writeToFile(text);
+        task47.printTextFromFile(task47.readFile());
+        System.out.println("\nКол-во знаков препинания: " + getNumberOfCharacters(task47.readFile()));
+        System.out.println("Кол-во слов: " + getNumbOfWord(task47.readFile()));
     }
 
-    public static int getNumberOfCharacters(String text){
-        Pattern pattern = Pattern.compile("[\\p{Punct}]");
-        Matcher matcher = pattern.matcher(text);
+    public static int getNumberOfCharacters(List<String> list){
+        Pattern pattern = Pattern.compile("[.]{3,}|\\?+!+|!+\\?+|!+|\\?+|[.,;:\\-\"]");
         int count = 0;
-        while (matcher.find()){
-            count++;
+        for (String text : list){
+            Matcher matcher = pattern.matcher(text);
+            while (matcher.find()){
+                count++;
+            }
         }
         return count;
     }
 
-    public static int getNumberOfWords(String text){
+    public static int getNumbOfWord(List<String> list){
         Pattern pattern = Pattern.compile("[А-Яа-яЁёA-Za-z]+");
-        Matcher matcher = pattern.matcher(text);
         int count = 0;
-        while (matcher.find()){
-            count++;
+        for (String text : list){
+            Matcher matcher = pattern.matcher(text);
+            while (matcher.find()){
+                count++;
+            }
         }
         return count;
     }
