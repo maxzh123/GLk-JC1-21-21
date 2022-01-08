@@ -19,11 +19,11 @@ public class Task48 {
     private static final List<Integer> arrayList = new ArrayList<>();
 
     public static void main(String[] args) {
-        FileHandler fileHandler = new FileHandler("io"+ File.separator+"TextFile48.txt");
+        FileHandler fileHandler = new FileHandler("io" + File.separator + "TextFile48.txt");
         String fileData = fileHandler.readFile();
         findNumbersInFile(fileData);
         displayingAllNumbers();
-        System.out.println("\nСумма всех чисел в файле: "+sumOfNumbersInFile());
+        System.out.println("\nСумма всех чисел в файле: " + sumOfNumbersInFile());
         displayingNumbersNoRepetitions();
     }
 

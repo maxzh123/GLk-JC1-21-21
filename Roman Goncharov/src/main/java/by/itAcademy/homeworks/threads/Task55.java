@@ -16,7 +16,7 @@ public class Task55 {
 
     public static void creatingThreads(Thread[] threadsArray) {
         for (int i = 0; i < threadsArray.length; i++) {
-            threadsArray[i] = new MyThread55();
+            threadsArray[i] = new Thread(new MyThread55());
             threadsArray[i].setName("Поток № " + (i + 1));
         }
     }

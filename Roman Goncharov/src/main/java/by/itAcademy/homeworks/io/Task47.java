@@ -13,7 +13,7 @@ import java.io.File;
 
 public class Task47 {
     public static void main(String[] args) {
-        FileHandler fileHandler = new FileHandler("io"+ File.separator+"TextFile47.txt");
+        FileHandler fileHandler = new FileHandler("io" + File.separator + "TextFile47.txt");
         String fileData = fileHandler.readFile();
         System.out.println("Количество слов в файле: " + findWordsInFile(fileData));
         System.out.println("Количество знаков препинания в файле: " + findPunctuationInFile(fileData));

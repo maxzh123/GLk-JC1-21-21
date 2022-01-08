@@ -5,14 +5,14 @@ import by.itAcademy.homeworks.io.Task51Objects.Person;
 import java.io.*;
 import java.util.Arrays;
 
-public class FileHandlerForObjectPerson<T extends Person>{
+public class FileHandlerForObject<T extends Person> {
     private T[] people;
     private String path = "." + File.separator + "Roman Goncharov" + File.separator + "src" + File.separator +
             "main" + File.separator + "java" + File.separator + "by" + File.separator + "itAcademy" + File.separator +
             "homeworks" + File.separator + "io" + File.separator;
     private String fileName;
 
-    public FileHandlerForObjectPerson(String fileName, T[] people) {
+    public FileHandlerForObject(String fileName, T[] people) {
         this.fileName = fileName;
         this.people = people;
     }
@@ -82,7 +82,8 @@ public class FileHandlerForObjectPerson<T extends Person>{
         } catch (IOException e) {
             System.out.println("Ошибка. Что-то не так с файлом: " + fileName);
         } catch (ClassNotFoundException e) {
-            System.out.println("Ошибка. Что-то не так с классом Person");;
+            System.out.println("Ошибка. Что-то не так с классом Person");
+            ;
         }
         return peopleFromFile;
     }

@@ -1,33 +1,28 @@
 package by.itAcademy.homeworks.threads;
 
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import by.itAcademy.homeworks.io.FileHandler;
+
+import java.io.*;
 import java.util.Arrays;
 
-public class MyThread54 implements Runnable {
-    Thread myThread;
+public class MyThread54 extends FileHandler implements Runnable {
+    private final int[] arrayForThread;
+    private static volatile int fileCounter;
+    private File file;
 
-    public MyThread54() {
-        myThread = new Thread(this);
+    public MyThread54(int[] arrayForThread) {
+        super("threads" + File.separator + "TextFiles54" + File.separator + "File" + fileCounter + ".txt");
+        this.arrayForThread = arrayForThread;
     }
 
     @Override
     public void run() {
-        int[] arrayForThread = Task53.creationAndFillingTheArray(10);
+        file = new File(getFilePath());
+        System.out.print(Thread.currentThread().getName() + ": ");
         fileWrite(Arrays.toString(arrayForThread));
     }
 
-    public void fileWrite(String str) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(Task54.file, true))) {
-            bw.write(str);
-            bw.newLine();
-            System.out.println(myThread.getName() + ": Запись в файл " + Task54.file.getName() + " произведена успешно.");
-        } catch (FileNotFoundException e) {
-            System.out.println("Файл не найден: " + Task54.file.getName());
-        } catch (IOException e) {
-            System.out.println("Ошибка. Что-то не так с файлом: " + Task54.file.getName());
-        }
+    public static void goToNextFile() {
+        fileCounter++;
     }
 }

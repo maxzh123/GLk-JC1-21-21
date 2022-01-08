@@ -15,9 +15,9 @@ public class Task51 {
         for (int i = 0; i < people.length; i++) {
             people[i] = new Person(RandomVariables.randomName(), RandomVariables.randomSurname(), RandomVariables.randomAge());
         }
-        FileHandlerForObjectPerson fhOne = new FileHandlerForObjectPerson("TextFile51.txt",people);
+        FileHandlerForObject<Person> fhOne = new FileHandlerForObject<>("TextFile51.txt", people);
         fhOne.writeTextToFile(fhOne.textDescriptionOfPeople());
-        FileHandlerForObjectPerson fhTwo = new FileHandlerForObjectPerson("BinaryFile51.bin",people);
+        FileHandlerForObject<Person> fhTwo = new FileHandlerForObject<>("BinaryFile51.bin", people);
         fhTwo.writeObjectToFile();
     }
 }

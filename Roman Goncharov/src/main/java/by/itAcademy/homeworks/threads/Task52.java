@@ -20,7 +20,7 @@ public class Task52 {
 
     public static void creatingThreads(Thread[] threadsArray) {
         for (int i = 0; i < threadsArray.length; i++) {
-            threadsArray[i] = new MyThread52();
+            threadsArray[i] = new MyThread52(creationAndFillingList(10));
         }
     }
 

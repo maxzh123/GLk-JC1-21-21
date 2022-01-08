@@ -3,9 +3,15 @@ package by.itAcademy.homeworks.threads;
 import java.util.List;
 
 public class MyThread52 extends Thread {
+    private final List<Integer> arrayListForThread;
+
+    public MyThread52(List<Integer> arrayListForThread) {
+        this.arrayListForThread = arrayListForThread;
+    }
+
+    @Override
     public void run() {
-        List<Integer> arrayListForThread = Task52.creationAndFillingList(10);
-        System.out.println(getName() + " создал коллекцию: " + arrayListForThread +
+        System.out.println(Thread.currentThread().getName() + " создал коллекцию: " + arrayListForThread +
                 " и высчитал среднее арифмитическое ёё чисел равное "
                 + arithmeticMeanOfTheNumbers(arrayListForThread));
     }

@@ -10,15 +10,15 @@ package by.itAcademy.homeworks.io;
 import java.io.*;
 
 public class Task50 {
-    private static final String path = "io"+ File.separator+"Package50" +
+    private static final String path = "io" + File.separator + "Package50" +
             File.separator + "Package1" + File.separator + "Package2" + File.separator;
 
     public static void main(String[] args) {
         int fileCount = 5; // Кол-во читаемых файлов
-        FileHandler fileHandlerOne = new FileHandler(path+"CommonFile.txt");
+        FileHandler fileHandlerOne = new FileHandler(path + "CommonFile.txt");
         fileHandlerOne.fileWrite(getContentOfFiles(fileCount));
-        FileHandler fileHandlerTwo = new FileHandler(path+"ListFile.txt");
-        fileHandlerTwo.fileWrite(getListOfFilesInDirectory(fileHandlerTwo.getDirectoryPath()+path));
+        FileHandler fileHandlerTwo = new FileHandler(path + "ListFile.txt");
+        fileHandlerTwo.fileWrite(getListOfFilesInDirectory(fileHandlerTwo.getDirectoryPath() + path));
     }
 
     public static String getListOfFilesInDirectory(String nameDirectory) {
@@ -38,7 +38,7 @@ public class Task50 {
         FileHandler[] fileHandlers = new FileHandler[number];
         StringBuilder listString = new StringBuilder();
         for (int i = 0; i < number; i++) {
-            fileHandlers[i] = new FileHandler(path+"File" + (i + 1) + ".txt");
+            fileHandlers[i] = new FileHandler(path + "File" + (i + 1) + ".txt");
             listString.append(fileHandlers[i].readFile());
         }
         return listString.toString();

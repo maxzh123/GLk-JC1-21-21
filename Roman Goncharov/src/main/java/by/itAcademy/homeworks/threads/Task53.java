@@ -19,7 +19,7 @@ public class Task53 {
 
     public static void creatingThreads(Thread[] threadsArray) {
         for (int i = 0; i < threadsArray.length; i++) {
-            threadsArray[i] = new MyThread53().myThread;
+            threadsArray[i] = new Thread(new MyThread53(creationAndFillingTheArray(10)));
             threadsArray[i].setName("Поток №" + (i + 1));
         }
     }
