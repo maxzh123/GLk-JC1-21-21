@@ -14,7 +14,7 @@ public class Task49 {
     private static final List<Integer> arrayList = new ArrayList<>();
 
     public static void main(String[] args) {
-        FileHandler fileHandler = new FileHandler("File49.dat");
+        FileHandler fileHandler = new FileHandler("io"+ File.separator+"File49.dat");
         File newFile = new File(fileHandler.getFilePath());
         binaryFileWrite(newFile);
         readBinaryFile(newFile);

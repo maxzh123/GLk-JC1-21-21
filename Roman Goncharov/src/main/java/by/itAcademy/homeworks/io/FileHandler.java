@@ -3,28 +3,17 @@ package by.itAcademy.homeworks.io;
 import java.io.*;
 
 public class FileHandler {
-    private static String path = "." + File.separator + "Roman Goncharov" + File.separator + "src" + File.separator +
+    private String path = "." + File.separator + "Roman Goncharov" + File.separator + "src" + File.separator +
             "main" + File.separator + "java" + File.separator + "by" + File.separator + "itAcademy" + File.separator +
-            "homeworks" + File.separator + "io" + File.separator;
+            "homeworks" + File.separator;
     private String fileName;
-    private static String path54 = "." + File.separator + "Roman Goncharov" + File.separator + "src" + File.separator +
-            "main" + File.separator + "java" + File.separator + "by" + File.separator + "itAcademy" + File.separator +
-            "homeworks" + File.separator + "threads" + File.separator;
 
     public FileHandler(String fileName) {
         this.fileName = fileName;
     }
 
-    public static void setNewPathTask50() {
-        path += "Package50" + File.separator + "Package1" + File.separator + "Package2" + File.separator;
-    }
-
-    public static String getDirectoryPath() {
+    public String getDirectoryPath() {
         return path;
-    }
-
-    public static String getDirectoryPath54() {
-        return path54;
     }
 
     public String getFilePath() {

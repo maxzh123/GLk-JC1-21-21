@@ -8,6 +8,7 @@ package by.itAcademy.homeworks.io;
 
 import by.itAcademy.homeworks.collections.Task40;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -18,7 +19,7 @@ public class Task48 {
     private static final List<Integer> arrayList = new ArrayList<>();
 
     public static void main(String[] args) {
-        FileHandler fileHandler = new FileHandler("TextFile48.txt");
+        FileHandler fileHandler = new FileHandler("io"+ File.separator+"TextFile48.txt");
         String fileData = fileHandler.readFile();
         findNumbersInFile(fileData);
         displayingAllNumbers();
