@@ -81,7 +81,7 @@ public class Task21 {
         int index = 0;
 
         for (int i = 1; i < array.length; i++) {
-            if (array[i] <= minValue) {
+            if (array[i] < minValue) {
                 minValue = array[i];
                 index = i;
             }
@@ -92,7 +92,7 @@ public class Task21 {
     public static boolean[] getBooleanArray(int[] array, int valueMaxOrMin){
         boolean[] helperForBoolean = new boolean[array.length];
         for (int i = 0; i< array.length;i++){
-            if(i==valueMaxOrMin){
+            if(array[i]==valueMaxOrMin){
                 helperForBoolean[i] = true;
             }
         } return helperForBoolean;

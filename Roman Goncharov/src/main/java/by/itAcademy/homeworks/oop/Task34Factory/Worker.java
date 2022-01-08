@@ -17,8 +17,8 @@ public abstract class Worker extends LaborOrganizationDepartment implements Empl
         return age;
     }
 
-    public Worker(String workSchedule, String workplace, String wage, String position) {
-        super(workSchedule, workplace, wage);
+    public Worker(String workSchedule, String workplace, String wage, String position, String contract) {
+        super(workSchedule, workplace, wage, contract);
         this.position = position;
     }
 
@@ -27,6 +27,7 @@ public abstract class Worker extends LaborOrganizationDepartment implements Empl
         setWorkSchedule();
         setWorkplace();
         setWage();
+        concludeContract();
         payroll();
     }
 }

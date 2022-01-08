@@ -1,8 +1,11 @@
 package by.itAcademy.homeworks.io.task51;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Human {
+public class Human implements Serializable {
+    private static final long serialVersionUID = 12738495960L;
+
     private String name, surname;
     private int age;
     Name [] names = Name.values();
