@@ -5,8 +5,10 @@
 public class NonCommand {
 
     public String nonCommandExecute(Long chatId, String userName, String text) {
-
-         return "Простите, я не понимаю Вас. Возможно, Вам поможет /help";
+         if (text.equalsIgnoreCase("Погоду скажи")){
+             return WeatherGetter.getWeather();
+         }
+         return "Простите,"+userName+" я не понимаю Вас.";
     }
 
 }
