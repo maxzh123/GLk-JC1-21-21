@@ -6,8 +6,6 @@ import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class Bot extends TelegramLongPollingCommandBot {
-    private final String BOT_NAME = "";
-    private final String BOT_TOKEN = "";
 
 
     //Класс для обработки сообщений, не являющихся командой
@@ -27,18 +25,19 @@ public class Bot extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotToken() {
-        return BOT_TOKEN;
+        return Config.BOT_TOKEN;
     }
 
     @Override
     public String getBotUsername() {
-        return BOT_NAME;
+        return Config.BOT_NAME;
     }
 
     /**
      * Ответ на запрос, не являющийся командой
      */
 
+    @Override
     public void processNonCommandUpdate(Update update) {
 
         Message msg = update.getMessage();
