@@ -65,6 +65,9 @@ public abstract class Employee implements Wage{
         setPrizePerMonth(prizePerMonth);
     }
 
+    public Employee() {
+    }
+
     @Override
     public double calculateSalary(){
         double salary = this.getSalaryPerMonth()/this.getWorkingHoursPerMonth()*getHoursWorkedPerMonth()+this.getPrizePerMonth();

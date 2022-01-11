@@ -9,6 +9,17 @@ public abstract class Workers extends Employee implements Wage {
         salaryPerMonth = 0;
     }
 
+    public Workers(String nameOfEmployee, String lastNameOfEmployee, double workingHoursPerMonth, double hoursWorkedPerMonth, double prizePerMonth, double salaryForOnePiece, int partsScheduledToBeReleased, int numberOfPartsMade) {
+        nameOfEmployee = super.getNameOfEmployee();
+        lastNameOfEmployee = super.getLastNameOfEmployee();
+        workingHoursPerMonth = super.getWorkingHoursPerMonth();
+        hoursWorkedPerMonth = super.getHoursWorkedPerMonth();
+        prizePerMonth = super.getPrizePerMonth();
+        setSalaryForOnePiece(salaryForOnePiece);
+        setPartsScheduledToBeReleased(partsScheduledToBeReleased);
+        setNumberOfPartsMade(numberOfPartsMade);
+    }
+
     double salaryForOnePiece;
     int partsScheduledToBeReleased;
     int numberOfPartsMade;

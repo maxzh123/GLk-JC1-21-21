@@ -13,9 +13,9 @@ public class Task33 {
         Employee specialistSale = new SalesManager("Светлая", "Светлана", 160, 152, 1000, 500, 0.9);
         System.out.printf("Зарплата %-10s %-10s составляет %.2f руб.\n", specialistSale.getNameOfEmployee(), specialistSale.getLastNameOfEmployee(), specialistSale.calculateSalary());
 
-        Employee locksmith1 = new Locksmith("Николаев", "Николай", 160, 152, 5000, 100, 10, 100, 90); // 900
+        Locksmith locksmith1 = new Locksmith("Николаев", "Николай", 160, 152, 100, 10, 100, 90); // 900
         System.out.printf("Зарплата %-10s %-10s составляет %.2f руб.\n", locksmith1.getNameOfEmployee(), locksmith1.getLastNameOfEmployee(), locksmith1.calculateSalary());
-        Employee locksmith2 = new Locksmith("Петров", "Петр", 160, 152, 0, 100, 10, 100, 100); // 1100
+        Locksmith locksmith2 = new Locksmith("Петров", "Петр", 160, 152, 100, 10, 100, 100); // 1100
         System.out.printf("Зарплата %-10s %-10s составляет %.2f руб.\n", locksmith2.getNameOfEmployee(), locksmith2.getLastNameOfEmployee(), locksmith2.calculateSalary());
     }
 }
