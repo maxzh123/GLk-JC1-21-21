@@ -25,7 +25,7 @@ public class Task40Test {
         expectArray.add(10);
         expectArray.add(0);
 
-        Assertions.assertEquals(expectArray, Task40.helperForDeleteRepeats(originalArray));
+        Assertions.assertEquals(expectArray, Task40.helperForRemoveRepeats(originalArray));
 
     }
 

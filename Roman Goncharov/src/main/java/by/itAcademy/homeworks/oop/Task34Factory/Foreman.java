@@ -1,6 +1,6 @@
 package by.itAcademy.homeworks.oop.Task34Factory;
 
-public class Foreman extends Manager {
+public class Foreman extends Manager implements Supervisor, PersonWithTechnicalEducation {
     public Foreman(String name, int age) {
         super("Пятидневка", "Кабинет старшего мастера", "Повременно-премиальная",
                 "Старший мастер", "Контракт на 3 года");
