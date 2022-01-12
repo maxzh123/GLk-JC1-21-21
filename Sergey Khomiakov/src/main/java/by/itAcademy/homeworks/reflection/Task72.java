@@ -13,17 +13,22 @@ import java.util.Arrays;
 public class Task72 {
     public static void main(String[] args) throws NoSuchMethodException {
       ExampleForTask72 example = new ExampleForTask72();
-      getAllMethods(example);
+        getAllMethodsWithAnnotationAcademyInfo(example);
     }
 
-    public static void getAllMethods(Object object){
+    public static void getAllMethodsWithAnnotationAcademyInfo(Object object){
         Method[] methods = object.getClass().getDeclaredMethods();
          for (Method element:methods){
-            System.out.println(element.getName());
-            Annotation[] annotations = element.getDeclaredAnnotations();
-            System.out.println(Arrays.toString(annotations));
-        }
+             if(element.getDeclaredAnnotation(AcademyInfo.class)!=null){
+                 System.out.println(element.getName());
+                 System.out.println(element.getDeclaredAnnotation(AcademyInfo.class).toString());
+             }
+
+         }
     }
 
-
 }
+
+
+
+
