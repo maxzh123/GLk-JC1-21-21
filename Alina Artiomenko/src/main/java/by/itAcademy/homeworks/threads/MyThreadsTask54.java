@@ -8,14 +8,6 @@ import java.util.Arrays;
 
 public class MyThreadsTask54 implements Runnable{
     private final int amountOfNumbers = 10;
-
-    Thread thread;
-
-    MyThreadsTask54(){
-        thread = new Thread(this);
-        thread.start();
-    }
-
     @Override
     public void run() {
         int[] arrayOfNumber = Task20.fillArrayWithNumber(amountOfNumbers);

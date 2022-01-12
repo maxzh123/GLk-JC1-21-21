@@ -7,12 +7,6 @@ import java.util.Arrays;
 public class MyThreadsTask53 implements Runnable{
     private final int amountOfumber = 10;
 
-    Thread thread;
-    MyThreadsTask53(){
-        thread = new Thread(this);
-        thread.start();
-    }
-
     @Override
     public void run() {
         int[] array = Task20.fillArrayWithNumber(amountOfumber);

@@ -12,7 +12,8 @@ public class Task54 {
         final int amoutOfThreads = 5;
 
         for(int i = 0; i < amoutOfThreads; i++){
-            new MyThreadsTask54();
+            Thread myThready = new Thread(new MyThreadsTask54());
+            myThready.start();
         }
     }
 }

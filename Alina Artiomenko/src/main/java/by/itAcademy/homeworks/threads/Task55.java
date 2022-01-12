@@ -12,8 +12,10 @@ public class Task55 {
 
         for (int i = 0; i < amountOfThreads; i++){
             MyThreadsTask55 t = new MyThreadsTask55();
+            Thread thread = new Thread(new MyThreadsTask55());
+            thread.start();
             try {
-                t.thread.join();
+                thread.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
