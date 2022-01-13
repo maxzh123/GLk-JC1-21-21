@@ -16,12 +16,20 @@ public class WorkWithFileNew {
             "main" + fileSeparator + "java" + fileSeparator + "by" + fileSeparator +
             "itAcademy" + fileSeparator + "homeworks" + fileSeparator + "io" + fileSeparator;
 
-    WorkWithFileNew(String nameFile){
+    private final String pathThreads = "Alina Artiomenko" + fileSeparator + "src" + fileSeparator +
+            "main" + fileSeparator + "java" + fileSeparator + "by" + fileSeparator +
+            "itAcademy" + fileSeparator + "homeworks" + fileSeparator + "threads" + fileSeparator;
+
+    public WorkWithFileNew(String nameFile){
         this.nameFile = nameFile;
     }
 
     public String getPath(){
         return path + nameFile;
+    }
+
+    public String getPathThreads(){
+        return pathThreads + nameFile;
     }
 
     public String getNameFile(){
@@ -42,6 +50,18 @@ public class WorkWithFileNew {
     public void createNewFile(){
         try {
             if(new File(getPath()).createNewFile()){
+                System.out.println("Файл " + nameFile + " создан!");
+            } else {
+                System.out.println("Файл " + nameFile + " уже был создан!");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void createNewFileThreads(){
+        try {
+            if(new File(getPathThreads()).createNewFile()){
                 System.out.println("Файл " + nameFile + " создан!");
             } else {
                 System.out.println("Файл " + nameFile + " уже был создан!");
@@ -189,6 +209,26 @@ public class WorkWithFileNew {
         try {
             fileWriter = new FileWriter(directory + fileSeparator + nameFile);
             fileWriter.write(Arrays.toString(arrayOfNumber));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void writeToFileThreads(int[] arrayOfNumber){
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(getPathThreads());
+            fileWriter.write(Arrays.toString(arrayOfNumber));
+            System.out.println("Файл " + nameFile + " успешно записан!");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

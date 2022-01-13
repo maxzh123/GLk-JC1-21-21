@@ -1,27 +1,25 @@
 package by.itAcademy.homeworks.oop.Factory;
 
-//public class Specialists extends WorkingPeople {
-//    double salaryPerMonth;
-//    double productsSoldPerMonth;
-//    double percent;
-//
-//    public Specialists(String name, String lastName, String position, double rateOfHoursPerMonth, double salaryPerMonth, double productsSoldPerMonth, double percent) {
-//        super(name, lastName, position, rateOfHoursPerMonth);
-//        this.salaryPerMonth = salaryPerMonth;
-//
-//        this.productsSoldPerMonth = productsSoldPerMonth;
-//        this.percent = this.percent;
-//    }
-//
-//    @Override
-//    public void mixedWages(double rateOfHoursPerMonth, double salaryPerMonth, double productsSoldPerMonth, double percent) {
-//        System.out.println("Норма часов в отработанном месяце: " + rateOfHoursPerMonth);
-//        System.out.println("Должностной оклад за месяц: " + salaryPerMonth);
-//
-//        System.out.println("Продано продукции в месяц" + productsSoldPerMonth);
-//        System.out.println("Ставка процента от продаж: " + percent);
-//        System.out.println("Заработная плата за отработнанный месяц составляет: " + salary + productsSoldPerMonth*percent/100);
-//    }
-//
-//    public abstract void calculateWages(double rateOfHoursPerMonth, double salaryPerMonth);
-//}
+public class Specialists extends Employee implements Wage{
+    public double percentageOfPlanCompletion;
+
+    public double getPercentageOfPlanCompletion() {
+        return percentageOfPlanCompletion;
+    }
+
+    public void setPercentageOfPlanCompletion(double percentageOfPlanCompletion) {
+        this.percentageOfPlanCompletion = percentageOfPlanCompletion;
+    }
+
+        public Specialists(String nameOfEmployee, String lastNameOfEmployee, double workingHoursPerMonth, double hoursWorkedPerMonth,
+                           double salaryPerMonth, double prizePerMonth, double percentageOfPlanCompletion) {
+        super(nameOfEmployee, lastNameOfEmployee, workingHoursPerMonth, hoursWorkedPerMonth, salaryPerMonth, prizePerMonth);
+        setPercentageOfPlanCompletion(percentageOfPlanCompletion);
+    }
+
+    @Override
+    public double calculateSalary(){
+        double salary = this.getSalaryPerMonth() / this.getWorkingHoursPerMonth() * getHoursWorkedPerMonth() + this.getPrizePerMonth() * getPercentageOfPlanCompletion();
+        return salary;
+    }
+}

@@ -1,20 +1,13 @@
 package by.itAcademy.homeworks.oop.Factory;
 
-//public class Director extends Leaders{
-//    double hoursWorkedPerMonth;
-//
-//    public Director (String name, String lastName, String position, double rateOfHoursPerMonth, double salaryPerMonth, double hoursWorkedPerMonth) {
-//        super(name, lastName, position, rateOfHoursPerMonth, salaryPerMonth);
-//        this.hoursWorkedPerMonth = hoursWorkedPerMonth;
-//    }
-//
-//    @Override
-//    public double calculateWages(double salaryPerMonth) {
-//        double calculateSalary = salaryPerMonth / rateOfHoursPerMonth * hoursWorkedPerMonth;
-//        System.out.println("Начисленная заработная плата " + position + " " + name + " " + lastName + " за отработанный месяц = " + calculateSalary + " рублей");
-//        return calculateSalary;
-//    }
-//
-//
-//
-//}
+public class Director extends Leaders {
+    public Director(String nameOfEmployee, String lastNameOfEmployee, double workingHoursPerMonth, double hoursWorkedPerMonth, double salaryPerMonth, double prizePerMonth) {
+        super(nameOfEmployee, lastNameOfEmployee, workingHoursPerMonth, hoursWorkedPerMonth, salaryPerMonth, prizePerMonth);
+    }
+
+    @Override
+    public double calculateSalary(){
+        double salary = getSalaryPerMonth() / getWorkingHoursPerMonth()*getHoursWorkedPerMonth() + getPrizePerMonth()*getHoursWorkedPerMonth() / getWorkingHoursPerMonth();
+        return salary;
+    }
+}

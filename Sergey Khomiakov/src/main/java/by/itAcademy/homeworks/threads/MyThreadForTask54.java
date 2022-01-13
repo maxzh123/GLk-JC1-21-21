@@ -15,7 +15,7 @@ public class MyThreadForTask54 extends ReadWriteFileAssistant implements Runnabl
     private final String  path = "Sergey Khomiakov" + File.separator + "src" + File.separator + "main" + File.separator +
             "java" + File.separator + "by" + File.separator + "itAcademy" + File.separator + "homeworks" +
             File.separator + "threads" + File.separator + "task54" + File.separator;
-    Thread th;
+    private Thread th;
 
     public MyThreadForTask54(String nameOfFile) {
         super(nameOfFile);

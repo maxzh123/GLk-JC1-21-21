@@ -1,20 +1,60 @@
 package by.itAcademy.homeworks.oop.Factory;
 
-//public class Workers extends WorkingPeople {
-//    double producedProductsPerMonth;
-//    double percent;
-//
-//    public Workers (String name, String lastName, String position, double rateOfHoursPerMonth, double producedProductsPerMonth, double percent) {
-//        super(name, lastName, position, rateOfHoursPerMonth);
-//        this.producedProductsPerMonth = producedProductsPerMonth;
-//        this.percent = percent;
-//    }
-//
-//    @Override
-//    public void calculateWages(double producedProductsPerMonth) {
-//        System.out.println("Произведено продукции на сумму в отработанном месяце: " + producedProductsPerMonth);
-//        System.out.println("Ставка процента от суммы произведенной продукции: " + percent);
-//    }
-//
-//    public abstract void interestWages(double rateOfHoursPerMonth, double hoursWorkedPerMonth);
-//}
+public abstract class Workers extends Employee implements Wage {
+    public Workers(String nameOfEmployee, String lastNameOfEmployee, double workingHoursPerMonth, double hoursWorkedPerMonth, double salaryPerMonth, double prizePerMonth, double salaryForOnePiece, int partsScheduledToBeReleased, int numberOfPartsMade) {
+        super(nameOfEmployee, lastNameOfEmployee, workingHoursPerMonth, hoursWorkedPerMonth, salaryPerMonth, prizePerMonth);
+        setSalaryForOnePiece(salaryForOnePiece);
+        setPartsScheduledToBeReleased(partsScheduledToBeReleased);
+        setNumberOfPartsMade(numberOfPartsMade);
+        salaryPerMonth = 0;
+    }
+
+    public Workers(String nameOfEmployee, String lastNameOfEmployee, double workingHoursPerMonth, double hoursWorkedPerMonth, double prizePerMonth, double salaryForOnePiece, int partsScheduledToBeReleased, int numberOfPartsMade) {
+        nameOfEmployee = super.getNameOfEmployee();
+        lastNameOfEmployee = super.getLastNameOfEmployee();
+        workingHoursPerMonth = super.getWorkingHoursPerMonth();
+        hoursWorkedPerMonth = super.getHoursWorkedPerMonth();
+        prizePerMonth = super.getPrizePerMonth();
+        setSalaryForOnePiece(salaryForOnePiece);
+        setPartsScheduledToBeReleased(partsScheduledToBeReleased);
+        setNumberOfPartsMade(numberOfPartsMade);
+    }
+
+    double salaryForOnePiece;
+    int partsScheduledToBeReleased;
+    int numberOfPartsMade;
+
+    public double getSalaryForOnePiece() {
+        return salaryForOnePiece;
+    }
+
+    public void setSalaryForOnePiece(double salaryForOnePiece) {
+        this.salaryForOnePiece = salaryForOnePiece;
+    }
+
+    public int getPartsScheduledToBeReleased() {
+        return partsScheduledToBeReleased;
+    }
+
+    public void setPartsScheduledToBeReleased(int partsScheduledToBeReleased) {
+        this.partsScheduledToBeReleased = partsScheduledToBeReleased;
+    }
+
+    public int getNumberOfPartsMade() {
+        return numberOfPartsMade;
+    }
+
+    public void setNumberOfPartsMade(int numberOfPartsMade) {
+        this.numberOfPartsMade = numberOfPartsMade;
+    }
+
+    @Override
+    public double calculateSalary() {
+        double salary;
+        if(getNumberOfPartsMade() < getPartsScheduledToBeReleased()) {
+            setPrizePerMonth(0);
+        }
+        salary = getNumberOfPartsMade() * getSalaryForOnePiece() + getPrizePerMonth();
+        return salary;
+    }
+}

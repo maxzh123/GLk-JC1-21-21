@@ -1,6 +1,6 @@
 package by.itAcademy.homeworks.oop.Task34Factory;
 
-public abstract class Worker extends LaborOrganizationDepartment implements Employee {
+public abstract class Worker extends LaborOrganizationDepartment implements Employee,PersonWithTechnicalEducation {
     private final String position;
     String name;
     int age;
