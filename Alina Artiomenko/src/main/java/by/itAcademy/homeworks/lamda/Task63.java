@@ -2,13 +2,9 @@ package by.itAcademy.homeworks.lamda;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
 
 /**Задание 63
  * 1. Создать List<Integer> из n элементов от minValue до maxValue
