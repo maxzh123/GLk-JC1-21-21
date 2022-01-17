@@ -12,7 +12,8 @@ public class Task53 {
         final int amountOfThreads = 10;
 
         for (int i = 0; i < amountOfThreads; i++){
-            new MyThreadsTask53();
+            Thread myThready = new Thread(new MyThreadsTask53());
+            myThready.start();
         }
     }
 }

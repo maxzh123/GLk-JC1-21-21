@@ -9,4 +9,9 @@ public class SimpleInput {
         System.out.println(text);
         return console.nextLine();
     }
+
+    public static int getNumber(String text) {
+        System.out.println(text);
+        return console.nextInt();
+    }
 }

@@ -14,10 +14,10 @@ import java.util.List;
 public class Task53 {
     public static void main(String[] args) {
         int numberOfThreads = 10;
-        List<MyThreadForTask53> myThreads = new ArrayList<>();
+        List<MyThreadFor53> myThreads = new ArrayList<>();
 
         for(int i = 0; i<numberOfThreads;i++){
-            myThreads.add(new MyThreadForTask53());
+            myThreads.add(new MyThreadFor53());
             myThreads.get(i).start();
         }
 

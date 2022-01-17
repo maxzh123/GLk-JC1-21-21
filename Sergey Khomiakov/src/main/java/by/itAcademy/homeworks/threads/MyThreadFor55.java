@@ -1,6 +1,6 @@
 package by.itAcademy.homeworks.threads;
 
-public class MyThreadForTask55 implements Runnable{
+public class MyThreadFor55 implements Runnable{
     @Override
     public synchronized void run() {
         System.out.println("Current thread is ..." + Thread.currentThread().getName());

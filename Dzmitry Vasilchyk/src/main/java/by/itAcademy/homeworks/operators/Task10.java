@@ -19,18 +19,20 @@ public class Task10 {
         System.out.println("Введите размеры участка:");
         int e = Integer.parseInt(reader.readLine());
         int f = Integer.parseInt(reader.readLine());
-        compareSquare(a,b,c,d,e,f);
+        System.out.println(compareSquare(a, b, c, d, e, f));
     }
-    private static void compareSquare(int a,int b,int c,int d,int e,int f) {
-        if(e>=a+c && f>=b && f>=d){
-            System.out.println("два дома поместятся на участке");}
-            else if(e>=b+d && f>=a && f>=b){
-            System.out.println("два дома поместятся на участке");}
-            else if(f>=a+c && e>=b && e>=d){
-            System.out.println("два дома поместятся на участке");}
-            else if(f>=b+d && e>=a && e>=b){
-            System.out.println("два дома поместятся на участке");}
-            else System.out.println("два дома не поместятся на участке");}
+    public static String compareSquare(int a, int b, int c, int d, int e, int f) {
+        String result = "";
+        if((e >= a + c && f >= b && f >= d)||
+          (e >= b + d && f >= a && f >= b) ||
+          (f >= a + c && e >= b && e >= d) ||
+          (f >= b + d && e >= a && e >= b)) {
+            return result = "два дома поместятся на участке";
+            }
+        else{
+            return result = "два дома не поместятся на участке";
+        }
+    }
 }
 
 

@@ -9,7 +9,7 @@ import java.util.Random;
  * 2) Каждый из потоков должен вычислять среднее арифметическое коллекции из 10 случайных целых чисел и выводить на экран.
  */
 
-public class MyThreadForTask52 extends Thread{
+public class MyThreadFor52 extends Thread{
     @Override
     public void run() {
        int numberOfIntegers = 10;
