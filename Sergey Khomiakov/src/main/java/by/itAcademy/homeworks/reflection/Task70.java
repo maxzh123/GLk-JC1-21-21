@@ -16,10 +16,19 @@ import java.lang.reflect.Method;
 public class Task70 {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Man man = new Man("Сергей", "Хомяков", 28);
+        System.out.println("Проверяем, какие есть поля и методы в нашем классе:");
+        System.out.println("_______________________________________________________________");
         getAllInfoAboutClass(man);
+        System.out.println("_______________________________________________________________");
+        System.out.println("Пробуем вызвать private метод printData, к которому у нас не должно быть доступа.");
         getPrivateMethodAllData(man);
-        System.out.println("\n" + getPrivateMethodInfo(man));
+        System.out.println("_______________________________________________________________");
+        System.out.println("Пробуем вызвать private метод getInfo, к которому у нас не должно быть доступа.");
+        System.out.println(getPrivateMethodInfo(man));
+        System.out.println("_______________________________________________________________");
+        System.out.println("Повторно вызываем private метод printData,чтобы убедиться, что предыдущий шаг поменял поле info.");
         getPrivateMethodAllData(man);
+
    }
 
     public static void getAllInfoAboutClass(Object object) {

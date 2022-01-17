@@ -10,7 +10,7 @@ package by.itAcademy.homeworks.threads;
 public class Task55 {
 
     public static void main(String[] args){
-        MyThreadForTask55 task = new MyThreadForTask55();
+        MyThreadFor55 task = new MyThreadFor55();
         int countOfThreads = 10;
         for(int i = 0; i < countOfThreads; i++){
             Thread thread = new Thread(task);
