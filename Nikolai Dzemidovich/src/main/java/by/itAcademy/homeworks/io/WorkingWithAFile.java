@@ -16,6 +16,12 @@ public class WorkingWithAFile {
     private String fileName;
     private List<Integer> list = new ArrayList<>();
 
+    public List<Integer> getBinaryList() {
+        return binaryList;
+    }
+
+    private List<Integer> binaryList = new ArrayList<>();
+
     public WorkingWithAFile(String fileName) {
         this.fileName = fileName;
     }
@@ -39,30 +45,73 @@ public class WorkingWithAFile {
         }
         return String.valueOf(str);
 
-    } public void displayListOfNumber (String str){
+    }
+
+    public void displayListOfNumber(String str) {
 
         Pattern pattern = Pattern.compile("\\d+");
         Matcher matcher = pattern.matcher(str);
 
-        while(matcher.find()){
+        while (matcher.find()) {
             list.add(Integer.parseInt(matcher.group()));
         }
         System.out.println("В файле находятся следующие числа: ");
-        for(Integer number : list){
+        for (Integer number : list) {
             System.out.print(number + " ");
         }
 
-    } public Integer sumOfNumberInFile (){
+    }
+
+    public Integer sumOfNumberInFile() {
         Iterator<Integer> iterator = list.iterator();
         Integer sum = 0;
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Integer next = iterator.next();
-            sum+= next;
+            sum += next;
         }
         return sum;
-    } public List<Integer> displayListWithoutRepetitions(){
+    }
+
+    public List<Integer> displayListWithoutRepetitions() {
         System.out.println("Список чисел в файле без повторений : ");
         OperationsWithArrayList.deleteDuplicate(list);
         return list;
     }
+
+    public void writeBinaryFile(int[] arraysOfNumbers) {
+        DataOutputStream dataOutputStream = null;
+
+        try {
+            dataOutputStream = new DataOutputStream(new FileOutputStream(getFilePath()));
+            for (int arr : arraysOfNumbers) {
+                dataOutputStream.writeInt(arr);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void readBinaryFile() {
+        System.out.println("Список чисел: ");
+        DataInputStream dataInputStream = null;
+
+        try {
+            dataInputStream = new DataInputStream(new FileInputStream(getFilePath()));
+            int number = dataInputStream.readInt();
+            while (true) {
+                binaryList.add(number);
+                try {
+                    number = dataInputStream.readInt();
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(binaryList);
+    }
 }
+

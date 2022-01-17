@@ -6,7 +6,7 @@ package by.itAcademy.homeworks.reflection;
  * 3) С помощью рефлексии проверить наличие данной аннотации у этих методов из основной программы.
  */
 
-public class ExampleForTask72 {
+public class Year {
 
     @AcademyInfo(year = "1.0")
     private void methodWithAnnotation(){
