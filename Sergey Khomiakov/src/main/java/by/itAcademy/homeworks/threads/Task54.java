@@ -13,11 +13,11 @@ import java.util.List;
 public class Task54 {
     public static void main(String[] args) {
         int numberOfThreads = 5;
-        List<MyThreadForTask54> myThreads = new ArrayList<>();
+        List<MyThreadFor54> myThreads = new ArrayList<>();
 
         for (int i = 0; i < numberOfThreads; i++) {
             String nameOfFile = String.format("ThreadWithNumbers[%d].dat", i+1);
-            myThreads.add(new MyThreadForTask54(nameOfFile));
+            myThreads.add(new MyThreadFor54(nameOfFile));
             myThreads.get(i).start();
         }
     }

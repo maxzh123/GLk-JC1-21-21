@@ -12,7 +12,7 @@ import java.util.Random;
  * 5) Запустить 10 потоков.
  */
 
-public class MyThreadForTask53 extends Thread {
+public class MyThreadFor53 extends Thread {
     @Override
     public void run() {
         int numberOfIntegers = 10;
