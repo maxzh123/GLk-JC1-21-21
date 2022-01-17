@@ -18,7 +18,8 @@ public class MyCallable58 extends FileHandler implements Callable<String> {
     @Override
     public String call() throws Exception {
         fileWrite(RandomString.getRandomString());
-        TimeUnit.SECONDS.sleep((int) (Math.random()*3+1));
+        TimeUnit.MILLISECONDS.sleep((int) (Math.random()*1500+1));
+        System.out.println(Thread.currentThread().getName()+": Задача для " + getFileName()+ " завершена.");
         return file.getName();
     }
 

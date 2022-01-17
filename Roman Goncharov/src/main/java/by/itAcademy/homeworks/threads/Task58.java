@@ -16,9 +16,11 @@ public class Task58 {
         for (int i = 0; i < 10; i++) {
             MyCallable58 myCall = new MyCallable58();
             Future<String> future = pool.submit(myCall);
+
             list.add(future);
         }
         pool.shutdown();
+
         while (true){
             boolean bool = pool.isTerminated();
             Thread.sleep(1000);
