@@ -6,10 +6,15 @@ public class FileHandler {
     private String path = "." + File.separator + "Roman Goncharov" + File.separator + "src" + File.separator +
             "main" + File.separator + "java" + File.separator + "by" + File.separator + "itAcademy" + File.separator +
             "homeworks" + File.separator;
+
     private String fileName;
 
     public FileHandler(String fileName) {
         this.fileName = fileName;
+    }
+
+    public String getFileName() {
+        return fileName;
     }
 
     public String getDirectoryPath() {
