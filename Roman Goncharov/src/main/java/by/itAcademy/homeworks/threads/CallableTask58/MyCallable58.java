@@ -17,18 +17,19 @@ public class MyCallable58 extends FileHandler implements Callable<String> {
 
     @Override
     public String call() throws Exception {
+        System.out.println(Thread.currentThread().getName() + " начал работу");
         fileWrite(RandomString.getRandomString());
-        TimeUnit.MILLISECONDS.sleep((int) (Math.random()*1500+1));
-        System.out.println(Thread.currentThread().getName()+": Задача для " + getFileName()+ " завершена.");
+        TimeUnit.SECONDS.sleep((int) (Math.random() * 3 + 1));
+        System.out.println(Thread.currentThread().getName() + " закончил работу с файлом " + getFileName());
         return file.getName();
     }
 
     @Override
     public void fileWrite(String str) {
         file = new File(getFilePath());
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(getFilePath()))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file.getPath()))) {
             bw.write(str);
-            System.out.println(Thread.currentThread().getName()+": Запись в файл " + getFileName()+ " произведена успешно.");
+            System.out.println(Thread.currentThread().getName() + ": Запись в файл " + getFileName() + " произведена успешно.");
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден: " + getFileName());
         } catch (IOException e) {
