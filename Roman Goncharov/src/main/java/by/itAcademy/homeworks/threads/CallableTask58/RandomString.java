@@ -3,8 +3,8 @@ package by.itAcademy.homeworks.threads.CallableTask58;
 import java.util.Random;
 
 public class RandomString {
-    private static Words[] words = Words.values();
-    private static Random random = new Random();
+    private static final Words[] words = Words.values();
+    private static final Random random = new Random();
 
     public static String getRandomString() {
         StringBuilder sb = new StringBuilder();
