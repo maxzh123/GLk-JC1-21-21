@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Random;
 
 
-public class MyTread52 extends Thread {
+public class MyThread52 extends Thread {
     private final int size = 10;
     private List<Integer> listOfNumber;
     private Random random = new Random();
 
-    public MyTread52() {
+    public MyThread52() {
         this.listOfNumber = new ArrayList<>();
     }
 
