@@ -23,7 +23,7 @@ public class Task29 {
     }
 
     public static void searchForHexadecimalNumbers (String text){
-        Pattern pattern = Pattern.compile("0x\\p{XDigit}+");
+        Pattern pattern = Pattern.compile("0x([A-F0-9]{2})+");
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()){
             System.out.println(matcher.group());

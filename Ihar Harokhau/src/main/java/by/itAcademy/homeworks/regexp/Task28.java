@@ -21,7 +21,7 @@ public class Task28 {
         lastLetters(text);
     }
     public static void lastLetters (String text){
-        Pattern pattern = Pattern.compile("[А-Яа-яЁёA-Za-z]\\b");
+        Pattern pattern = Pattern.compile("[a-zA-Zа-яА-ЯЁё]+[-]?[a-zA-Zа-яА-ЯЁё]*");
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()){
             System.out.print(matcher.group());

@@ -19,16 +19,16 @@ public class Task26 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String text = reader.readLine();
-        characterSearch(text);
+        System.out.println("Number of punctuation marks: " + characterSearch(text));
     }
 
-    public static void characterSearch (String text){
-        Pattern pattern = Pattern.compile("[\\p{Punct}&&[...]]");
+    public static int characterSearch (String text){
+        Pattern pattern = Pattern.compile("[.]{3,}|\\?+!+|!+\\?+|!+|\\?+|[.,;:\\-\"]");
         Matcher matcher = pattern.matcher(text);
         int count = 0;
         while (matcher.find()) {
             count++;
         }
-        System.out.println(count);
+        return count;
     }
 }

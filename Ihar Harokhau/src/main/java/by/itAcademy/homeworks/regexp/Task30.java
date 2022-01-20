@@ -21,9 +21,10 @@ public class Task30 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String text = reader.readLine();
-        tagSearch(text);
+        System.out.println(tagSearch(text));
     }
-    public static void tagSearch (String text){
-        System.out.println(text.replaceAll("<p id=p1>", "<p>"));
+    public static String tagSearch (String text){
+        text =  text.replaceAll("<p id=p1>", "<p>");
+        return text;
     }
 }
