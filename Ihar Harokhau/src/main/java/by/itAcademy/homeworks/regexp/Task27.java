@@ -18,16 +18,16 @@ public class Task27 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String text = reader.readLine();
-        countingWords(text);
+        System.out.println("Number of words in a sentence: " + countingWords(text));
     }
 
-    public static void countingWords (String text){
-        Pattern pattern = Pattern.compile("[А-Яа-яЁёA-Za-z]+");
+    public static int countingWords (String text){
+        Pattern pattern = Pattern.compile("([a-zA-Zа-яА-ЯЁё]+[-]?[ ]{2,}[a-zA-Zа-яА-ЯЁё]*)|([a-zA-Zа-яА-ЯЁё]+[-]?[a-zA-Zа-яА-ЯЁё]*)");
         Matcher matcher = pattern.matcher(text);
         int count = 0;
         while (matcher.find()) {
             count++;
         }
-        System.out.println(count);
+        return count;
     }
 }
