@@ -1,7 +1,7 @@
 package by.itAcademy.homeworks.oop;
 //ВОПРОС: КАК ПРОПИСАТЬ ЛОГИКУ СЕТТЕРОВ ЕСЛИ ЕСТЬ 2 ВЗАИМОИСКЛЮЧАЮЩИХ ПОЛЯ
 // (ЧТОБЫ НЕЛЬЗЯ БЫЛО ОДНОВРЕМЕННО ПОСТАВИТЬ TRUE ДЛЯ ДЕБЕТОВЫХ И КРЕДИТНЫХ КАРТ?
-public class BankCard extends AbstractCard implements CardsAction{
+public class BankCard extends AbstractCard implements CardsAction33 {
     private boolean creditCard;
     private boolean debitCard;
     private double balance;
