@@ -5,7 +5,7 @@ public class Task43 {
         String s=null;
       try {
           System.out.println("Начало работы");
-          System.out.println(s.length());
+          System.out.println(s.length());   //
       }
       catch (NullPointerException e){
           System.out.println("Произошел проброс исключения");
