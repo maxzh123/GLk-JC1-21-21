@@ -21,9 +21,33 @@ public class Human implements Serializable {
         Random random = new Random();
         name = String.valueOf(names[random.nextInt(names.length)]);
         surname = String.valueOf(surnames[random.nextInt(names.length)]);
-        age = random.nextInt(90)+1;
+        age = random.nextInt(15)+15;
 
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
