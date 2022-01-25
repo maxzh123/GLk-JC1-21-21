@@ -12,17 +12,17 @@ package by.itAcademy.homeworks.threads;
 import by.itAcademy.homeworks.threads.ProductionTask57.Consumer;
 import by.itAcademy.homeworks.threads.ProductionTask57.Producer;
 
-import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Task57 {
     public static volatile int processedElements;
 
     public static void main(String[] args) throws InterruptedException {
-        Queue<Integer> integerQueue = new LinkedList<>();
+        Queue<Integer> queue = new ConcurrentLinkedQueue<>();
         int maxQueueSize = 200; // Добавил макс. размер очереди, хотя именно для этого задания он не нужен.
-        creatingAndStartingProducers(integerQueue, maxQueueSize, 3);
-        creatingAndStartingConsumers(integerQueue, maxQueueSize, 2);
+        creatingAndStartingProducers(queue, maxQueueSize, 3);
+        creatingAndStartingConsumers(queue, maxQueueSize, 2);
     }
 
     public static void creatingAndStartingProducers(Queue<Integer> queue, int maxQueueSize, int numberOfProducers) {

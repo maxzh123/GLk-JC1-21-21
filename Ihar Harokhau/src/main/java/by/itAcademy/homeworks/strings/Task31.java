@@ -20,18 +20,20 @@ public class Task31 {
     }
 
     public static Long additionOperator (String text){
-        long startTime = System.nanoTime();
         String string = text;
-        for (int i = 0; i < 1_000; i++) {
+        System.gc();
+        long startTime = System.nanoTime();
+        for (int i = 0; i < 1_000_000; i++) {
             string += text;
         }
         return System.nanoTime() - startTime;
     }
 
     public static Long additionUsingStringBuilder (String text){
-        long startTime = System.nanoTime();
         StringBuilder str = new StringBuilder(text);
-        for (int i = 0; i < 1_000; i++) {
+        System.gc();
+        long startTime = System.nanoTime();
+        for (int i = 0; i < 1_000_000; i++) {
             str.append(text);
         }
         return System.nanoTime() - startTime;
