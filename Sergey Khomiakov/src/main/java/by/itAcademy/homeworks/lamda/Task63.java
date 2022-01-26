@@ -25,10 +25,10 @@ public class Task63 {
        List<Integer> list = Stream.generate(() -> minValue + new Random().nextInt(maxValue-minValue+1))
                 .limit(numberOfElement)
                 .peek(element -> System.out.print(element + "; "))
-                .filter(element -> element%3==0 || element%5==0)
+                .filter(element -> element%3==0 & element%5==0)
                 .collect(Collectors.toList());
 
-        System.out.println("\nЧисла, которые делятся на 3 или на 5:");
+        System.out.println("\nЧисла, которые делятся на 3 и на 5:");
         System.out.println(Arrays.toString(list.toArray()));
     }
 
