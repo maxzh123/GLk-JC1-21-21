@@ -22,14 +22,14 @@ public class Task63 {
         System.out.println("Введите максимальное значение");
         int maxValue = SimpleReader.readInt();
 
-       List<Integer> list = Stream.generate(() -> minValue + new Random().nextInt(maxValue-minValue+1))
+       long count = Stream.generate(() -> minValue + new Random().nextInt(maxValue-minValue+1))
                 .limit(numberOfElement)
                 .peek(element -> System.out.print(element + "; "))
                 .filter(element -> element%3==0 & element%5==0)
-                .collect(Collectors.toList());
+                .count();
 
-        System.out.println("\nЧисла, которые делятся на 3 и на 5:");
-        System.out.println(Arrays.toString(list.toArray()));
+        System.out.println("\nКоличество чисел, которые делятся на 3 и на 5");
+        System.out.println(count);
     }
 
 }

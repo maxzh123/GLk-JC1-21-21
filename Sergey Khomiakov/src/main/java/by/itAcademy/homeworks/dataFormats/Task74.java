@@ -1,8 +1,10 @@
 package by.itAcademy.homeworks.dataFormats;
 
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import xml.example.DomExample;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -21,7 +23,7 @@ public class Task74 {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(DomExample.class.getClassLoader().getResourceAsStream("Point.xml"));
+        Document document = builder.parse(Task74.class.getClassLoader().getResourceAsStream("Point.xml"));
         NodeList pointList = document.getDocumentElement().getElementsByTagName("point");
         for (int i = 0; i < pointList.getLength(); i++) {
             Node nNode = pointList.item(i);

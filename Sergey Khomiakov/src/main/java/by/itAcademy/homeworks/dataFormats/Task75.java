@@ -1,6 +1,8 @@
 package by.itAcademy.homeworks.dataFormats;
 
-import xml.example.StAXExample;
+
+
+
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -18,7 +20,7 @@ import javax.xml.stream.events.XMLEvent;
 public class Task75 {
     public static void main(String[] args) throws XMLStreamException {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-        XMLEventReader reader = xmlInputFactory.createXMLEventReader(StAXExample.class.getClassLoader().getResourceAsStream("Point.xml"));
+        XMLEventReader reader = xmlInputFactory.createXMLEventReader(Task75.class.getClassLoader().getResourceAsStream("Point.xml"));
 
         while (reader.hasNext()) {
             XMLEvent nextEvent = reader.nextEvent();
