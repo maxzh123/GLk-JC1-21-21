@@ -1,6 +1,9 @@
 package by.itAcademy.homeworks.reflection;
 
-public class AnimalPerson {
+import by.itAcademy.interfaces.basics.ITask1;
+import by.itAcademy.interfaces.basics.ITask2;
+
+public class AnimalPerson implements ITask1, ITask2 {
     private String name;
     private int age;
 

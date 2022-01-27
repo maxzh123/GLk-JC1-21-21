@@ -5,9 +5,14 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
-public class Task70 {
+public class Task70 extends AnimalPerson {
+    public Task70(String name, int age) {
+        super(name, age);
+    }
+
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
         //AnimalPerson cat = new AnimalPerson("Мурзик",4);
         HashMap cat = new HashMap(10);
@@ -15,6 +20,12 @@ public class Task70 {
         hackersMethod2(cat);
         hackersMethod3(cat);
         System.out.println(cat);
+        System.out.println(AnimalPerson.class.getSuperclass());
+        System.out.println(Arrays.toString(AnimalPerson.class.getInterfaces()));
+
+        System.out.println(Task70.class.getSuperclass());
+        System.out.println(Arrays.toString(Task70.class.getInterfaces()));
+
     }
 
     private static void hackersMethod(Object a) throws InvocationTargetException, IllegalAccessException {
