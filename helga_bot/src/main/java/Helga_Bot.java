@@ -1,7 +1,10 @@
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -16,6 +19,8 @@ import static java.lang.Integer.parseInt;
 
 
 public class Helga_Bot extends TelegramLongPollingBot {
+
+    private static ConcurrentHashMap<Long,Chat> storage=new ConcurrentHashMap<Long,Chat>();
 
     public static void main(String[] args) {
         TelegramBotsApi telegramBotsApi = null;
@@ -40,46 +45,10 @@ public class Helga_Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
-        switch (message.getText()) {
-            case "/start":
-                sendMsg(message, "Введите свой табельный номер");
-                int personnelNumber = Integer.parseInt(update.getMessage().getText());     //КАК СДЕЛАТЬ ИЗ ВВЕДЕННОГО НА ВОПРОС "Введите свой табельный номер" ЗНАЧЕНИЕ В INT?
-//             // в организации  условно 300 работников
-             if (personnelNumber > 0 & personnelNumber < 300) {
-                    sendMsg(message, "Здравствуйте, уважаемый (-ая) ");
-                } else {
-                    sendMsg(message, "Табельный номер введен некорректно");
-                }
-
-            case "Получить расчетный лист за текущий месяц":
-                sendMsg(message, "!");
-                System.out.println(message.getText());
-                break;
-//            case "Получить заработную плату за год":
-//                sendMsg(message, "!!");
-//                System.out.println(message.getText());
-//                break;
-//            case "Получить заработную плату за весь период работы":
-//                sendMsg(message, "!!!");
-//                System.out.println(message.getText());
-//                break;
-//            case "Получить сведения из трудового договора":
-//                sendMsg(message, "!!!!");
-//                System.out.println(message.getText());
-//                break;
-//            case "Получить сведения о текущем режиме работы":
-//                sendMsg(message, "!!!!!");
-//                System.out.println(message.getText());
-//                break;
-//            case "Получить сведения о трудовом отпуске":
-//                sendMsg(message, "!!!!!!");
-//                System.out.println(message.getText());
-//                break;
-            default:
-                sendMsg(message, "Выберите вариант на клавиатуре");
-                System.out.println(message.getText());
-                break;
-        }
+        Chat ch=new Chat();
+        Chat chold= storage.putIfAbsent(message.getChatId(),ch);
+        if (chold!=null){ch=chold;}
+        sendMsg(message,ch.processMessage(message.getText()));
     }
 
     public void sendMsg(Message message, String text) {
