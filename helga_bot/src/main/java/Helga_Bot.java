@@ -1,11 +1,7 @@
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -14,9 +10,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMar
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
-
-import static java.lang.Integer.parseInt;
-
 
 public class Helga_Bot extends TelegramLongPollingBot {
 
@@ -70,30 +63,30 @@ public class Helga_Bot extends TelegramLongPollingBot {
         // Добавляем кнопки в первую строчку клавиатуры
         keyboardFirstRow.add("Получить расчетный лист за текущий месяц");
 
-        // Вторая строчка клавиатуры
-        KeyboardRow keyboardSecondRow = new KeyboardRow();
-        // Добавляем кнопки во вторую строчку клавиатуры
-        keyboardSecondRow.add("Получить заработную плату за год");
-
-        KeyboardRow keyboardThirdRow = new KeyboardRow();
-        keyboardThirdRow.add("Получить заработную плату за весь период работы");
-
-        KeyboardRow keyboardFourthdRow = new KeyboardRow();
-        keyboardFourthdRow.add("Получить сведения из трудового договора");
-
-        KeyboardRow keyboardFifthhdRow = new KeyboardRow();
-        keyboardFifthhdRow.add("Получить сведения о текущем режиме работы");
-
-        KeyboardRow keyboardSixthhdRow = new KeyboardRow();
-        keyboardSixthhdRow.add("Получить сведения о трудовом отпуске");
+//        // Вторая строчка клавиатуры
+//        KeyboardRow keyboardSecondRow = new KeyboardRow();
+//        // Добавляем кнопки во вторую строчку клавиатуры
+//        keyboardSecondRow.add("Получить заработную плату за год");
+//
+//        KeyboardRow keyboardThirdRow = new KeyboardRow();
+//        keyboardThirdRow.add("Получить заработную плату за весь период работы");
+//
+//        KeyboardRow keyboardFourthdRow = new KeyboardRow();
+//        keyboardFourthdRow.add("Получить сведения из трудового договора");
+//
+//        KeyboardRow keyboardFifthhdRow = new KeyboardRow();
+//        keyboardFifthhdRow.add("Получить сведения о текущем режиме работы");
+//
+//        KeyboardRow keyboardSixthhdRow = new KeyboardRow();
+//        keyboardSixthhdRow.add("Получить сведения о трудовом отпуске");
 
         // Добавляем все строчки клавиатуры в список
         keyboard.add(keyboardFirstRow);
-        keyboard.add(keyboardSecondRow);
-        keyboard.add(keyboardThirdRow);
-        keyboard.add(keyboardFourthdRow);
-        keyboard.add(keyboardFifthhdRow);
-        keyboard.add(keyboardSixthhdRow);
+//        keyboard.add(keyboardSecondRow);
+//        keyboard.add(keyboardThirdRow);
+//        keyboard.add(keyboardFourthdRow);
+//        keyboard.add(keyboardFifthhdRow);
+//        keyboard.add(keyboardSixthhdRow);
 
         // и устанваливаем этот список нашей клавиатуре
         replyKeyboardMarkup.setKeyboard(keyboard);

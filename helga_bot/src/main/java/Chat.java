@@ -1,26 +1,40 @@
+import java.sql.*;
+
 public class Chat {
-    ChatState state=ChatState.START;
+    ChatState state = ChatState.START;
+    // А вот так мы можем сохранить номер. т.е мы просто расширяем состояние. ведь у нас объект чат уникален для каждого чата.
+    private long personnelNumber;
 
-    public String processMessage(String text){
-            switch (state){
-                case START:
-                    switch (text){
-                        case "/start":
-                            state=ChatState.INPUNT_NUMBER;
-                            return "Введите свой табельный номер";
+    public String processMessage(String text) {
+        switch (state) {
+            case START:
+                switch (text) {
+                    case "/start":
+                        state = ChatState.INPUNT_NUMBER;
+                        return "Для получения сведений о зарплате введите свой табельный номер";
+                }
+            case INPUNT_NUMBER:
+                state = ChatState.START;
+                try {
+                    // А вот так мы можем сохранить номер. т.е мы просто расширяем состояние. ведь у нас объект чат уникален для каждого чата.
+                    this.personnelNumber = Long.parseLong(text);
+
+                    // В организации 5 работников
+                    if (personnelNumber > 0 && personnelNumber <= 5) {
+                        state = ChatState.GET_INFORMATION;
+                        return "Вы ввели " + personnelNumber + ". " + "Выберите нужную кнопку на клавиатуре";
+                    } else {
+                        state = ChatState.START;
+                        return "Вы ввели неправильный табельный номер, попробуйте еще раз!";
                     }
-                return "Напишите одну из комманд";
-                case INPUNT_NUMBER:
-                    state=ChatState.START;
-                    try {
-                        int personnelNumber = Integer.parseInt(text);     //КАК СДЕЛАТЬ ИЗ ВВЕДЕННОГО НА ВОПРОС "Введите свой табельный номер" ЗНАЧЕНИЕ В INT?
-                        return "Вы ввели "+personnelNumber+"/ Вы великолепны. продолжайте так-же.";
-                    }catch (Exception e){
-                        return "Вы даже номер ввести не можете. Вы омерзительны! не пишите мне больше :-)";
-                    }
-
-            }
-
+                } catch (Exception e) {
+                    state = ChatState.START;
+                    return "Пока не работает";
+                }
+            case GET_INFORMATION:
+                state = ChatState.INPUNT_NUMBER;
+                Employe emp=ChatDao.getEmployeByNum(this.personnelNumber);
+                // Тут работайте дальше
 //            case "/start":
 //                "Введите свой табельный номер");
 ////             // в организации  условно 300 работников
@@ -59,6 +73,8 @@ public class Chat {
 //                System.out.println(message.getText());
 //                break;
 //        }
-        return "прям не знаю что вас сказать.";
+
+        }
+        return "Приходите ещё";
     }
 }
