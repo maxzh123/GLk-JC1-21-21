@@ -1,9 +1,9 @@
-import org.postgresql.util.PGPropertyMaxResultBufferParser;
-
 import java.sql.*;
 
 public class Chat {
     ChatState state = ChatState.START;
+    // А вот так мы можем сохранить номер. т.е мы просто расширяем состояние. ведь у нас объект чат уникален для каждого чата.
+    private long personnelNumber;
 
     public String processMessage(String text) {
         switch (state) {
@@ -16,7 +16,9 @@ public class Chat {
             case INPUNT_NUMBER:
                 state = ChatState.START;
                 try {
-                    int personnelNumber = Integer.parseInt(text);
+                    // А вот так мы можем сохранить номер. т.е мы просто расширяем состояние. ведь у нас объект чат уникален для каждого чата.
+                    this.personnelNumber = Long.parseLong(text);
+
                     // В организации 5 работников
                     if (personnelNumber > 0 && personnelNumber <= 5) {
                         state = ChatState.GET_INFORMATION;
@@ -31,34 +33,8 @@ public class Chat {
                 }
             case GET_INFORMATION:
                 state = ChatState.INPUNT_NUMBER;
-                try {
-                    Connection conn = DriverManager.getConnection("jdbc:postgresql://194.195.241.62:5432/o_makarevich_db",
-                            "o_makarevich", ":wmegk*");
-                    PreparedStatement ps = conn.prepareStatement(
-                            "SELECT Personnel_Number, Last_Name, First_Name, Patronymic, `Month`, Salary FROM PaySlips ps");
-                    ResultSet rs = ps.executeQuery();
-                    while (rs.next()) {
-
-                        /** Как здесь получить доступ к personnelNumber, который ввел пользователь в case INPUNT_NUMBER:, чтобы сравнить его с Personnel_Number из БД?*/
-
-//                        if (personnelNumber == rs.getInt("Personnel_Number")) {
-//                            System.out.print(rs.getString("Last_Name"));
-//                            System.out.print("; ");
-//                            System.out.print(rs.getString("First_Name"));
-//                            System.out.print("; ");
-//                            System.out.print(rs.getString("Patronymic"));
-//                            System.out.print("; ");
-//                            System.out.print(rs.getDate("Month"));
-//                            System.out.print("; ");
-//                            System.out.print(rs.getBigDecimal("Salary"));
-//                        }
-                    }
-                    rs.close();
-                    ps.close();
-                } catch (SQLException e) {
-                    return "Попробуйте позже";
-                }
-
+                Employe emp=ChatDao.getEmployeByNum(this.personnelNumber);
+                // Тут работайте дальше
 //            case "/start":
 //                "Введите свой табельный номер");
 ////             // в организации  условно 300 работников
