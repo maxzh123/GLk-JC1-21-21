@@ -22,7 +22,7 @@ public class Task64 {
         LocalDate b = date1.with(TemporalAdjusters.lastDayOfMonth());
         while (a.isBefore(b)) {
             System.out.println(a.format(DateTimeFormatter.ofPattern("d::MMM::uuuu")));
-            a.plusDays(10);
+            a.plusDays(1);
         }
     }
 }
