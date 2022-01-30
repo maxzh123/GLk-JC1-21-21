@@ -33,17 +33,12 @@ public class Chat {
                 }
             case GET_INFORMATION:
                 state = ChatState.INPUNT_NUMBER;
-                Employe emp=ChatDao.getEmployeByNum(this.personnelNumber);
-                // Тут работайте дальше
-//            case "/start":
-//                "Введите свой табельный номер");
-////             // в организации  условно 300 работников
-//                if (personnelNumber > 0 & personnelNumber < 300) {
-//                    sendMsg(message, "Здравствуйте, уважаемый (-ая) ");
-//                } else {
-//                    sendMsg(message, "Табельный номер введен некорректно");
-//                }
+                Employe emp = ChatDao.getEmployeByNum(this.personnelNumber);
+//                Salary sal = null;
+//                ChatDao.getSalary(emp, this.personnelNumber);
+        }
 
+        // Тут работайте дальше
 //            case "Получить расчетный лист за текущий месяц":
 //                sendMsg(message, "!");
 //                System.out.println(message.getText());
@@ -74,7 +69,6 @@ public class Chat {
 //                break;
 //        }
 
-        }
         return "Приходите ещё";
     }
 }
