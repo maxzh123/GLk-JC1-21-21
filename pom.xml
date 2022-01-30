@@ -29,7 +29,10 @@
 <module>Kate Buglakova</module>
 <module>Olga Makarevich</module>
 <module>spring boot</module>
-    <module>TGBot</module>
+<module>spring_boot_blog</module>
+<module>TGBot</module>
+<module>helga_bot</module>
+
 </modules>
 
 </project>

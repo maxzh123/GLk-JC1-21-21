@@ -39,7 +39,7 @@ public class Task49 {
         System.out.println("список чисел: "+list);
         System.out.println("среднее арифметическое: "+everageNumber(list));
     }
-    private static double everageNumber(Collection<Integer> string) {
+    public static double everageNumber(Collection<Integer> string) {
         int s = 0;
         for (Integer x : string) {
             s+=x;
