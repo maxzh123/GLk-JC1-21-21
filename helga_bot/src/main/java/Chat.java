@@ -32,9 +32,9 @@ public class Chat {
                     return "Пока не работает";
                 }
             case GET_INFORMATION:
-                state = ChatState.INPUNT_NUMBER;
+                state = ChatState.GET_INFORMATION;
                 Employe emp = ChatDao.getEmployeByNum(this.personnelNumber);
-//                Salary sal = null;
+                return "Кавы на это живете? У вас всего:"+emp.getSalary();
 //                ChatDao.getSalary(emp, this.personnelNumber);
         }
 

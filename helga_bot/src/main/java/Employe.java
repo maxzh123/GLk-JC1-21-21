@@ -1,8 +1,16 @@
+import java.math.BigDecimal;
+
 public class Employe {
     private int personnelNumber;
     private String lastName;
     private String firstName;
     private String patronymic;
+
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    private BigDecimal salary;
 
     public int getPersonnelNumber() {
         return personnelNumber;
@@ -49,5 +57,9 @@ public class Employe {
     @Override
     public String toString() {
         return "Работник " + lastName + " " + firstName + " " + patronymic;
+    }
+
+    public void setSalary(BigDecimal salary) {
+        this.salary=salary;
     }
 }
