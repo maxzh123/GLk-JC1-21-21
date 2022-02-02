@@ -8,7 +8,7 @@ public class ChatDao {
     private static ComboPooledDataSource dataSource = new ComboPooledDataSource();
 
     static {
-        dataSource.setJdbcUrl("jdbc:mysql://194.195.241.62:3306/o_makarevich_db");
+        dataSource.setJdbcUrl("jdbc:mariadb://194.195.241.62:3306/o_makarevich_db");
         dataSource.setUser("o_makarevich");
         dataSource.setPassword(new String(Config.DB_PW));
         dataSource.setInitialPoolSize(2);
