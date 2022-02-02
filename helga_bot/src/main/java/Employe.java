@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.time.Month;
 
 public class Employe {
     private int personnelNumber;
@@ -6,15 +7,11 @@ public class Employe {
     private String firstName;
     private String patronymic;
     private BigDecimal salary;
-
-    public BigDecimal getSalary() {
-        return salary;
-    }
+    private Month month;
 
     public int getPersonnelNumber() {
         return personnelNumber;
     }
-
     public void setPersonnelNumber(int personnelNumber) {
         this.personnelNumber = personnelNumber;
     }
@@ -22,7 +19,6 @@ public class Employe {
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -30,7 +26,6 @@ public class Employe {
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -38,13 +33,23 @@ public class Employe {
     public String getPatronymic() {
         return patronymic;
     }
-
     public void setPatronymic(String patronymic) {
         this.patronymic = patronymic;
     }
 
+    public BigDecimal getSalary() {
+        return salary;
+    }
     public void setSalary(BigDecimal salary) {
         this.salary=salary;
+    }
+
+    public Month getMonth() {
+        return month;
+    }
+
+    public void setMonth(Month month) {
+        this.month = month;
     }
 
     public Employe() {
@@ -59,6 +64,6 @@ public class Employe {
 
     @Override
     public String toString() {
-        return "Работник " + lastName + " " + firstName + " " + patronymic;
+        return lastName + " " + firstName + " " + patronymic;
     }
 }

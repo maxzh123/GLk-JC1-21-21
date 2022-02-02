@@ -2,6 +2,8 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.Month;
 
 public class ChatDao {
     //Создаем и настравиваем мул соединения к базе данных
@@ -31,7 +33,8 @@ public class ChatDao {
                         rs.getString("First_Name"),
                         rs.getString("Patronymic")
                 );
-                //emp.setMonth(rs.getDate("Month"));
+                emp.setMonth(rs.getDate("Month").toLocalDate().getMonth());
+                System.out.println("");
                 emp.setSalary(rs.getBigDecimal("Salary"));
                 System.out.println("");
             }
@@ -41,25 +44,4 @@ public class ChatDao {
         }
         return emp;
     }
-
-//    public static Salary getSalary(Employe emp, long personnelNumber) {
-//        Salary salary = null;
-//        if (emp.getPersonnelNumber() == personnelNumber) {
-//            try (Connection conn = dataSource.getConnection()) {
-//                PreparedStatement ps = conn.prepareStatement(
-//                        "SELECT `Month`, Salary FROM o_makarevich_db.PaySlips");
-//                ResultSet rs = ps.executeQuery();
-//                if (rs.next()) {
-//                    salary = new Salary(
-//                            rs.getDate("Month"),
-//                            rs.getBigDecimal("Salary")
-//                    );
-//                }
-//                rs.close();
-//                ps.close();
-//            } catch (SQLException e) {
-//            }
-//        }
-//        return salary;
-//    }
 }

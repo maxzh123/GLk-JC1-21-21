@@ -34,8 +34,8 @@ public class Chat {
             case GET_INFORMATION:
                 state = ChatState.GET_INFORMATION;
                 Employe emp = ChatDao.getEmployeByNum(this.personnelNumber);
-                return "Заработная плата " + emp.getFirstName() +" " + emp.getPatronymic() +" "+ emp.getLastName() + " составляет "
-                        +emp.getSalary() + " рублей";
+                return "Заработная плата " + emp.toString() +" за " + emp.getMonth()+ " составляет "+emp.getSalary() +
+                        " рублей\n"+ "Приходите еще!";
         }
 
         // Тут работайте дальше
@@ -68,7 +68,6 @@ public class Chat {
 //                System.out.println(message.getText());
 //                break;
 //        }
-
-        return "Приходите ещё";
+        return "";
     }
 }
