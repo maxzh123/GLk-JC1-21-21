@@ -34,8 +34,8 @@ public class Chat {
             case GET_INFORMATION:
                 state = ChatState.GET_INFORMATION;
                 Employe emp = ChatDao.getEmployeByNum(this.personnelNumber);
-                return "Кавы на это живете? У вас всего:"+emp.getSalary();
-//                ChatDao.getSalary(emp, this.personnelNumber);
+                return "Заработная плата " + emp.getFirstName() +" " + emp.getPatronymic() +" "+ emp.getLastName() + " составляет "
+                        +emp.getSalary() + " рублей";
         }
 
         // Тут работайте дальше

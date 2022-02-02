@@ -5,12 +5,11 @@ public class Employe {
     private String lastName;
     private String firstName;
     private String patronymic;
+    private BigDecimal salary;
 
     public BigDecimal getSalary() {
         return salary;
     }
-
-    private BigDecimal salary;
 
     public int getPersonnelNumber() {
         return personnelNumber;
@@ -44,6 +43,10 @@ public class Employe {
         this.patronymic = patronymic;
     }
 
+    public void setSalary(BigDecimal salary) {
+        this.salary=salary;
+    }
+
     public Employe() {
     }
 
@@ -57,9 +60,5 @@ public class Employe {
     @Override
     public String toString() {
         return "Работник " + lastName + " " + firstName + " " + patronymic;
-    }
-
-    public void setSalary(BigDecimal salary) {
-        this.salary=salary;
     }
 }
