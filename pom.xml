@@ -32,6 +32,7 @@
 <module>spring_boot_blog</module>
 <module>TGBot</module>
 <module>helga_bot</module>
+    <module>OrderBot</module>
 
 </modules>
 
