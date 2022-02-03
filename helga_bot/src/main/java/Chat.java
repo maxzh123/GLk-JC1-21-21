@@ -32,10 +32,11 @@ public class Chat {
                     return "Пока не работает";
                 }
             case GET_INFORMATION:
-                state = ChatState.INPUNT_NUMBER;
+                state = ChatState.GET_INFORMATION;
                 Employe emp = ChatDao.getEmployeByNum(this.personnelNumber);
-//                Salary sal = null;
-//                ChatDao.getSalary(emp, this.personnelNumber);
+                state = ChatState.INPUNT_NUMBER;
+                return "Заработная плата " + emp.toString() +" за " + emp.getMonth()+ " составляет "+emp.getSalary() +
+                        " рублей\n"+ "Приходите еще!";
         }
 
         // Тут работайте дальше
@@ -68,7 +69,6 @@ public class Chat {
 //                System.out.println(message.getText());
 //                break;
 //        }
-
-        return "Приходите ещё";
+        return "";
     }
 }

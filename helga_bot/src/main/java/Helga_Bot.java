@@ -61,7 +61,7 @@ public class Helga_Bot extends TelegramLongPollingBot {
         // Первая строчка клавиатуры
         KeyboardRow keyboardFirstRow = new KeyboardRow();
         // Добавляем кнопки в первую строчку клавиатуры
-        keyboardFirstRow.add("Получить расчетный лист за текущий месяц");
+        keyboardFirstRow.add("Получить сведения о зарплате за текущий месяц");
 
 //        // Вторая строчка клавиатуры
 //        KeyboardRow keyboardSecondRow = new KeyboardRow();
